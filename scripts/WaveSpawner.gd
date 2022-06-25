@@ -2,13 +2,16 @@ extends Node
 
 onready var basePath = $BaseWavePath
 
-var enemy = "res://scenes/enemies/SpiderEnemy.tscn"
+var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
+var enemyInfoUrl = "res://scenes/GameUI.tscn"
 
 var follows = []
 
+var currentEnemyInfo = null
+
 func _ready():
 	
-	var rawEnemy = load(enemy)
+	var rawEnemy = load(enemyUrl)
 	
 	for i in range(1, 5):
 		
@@ -18,6 +21,7 @@ func _ready():
 		var lerpY = lerp(-30, 30, randf())
 		
 		var enemy = rawEnemy.instance()
+		enemy.connect("enemyClicked", self, "_enemyClicked")
 
 		var new_follow = PathFollow2D.new()
 		new_follow.rotate = false
@@ -45,3 +49,14 @@ func _process(delta):
 			follow.offset += abstractEnemy.speed * delta
 			if follow.unit_offset >= 1:
 				follow.queue_free()
+
+func _enemyClicked(enemy):
+	if (is_instance_valid(currentEnemyInfo)):
+		currentEnemyInfo.queue_free()	
+	currentEnemyInfo = _addEnemyInfo(enemy)
+	
+func _addEnemyInfo(enemy):
+	var enemyInfo = load(enemyInfoUrl).instance()
+	get_parent().add_child(enemyInfo)
+	enemyInfo.init(enemy)
+	return enemyInfo

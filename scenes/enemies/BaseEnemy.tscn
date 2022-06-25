@@ -5,6 +5,7 @@
 
 [node name="BaseEnemy" type="Node2D" groups=["enemies"]]
 script = ExtResource( 1 )
+unitName = "EnemyName"
 
 [node name="Animation" type="AnimatedSprite" parent="."]
 playing = true
@@ -15,4 +16,9 @@ position = Vector2( 9, -17 )
 [node name="DeadBodyRelease" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="ClickArea"]
+
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_ClickArea_input_event"]
