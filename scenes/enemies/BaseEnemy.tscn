@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
+[ext_resource path="res://scenes/EnemyHealthBar.tscn" type="PackedScene" id=16]
+
+[node name="BaseEnemy" type="Node2D" groups=["enemies"]]
+script = ExtResource( 1 )
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+playing = true
+
+[node name="HealthBar" parent="." instance=ExtResource( 16 )]
+position = Vector2( 9, -17 )
+
+[node name="DeadBodyRelease" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]

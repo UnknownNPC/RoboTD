@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="BaseTower" type="Node2D" groups=["towers"]]
+position = Vector2( 175, 339 )
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+scale = Vector2( 2.5, 2.5 )
+playing = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

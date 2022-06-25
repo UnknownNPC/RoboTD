@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/enemies/SpiderAnimation.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://scripts/SpiderEnemy.gd" type="Script" id=3]
+
+[node name="SpiderEnemy" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+speed = 30
+
+[node name="Animation" parent="." index="0"]
+frames = ExtResource( 2 )
+
+[node name="DeadBodyRelease" parent="." index="2"]
+wait_time = 10.0
