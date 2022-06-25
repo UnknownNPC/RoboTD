@@ -14,10 +14,6 @@ config/name="RoboTD"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Utils="*res://scripts/Utils.gd"
-
 [display]
 
 window/size/width=320
@@ -27,7 +23,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [physics]
 
