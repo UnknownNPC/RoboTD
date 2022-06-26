@@ -5,8 +5,6 @@ export(int) var maxHealth = 100
 export(int) var speed = 100
 var currentHealth = maxHealth
 
-signal enemyClicked(enemy)
-
 var isDead = false
 
 onready var heathBar = $HealthBar
@@ -30,9 +28,9 @@ func add_damage(damage):
 func _on_DeadBodyRelease_timeout():
 	queue_free()
 
-
 func _on_ClickArea_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
-		emit_signal("enemyClicked", self)
 		$"/root/Utils".cleanupMouseSelection()
 		clickAreaBorder.visible = true
+		$"/root/Utils".addInfoPanel(self)
+		

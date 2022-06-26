@@ -71,5 +71,3 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( -65538, 1, 0, -131071, 2, 0, 131070, 3, 0, 65537, 4, 0 )
-
-[connection signal="input_event" from="." to="." method="_on_ClickArea_input_event"]
