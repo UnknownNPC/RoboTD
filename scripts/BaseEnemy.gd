@@ -13,6 +13,9 @@ onready var heathBar = $HealthBar
 onready var animation = $Animation
 onready var deadBodyRelease = $DeadBodyRelease
 
+onready var clickAreaBorder = $ClickArea/Select
+onready var clickAreaShape = $ClickArea/Collision
+
 func _ready():
 	animation.animation = "walk"
 
@@ -31,3 +34,5 @@ func _on_DeadBodyRelease_timeout():
 func _on_ClickArea_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
 		emit_signal("enemyClicked", self)
+		$"/root/Utils".cleanupMouseSelection()
+		clickAreaBorder.visible = true

@@ -6,16 +6,23 @@ export (int) var attackRadius = 120
 export (float) var attackCooldown = 1.0
 export (String) var unitName
 
-var attackRadiusCircleScene = load("res://scenes/AttackRadiusCircle.tscn")
+onready var clickAreaBorder = $ClickArea/Select
+onready var clickAreaShape = $ClickArea/Collision
+
+var attackRadiusCircleScene = preload("res://scenes/AttackRadiusCircle.tscn")
+var attackRadiusIntance
 
 signal towerClicked(tower)
 
 func _ready():
-	var attackRadiusIntance = attackRadiusCircleScene.instance()
+	attackRadiusIntance = attackRadiusCircleScene.instance()
 	attackRadiusIntance.attackRadius = attackRadius
+	attackRadiusIntance.visible = false
 	add_child(attackRadiusIntance)
-
 
 func _on_ClickArea_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
 		emit_signal("towerClicked", self)
+		$"/root/Utils".cleanupMouseSelection()
+		clickAreaBorder.visible = true
+		attackRadiusIntance.visible = true

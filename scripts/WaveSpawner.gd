@@ -11,10 +11,9 @@ var follows = []
 var currentEnemyInfo = null
 
 func _ready():
-	
 	var allTowers = get_tree().get_nodes_in_group("towers")
 	for tower in allTowers:
-		tower.connect("towerClicked", self, "_towerClicked")
+		tower.connect("towerClicked", self, "_elementClicked")
 		
 	var rawEnemy = load(enemyUrl)
 	
@@ -26,7 +25,7 @@ func _ready():
 		var lerpY = lerp(-30, 30, randf())
 		
 		var enemy = rawEnemy.instance()
-		enemy.connect("enemyClicked", self, "_enemyClicked")
+		enemy.connect("enemyClicked", self, "_elementClicked")
 
 		var new_follow = PathFollow2D.new()
 		new_follow.rotate = false
@@ -56,15 +55,12 @@ func _process(delta):
 				if follow.unit_offset >= 1:
 					follow.queue_free()
 
-func _enemyClicked(enemy):
+func _elementClicked(entity):
 	if (is_instance_valid(currentEnemyInfo)):
 		currentEnemyInfo.queue_free()
-	currentEnemyInfo = _addInfoUI(enemy, enemyInfoUrl)
-
-func _towerClicked(tower):
-	if (is_instance_valid(currentEnemyInfo)):
-		currentEnemyInfo.queue_free()
-	currentEnemyInfo = _addInfoUI(tower, towerInfoUrl)
+	var isEnemy = entity.is_in_group("enemies")
+	var url = enemyInfoUrl if isEnemy else towerInfoUrl
+	currentEnemyInfo = _addInfoUI(entity, url)
 
 func _addInfoUI(entity, sceneUrl):
 	var infoIU = load(sceneUrl).instance()

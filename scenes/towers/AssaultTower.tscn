@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/towers/BaseTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/AssaultTower.gd" type="Script" id=2]
 [ext_resource path="res://scenes/towers/AssaultAnimation.tres" type="SpriteFrames" id=3]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 18.0
 
 [node name="AssaultTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -14,6 +11,3 @@ unitName = "Assault"
 
 [node name="Animation" parent="." index="0"]
 frames = ExtResource( 3 )
-
-[node name="Shape" parent="ClickArea" index="0"]
-shape = SubResource( 1 )
