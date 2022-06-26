@@ -11,8 +11,8 @@ onready var heathBar = $HealthBar
 onready var animation = $Animation
 onready var deadBodyRelease = $DeadBodyRelease
 
-onready var clickAreaBorder = $ClickArea/Select
-onready var clickAreaShape = $ClickArea/Collision
+onready var spriteSelect = $SelectSprite/Select
+onready var spriteShape = $SelectSprite/Collision
 
 func _ready():
 	animation.animation = "walk"
@@ -28,9 +28,8 @@ func add_damage(damage):
 func _on_DeadBodyRelease_timeout():
 	queue_free()
 
-func _on_ClickArea_input_event(viewport, event, shape_idx):
+func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
 		$"/root/Utils".cleanupMouseSelection()
-		clickAreaBorder.visible = true
+		spriteSelect.visible = true
 		$"/root/Utils".addInfoPanel(self)
-		

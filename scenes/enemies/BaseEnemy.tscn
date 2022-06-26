@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
-[ext_resource path="res://scenes/UI/ClickArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/EnemyHealthBar.tscn" type="PackedScene" id=16]
 
 [node name="BaseEnemy" type="Node2D" groups=["enemies", "selectable"]]
@@ -17,7 +17,7 @@ position = Vector2( 9, -17 )
 [node name="DeadBodyRelease" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="ClickArea" parent="." instance=ExtResource( 2 )]
+[node name="SelectSprite" parent="." instance=ExtResource( 2 )]
 
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
-[connection signal="input_event" from="ClickArea" to="." method="_on_ClickArea_input_event"]
+[connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event"]

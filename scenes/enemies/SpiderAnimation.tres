@@ -22,23 +22,23 @@ animations = [ {
 "name": "idle",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "fire",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "malee",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
 "name": "die",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "fire",
+"speed": 7.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "malee",
 "speed": 7.0
 } ]

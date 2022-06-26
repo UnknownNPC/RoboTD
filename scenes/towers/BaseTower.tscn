@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/BaseTower.gd" type="Script" id=1]
-[ext_resource path="res://scenes/UI/ClickArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
 
 [node name="BaseTower" type="Node2D" groups=["selectable", "towers"]]
 script = ExtResource( 1 )
@@ -12,7 +12,7 @@ playing = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 
-[node name="ClickArea" parent="." instance=ExtResource( 2 )]
+[node name="SelectSprite" parent="." instance=ExtResource( 2 )]
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
-[connection signal="input_event" from="ClickArea" to="." method="_on_ClickArea_input_event"]
+[connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event"]

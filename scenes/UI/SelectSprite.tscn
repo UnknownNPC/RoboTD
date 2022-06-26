@@ -60,7 +60,7 @@
 4/shapes = [  ]
 4/z_index = 0
 
-[node name="ClickArea" type="Area2D"]
+[node name="SelectSprite" type="Area2D"]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
