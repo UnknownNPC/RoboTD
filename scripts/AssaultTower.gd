@@ -51,3 +51,4 @@ func _on_AttackTimer_timeout():
 
 func isEnemyInsideAttackRadius(enemy):
 	return pow((enemy.global_position.x - global_position.x),2) + pow((enemy.global_position.y - global_position.y),2) <= pow(attackRadius, 2)
+

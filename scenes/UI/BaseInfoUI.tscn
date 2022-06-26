@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tiles/UI/rect/range12.png" type="Texture" id=1]
 [ext_resource path="res://tiles/UI/rect/selection-cursor.png" type="Texture" id=2]
 [ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scripts/EnemyInfo.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 2/name = "menu_box"
@@ -88,20 +87,12 @@
 3/shapes = [  ]
 3/z_index = 0
 
-[node name="EnemyInfo" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -120.0
-margin_top = 176.0
-margin_right = -120.0
-margin_bottom = 176.0
-script = ExtResource( 4 )
+[node name="BaseInfoUI" type="Control"]
 
-[node name="UnitPosition" type="Position2D" parent="."]
+[node name="Animation" type="AnimatedSprite" parent="."]
 position = Vector2( 191, 50 )
 z_index = 2
+playing = true
 
 [node name="Border" type="TileMap" parent="."]
 scale = Vector2( 5, 5 )
@@ -127,41 +118,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "Name"
 
 [node name="NameValue" type="Label" parent="."]
-margin_left = 64.0
+margin_left = 70.0
 margin_top = 19.0
-margin_right = 112.0
+margin_right = 126.0
 margin_bottom = 33.0
 custom_fonts/font = ExtResource( 3 )
-text = "Spider"
-
-[node name="Speed" type="Label" parent="."]
-margin_left = 16.0
-margin_top = 48.0
-margin_right = 57.0
-margin_bottom = 62.0
-custom_fonts/font = ExtResource( 3 )
-text = "Speed"
-
-[node name="SpeedValue" type="Label" parent="."]
-margin_left = 64.0
-margin_top = 48.0
-margin_right = 105.0
-margin_bottom = 62.0
-custom_fonts/font = ExtResource( 3 )
-text = "250"
-
-[node name="HP" type="Label" parent="."]
-margin_left = 16.0
-margin_top = 64.0
-margin_right = 56.0
-margin_bottom = 78.0
-custom_fonts/font = ExtResource( 3 )
-text = "HP"
-
-[node name="HPValue" type="Label" parent="."]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 104.0
-margin_bottom = 78.0
-custom_fonts/font = ExtResource( 3 )
-text = "100/100"
+text = "Genetic"

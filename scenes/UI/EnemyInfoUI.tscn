@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/UI/BaseInfoUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/EnemyInfo.gd" type="Script" id=3]
+
+[node name="EnemyInfoUI" type="Control"]
+margin_left = 40.0
+margin_top = 520.0
+margin_right = 40.0
+margin_bottom = 520.0
+script = ExtResource( 3 )
+
+[node name="BaseInfoUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Speed" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 45.0
+margin_right = 57.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 1 )
+text = "Speed"
+
+[node name="SpeedValue" type="Label" parent="."]
+margin_left = 70.0
+margin_top = 45.0
+margin_right = 111.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 1 )
+text = "250"
+
+[node name="HP" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 61.0
+margin_right = 56.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 1 )
+text = "HP"
+
+[node name="HPValue" type="Label" parent="."]
+margin_left = 70.0
+margin_top = 61.0
+margin_right = 126.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 1 )
+text = "100/100"

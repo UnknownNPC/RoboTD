@@ -1,18 +1,17 @@
 extends Control
 
 var enemy
-var viewEnemy
 
-onready var nameValue = $NameValue
+onready var nameValue = $BaseInfoUI/NameValue
 onready var speedValue = $SpeedValue
 onready var hpValue = $HPValue
-onready var unitPosition = $UnitPosition
+onready var animation = $BaseInfoUI/Animation
 
 func _process(delta):
 	### can be queue_free
 	if (is_instance_valid(enemy)):
 		hpValue.text = str(enemy.maxHealth) + "/" + str(enemy.currentHealth)
-		viewEnemy.get_node("Animation").animation = enemy.get_node("Animation").animation
+		animation.animation = enemy.get_node("Animation").animation
 	else:
 		## close
 		queue_free()
@@ -22,8 +21,6 @@ func init(targetEnemy):
 	nameValue.text = enemy.unitName
 	speedValue.text = str(enemy.speed)
 	
-	viewEnemy = targetEnemy.duplicate()
-	viewEnemy.scale = Vector2(2,2)
-
-	unitPosition.add_child(viewEnemy)
-
+	animation.frames = enemy.get_node("Animation").frames.duplicate()
+	animation.animation = enemy.get_node("Animation").animation
+	animation.scale = Vector2(2, 2)
