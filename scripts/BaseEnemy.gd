@@ -28,8 +28,10 @@ func add_damage(damage):
 func _on_DeadBodyRelease_timeout():
 	queue_free()
 
-func _on_SelectSprite_input_event(viewport, event, shape_idx):
+
+func _on_SelectSprite_input_event2(viewport, event, shape_idx):
 	if (event.is_pressed()):
 		$"/root/Utils".cleanupMouseSelection()
 		spriteSelect.visible = true
 		$"/root/Utils".addInfoPanel(self)
+

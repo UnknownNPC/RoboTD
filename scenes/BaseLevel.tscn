@@ -1,14 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/WaveSpawner.gd" type="Script" id=1]
 [ext_resource path="res://tiles/terrain/tileset_arranged.png" type="Texture" id=2]
 [ext_resource path="res://scenes/towers/AssaultTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/BaseLevel.gd" type="Script" id=4]
-
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -63, 287, -32.9628, -2.99661, 32.9628, 2.99661, 155, 287, 0, 0, 0, 0, 193, 322, 0, 0, 0, 0, 193, 450, -38.5814, 0.374577, 38.5814, -0.374577, 232, 481, 0, 0, 0, 0, 521, 482 )
-}
+[ext_resource path="res://scenes/UI/LevelStateUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset_arranged.png 0"
@@ -236,17 +231,26 @@ _data = {
 15/shapes = [  ]
 15/z_index = 0
 
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -63, 287, -32.9628, -2.99661, 32.9628, 2.99661, 155, 287, 0, 0, 0, 0, 193, 322, 0, 0, 0, 0, 193, 450, -38.5814, 0.374577, 38.5814, -0.374577, 232, 481, 0, 0, 0, 0, 342, 482 )
+}
+
 [node name="BaseLevel" type="Node"]
 script = ExtResource( 4 )
 
-[node name="Wave_Spawner" type="Node" parent="."]
-script = ExtResource( 1 )
+[node name="LevelStateUI" parent="." instance=ExtResource( 5 )]
 
-[node name="NextWaveTriggerTimer" type="Timer" parent="Wave_Spawner"]
-wait_time = 10.0
+[node name="Towers" type="Node" parent="."]
 
-[node name="BaseWavePath" type="Path2D" parent="Wave_Spawner"]
-curve = SubResource( 2 )
+[node name="AssaultTower" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 262, 406 )
+
+[node name="AssaultTower2" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 118, 215 )
+
+[node name="AssaultTower3" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 122, 453 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
@@ -256,10 +260,12 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 131072, 0, 0, 131073, 14, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 15, 0, 131079, 0, 0, 196608, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262144, 11, 0, 262145, 12, 0, 262146, 11, 0, 262147, 12, 0, 262148, 11, 0, 262149, 11, 0, 262150, 0, 0, 262151, 0, 0, 393214, 9, 0, 393215, 2, 0, 327681, 2, 0, 327683, 1, 0, 327685, 11, 0, 327686, 0, 0, 327687, 0, 0, 393221, 11, 0, 393222, 15, 0, 393223, 0, 0, 458752, 11, 0, 458753, 11, 0, 458754, 12, 0, 458755, 6, 0, 458757, 12, 0, 458758, 0, 0, 458759, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 11, 0, 524293, 11, 0, 524294, 12, 0, 524295, 11, 0, 589824, 0, 0, 589825, 0, 0, 589826, 12, 0, 589827, 3, 0, 589829, 2, 0, 589831, 2, 0, 589833, 7, 0, 655360, 13, 0, 720899, 12, 0, 720900, 11, 0, 720901, 11, 0, 720902, 11, 0, 720903, 11, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0 )
 
-[node name="AssaultTower" parent="." instance=ExtResource( 3 )]
-position = Vector2( 262, 406 )
+[node name="BaseWavePath" type="Path2D" parent="."]
+curve = SubResource( 2 )
 
-[node name="AssaultTower2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 118, 215 )
+[node name="RuntimeSpawnBox" type="Node" parent="."]
 
-[connection signal="timeout" from="Wave_Spawner/NextWaveTriggerTimer" to="Wave_Spawner" method="_on_NextWaveTriggerTimer_timeout"]
+[node name="NextWaveTriggerTimer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]

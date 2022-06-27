@@ -15,9 +15,9 @@ playing = true
 position = Vector2( 9, -17 )
 
 [node name="DeadBodyRelease" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 
 [node name="SelectSprite" parent="." instance=ExtResource( 2 )]
 
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
-[connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event"]
+[connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event2"]

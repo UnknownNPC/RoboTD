@@ -11,6 +11,3 @@ speed = 30
 
 [node name="Animation" parent="." index="0"]
 frames = ExtResource( 2 )
-
-[node name="DeadBodyRelease" parent="." index="2"]
-wait_time = 10.0
