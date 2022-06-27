@@ -16,6 +16,7 @@ onready var deadBodyRelease = $DeadBodyRelease
 
 onready var spriteSelect = $SelectSprite/Select
 onready var spriteShape = $SelectSprite/Collision
+onready var animationPlayer = $AnimationPlayer
 
 func _ready():
 	animation.animation = "walk"
@@ -27,6 +28,7 @@ func add_damage(damage):
 		animation.animation = "die"
 		isDead = true
 		emit_signal("rewardForKill", self.energyReward)
+		animationPlayer.play("reward")
 		deadBodyRelease.start()
 
 func _on_DeadBodyRelease_timeout():

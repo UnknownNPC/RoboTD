@@ -1,8 +1,64 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
 [ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles/UI/icon2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/EnemyHealthBar.tscn" type="PackedScene" id=16]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AP_RawardIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AP_RawardIcon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "reward"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("AP_RawardIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AP_RawardIcon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
 
 [node name="BaseEnemy" type="Node2D" groups=["enemies", "selectable"]]
 script = ExtResource( 1 )
@@ -18,6 +74,14 @@ position = Vector2( 9, -17 )
 wait_time = 3.0
 
 [node name="SelectSprite" parent="." instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/reward = SubResource( 2 )
+
+[node name="AP_RawardIcon" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
 
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
 [connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event2"]
