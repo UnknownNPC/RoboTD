@@ -16,7 +16,7 @@ var maxWaveCounter = 3
 var levelIsFinished = false
 
 func _ready():
-	levelStateUI.init(10, maxWaveCounter, 250)
+	levelStateUI.init(10, maxWaveCounter, 0)
 	spawnEnemies(enemiesInWave)
 	
 func _process(delta):
@@ -73,6 +73,7 @@ func spawnEnemies(count):
 		var lerpY = lerp(-30, 30, randf())
 		
 		var enemy = rawEnemy.instance()
+		enemy.connect("rewardForKill", self, "_processRewardForKill")
 
 		var new_follow = PathFollow2D.new()
 		new_follow.rotate = false
@@ -93,6 +94,8 @@ func spawnEnemies(count):
 
 		paths.append(new_path)
 
+func _processRewardForKill(rawardCount):
+	levelStateUI.increaseEnegy(rawardCount)
 
 #Should be run when stopProcessingMovement = true
 func _cleanupWaveResources():

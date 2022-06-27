@@ -3,9 +3,12 @@ extends Node2D
 export (String) var unitName
 export(int) var maxHealth = 100
 export(int) var speed = 100
+export(int) var energyReward = 10
 var currentHealth = maxHealth
 
 var isDead = false
+
+signal rewardForKill(energy)
 
 onready var heathBar = $HealthBar
 onready var animation = $Animation
@@ -23,11 +26,11 @@ func add_damage(damage):
 	if (currentHealth <= 0 && !isDead):
 		animation.animation = "die"
 		isDead = true
+		emit_signal("rewardForKill", self.energyReward)
 		deadBodyRelease.start()
 
 func _on_DeadBodyRelease_timeout():
 	queue_free()
-
 
 func _on_SelectSprite_input_event2(viewport, event, shape_idx):
 	if (event.is_pressed()):
