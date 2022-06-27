@@ -34,7 +34,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "reward"
-length = 0.6
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AP_RawardIcon:scale")
 tracks/0/interp = 1
@@ -42,10 +42,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AP_RawardIcon:position")
@@ -54,10 +54,24 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -20 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, -10 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("AP_RawardIcon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
 }
 
 [node name="BaseEnemy" type="Node2D" groups=["enemies", "selectable"]]
