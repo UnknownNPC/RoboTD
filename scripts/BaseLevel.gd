@@ -10,13 +10,16 @@ var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
 var paths = []
 var isWaveWalking = true
 
-var enemiesInWave = 1
 var currentWaveCounter = 1
-var maxWaveCounter = 3
+var maxWaveCounter = 20
+var healthCounter = 10
+var energyCounter = 0
+
+var enemiesInWave = 1
 var levelIsFinished = false
 
 func _ready():
-	levelStateUI.init(10, maxWaveCounter, 0)
+	levelStateUI.init(healthCounter, maxWaveCounter, energyCounter)
 	spawnEnemies(enemiesInWave)
 	
 func _process(delta):
@@ -32,7 +35,8 @@ func _process(delta):
 						follow.offset += abstractEnemy.speed * delta
 						if (follow.unit_offset >= 1):
 							### Enemy moved to the end
-							levelStateUI.dicreaseHealth(1)
+							healthCounter -= 1
+							levelStateUI.setHealth(healthCounter)
 							enemiesPass += 1
 				else:
 					###Enemy died and was removed
@@ -46,6 +50,11 @@ func _process(delta):
 					levelIsFinished = true
 					return
 				nextWaveTimer.start()
+			
+			if (healthCounter <= 0):
+				print("Died")
+				levelIsFinished = true
+				return
 	else:
 		print("Game over")
 		get_tree().reload_current_scene()
@@ -55,8 +64,7 @@ func _on_NextWaveTriggerTimer_timeout():
 	
 	#Prepare next wave
 	currentWaveCounter += 1
-	var nextWave = str(maxWaveCounter) + "/" + str(currentWaveCounter)
-	levelStateUI.setWaveValue(nextWave)
+	levelStateUI.setWaveValue(currentWaveCounter)
 	enemiesInWave += 1
 	print("Starting new wave with " + str(enemiesInWave) + " enemies")
 	spawnEnemies(enemiesInWave)
@@ -94,8 +102,9 @@ func spawnEnemies(count):
 
 		paths.append(new_path)
 
-func _processRewardForKill(rawardCount):
-	levelStateUI.increaseEnegy(rawardCount)
+func _processRewardForKill(rewardCount):
+	energyCounter += rewardCount
+	levelStateUI.setEnergy(energyCounter)
 
 #Should be run when stopProcessingMovement = true
 func _cleanupWaveResources():

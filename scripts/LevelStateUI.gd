@@ -1,22 +1,25 @@
 extends CanvasLayer
 
-onready var healthValue = $MarginContainer/TopMenu/HealthBox/HealthValue
-onready var waveValue = $MarginContainer/TopMenu/WaveBox/WaveValue
-onready var energyValue = $MarginContainer/TopMenu/EnergyBox/EnergyValue
+onready var healthValue = $HealthBox/HealthValue
+onready var waveValue = $WaveBox/WaveValue
+onready var energyValue = $EnergyBox/EnergyValue
+
+var energyFormat = "%04d"
+var waveFormat = "%02d"
+
+var maxWaveCounterVal
 
 func init(healthVal, maxWaveValue, energyVal):
+	maxWaveCounterVal = maxWaveValue
 	healthValue.text = str(healthVal)
-	waveValue.text = str(maxWaveValue) + "/1"
-	energyValue.text = str(energyVal) 
+	waveValue.text = str(waveFormat % maxWaveCounterVal) + "/" + str(waveFormat % 1)
+	energyValue.text = str(energyFormat % energyVal) 
 
-func increaseEnegy(value):
-	energyValue.text = str(int(energyValue.text) + value)
-	
-func dicreaseEnegy(value):
-	energyValue.text = str(int(energyValue.text) - value)
+func setEnergy(value):
+	energyValue.text = energyFormat % value
 	
 func setWaveValue(value):
-	waveValue.text = value
+	waveValue.text = str(waveFormat % maxWaveCounterVal) + "/" + str(waveFormat % value)
 
-func dicreaseHealth(value):
-	healthValue.text = str(int(healthValue.text) - value)
+func setHealth(value):
+	healthValue.text = str(value)

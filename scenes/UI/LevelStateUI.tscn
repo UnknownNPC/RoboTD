@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles/UI/icon3.png" type="Texture" id=1]
 [ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://tiles/UI/icon4.png" type="Texture" id=4]
+[ext_resource path="res://scenes/UI/BorderUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tiles/UI/icon5.png" type="Texture" id=4]
 [ext_resource path="res://scripts/LevelStateUI.gd" type="Script" id=5]
 
 [sub_resource type="StreamTexture" id=1]
@@ -11,31 +12,19 @@ load_path = "res://.import/icon2.png-7662bc449ce0150559228b0e74c0d3e9.stex"
 [node name="LevelStateUI" type="CanvasLayer"]
 script = ExtResource( 5 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 60.0
-margin_top = 10.0
-margin_bottom = -590.0
-size_flags_horizontal = 4
+[node name="Border" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 3, 2, 0, 4, 2, 2, 5, 2, 1, 6, 2, 1, 7, 2, 2, 8, 2, 1, 9, 2, 1, 10, 2, 1, 11, 2, 2, 12, 2, 1, 13, 2, 1, 14, 2, 1, 15, 2, 3, 65539, 2, 131072, 65540, 2, 131074, 65541, 2, 131073, 65542, 2, 131074, 65543, 2, 131074, 65544, 2, 131073, 65545, 2, 65537, 65546, 2, 131074, 65547, 2, 65537, 65548, 2, 131074, 65549, 2, 65538, 65550, 2, 131074, 65551, 2, 65539, 131075, 2, 196608, 131076, 2, 196609, 131077, 2, 196609, 131078, 2, 196610, 131079, 2, 196609, 131080, 2, 196609, 131081, 2, 196610, 131082, 2, 196610, 131083, 2, 196610, 131084, 2, 196610, 131085, 2, 196610, 131086, 2, 196609, 131087, 2, 196611 )
 
-[node name="TopMenu" type="HBoxContainer" parent="MarginContainer"]
-margin_left = 18.0
-margin_top = 5.0
-margin_right = 242.0
-margin_bottom = 35.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_constants/separation = 10
-
-[node name="HealthBox" type="HBoxContainer" parent="MarginContainer/TopMenu"]
-margin_right = 55.0
-margin_bottom = 30.0
+[node name="HealthBox" type="HBoxContainer" parent="."]
+margin_left = 75.0
+margin_top = 16.0
+margin_right = 130.0
+margin_bottom = 46.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = -1
 
-[node name="HealthIcon" type="TextureRect" parent="MarginContainer/TopMenu/HealthBox"]
+[node name="HealthIcon" type="TextureRect" parent="HealthBox"]
 margin_right = 30.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
@@ -44,7 +33,7 @@ size_flags_vertical = 2
 texture = ExtResource( 1 )
 stretch_mode = 5
 
-[node name="HealthValue" type="Label" parent="MarginContainer/TopMenu/HealthBox"]
+[node name="HealthValue" type="Label" parent="HealthBox"]
 margin_left = 29.0
 margin_top = 3.0
 margin_right = 55.0
@@ -53,13 +42,16 @@ size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 2 )
 text = "20"
 
-[node name="WaveBox" type="HBoxContainer" parent="MarginContainer/TopMenu"]
-margin_left = 65.0
-margin_right = 133.0
-margin_bottom = 30.0
+[node name="WaveBox" type="HBoxContainer" parent="."]
+margin_left = 132.0
+margin_top = 16.0
+margin_right = 226.0
+margin_bottom = 46.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 custom_constants/separation = -1
 
-[node name="WaveIcon" type="TextureRect" parent="MarginContainer/TopMenu/WaveBox"]
+[node name="WaveIcon" type="TextureRect" parent="WaveBox"]
 margin_right = 30.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
@@ -68,22 +60,25 @@ size_flags_vertical = 2
 texture = ExtResource( 4 )
 stretch_mode = 5
 
-[node name="WaveValue" type="Label" parent="MarginContainer/TopMenu/WaveBox"]
+[node name="WaveValue" type="Label" parent="WaveBox"]
 margin_left = 29.0
 margin_top = 3.0
-margin_right = 68.0
+margin_right = 94.0
 margin_bottom = 26.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 2 )
-text = "9/1"
+text = "20/20"
 
-[node name="EnergyBox" type="HBoxContainer" parent="MarginContainer/TopMenu"]
-margin_left = 143.0
-margin_right = 224.0
-margin_bottom = 30.0
+[node name="EnergyBox" type="HBoxContainer" parent="."]
+margin_left = 224.0
+margin_top = 16.0
+margin_right = 305.0
+margin_bottom = 46.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 custom_constants/separation = -1
 
-[node name="EnergyIcon" type="TextureRect" parent="MarginContainer/TopMenu/EnergyBox"]
+[node name="EnergyIcon" type="TextureRect" parent="EnergyBox"]
 margin_right = 30.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
@@ -92,11 +87,11 @@ size_flags_vertical = 2
 texture = SubResource( 1 )
 stretch_mode = 5
 
-[node name="EnergyValue" type="Label" parent="MarginContainer/TopMenu/EnergyBox"]
+[node name="EnergyValue" type="Label" parent="EnergyBox"]
 margin_left = 29.0
 margin_top = 3.0
 margin_right = 81.0
 margin_bottom = 26.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 2 )
-text = "2509"
+text = "0000"

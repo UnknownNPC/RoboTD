@@ -22,7 +22,7 @@ func _ready():
 	animation.animation = "walk"
 
 func add_damage(damage):
-	currentHealth -= damage
+	currentHealth = max(currentHealth - damage, 0)
 	heathBar.update_healthbar(damage)
 	if (currentHealth <= 0 && !isDead):
 		animation.animation = "die"
