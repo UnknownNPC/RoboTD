@@ -9,11 +9,11 @@ var waveFormat = "%02d"
 
 var maxWaveCounterVal
 
-func init(healthVal, maxWaveValue, energyVal):
+func init(initHealthVal, maxWaveValue, initEnergyVal):
 	maxWaveCounterVal = maxWaveValue
-	healthValue.text = str(healthVal)
+	healthValue.text = str(initHealthVal)
 	waveValue.text = str(waveFormat % maxWaveCounterVal) + "/" + str(waveFormat % 1)
-	energyValue.text = str(energyFormat % energyVal) 
+	energyValue.text = str(energyFormat % initEnergyVal)
 
 func setEnergy(value):
 	energyValue.text = energyFormat % value
