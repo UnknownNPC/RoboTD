@@ -7,7 +7,6 @@ var currentInfoPanel
 var entity
 
 func addInfoPanel(entity):
-	_removeInfoPanel()
 	var isEnemy = entity.is_in_group("enemies")
 	var url = enemyInfoUrl if isEnemy else towerInfoUrl
 	currentInfoPanel = _addInfoUI(entity, url)
