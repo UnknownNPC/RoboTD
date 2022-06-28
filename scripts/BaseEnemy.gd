@@ -36,7 +36,7 @@ func _on_DeadBodyRelease_timeout():
 
 func _on_SelectSprite_input_event2(viewport, event, shape_idx):
 	if (event.is_pressed()):
-		$"/root/Utils".cleanupMouseSelection()
+		print("Rendering enemy UI elements")
 		spriteSelect.visible = true
 		$"/root/Utils".addInfoPanel(self)
 

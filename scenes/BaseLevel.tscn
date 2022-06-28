@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://scenes/SpawnPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/terrain/tileset_arranged.png" type="Texture" id=2]
 [ext_resource path="res://scenes/towers/AssaultTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/BaseLevel.gd" type="Script" id=4]
@@ -492,6 +493,17 @@ _data = {
 script = ExtResource( 4 )
 
 [node name="LevelStateUI" parent="." instance=ExtResource( 5 )]
+
+[node name="TowerSpawnPoints" type="Node" parent="."]
+
+[node name="SpawnPoint" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 72, 216 )
+
+[node name="SpawnPoint3" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 168, 216 )
+
+[node name="SpawnPoint2" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 24, 216 )
 
 [node name="Towers" type="Node" parent="."]
 

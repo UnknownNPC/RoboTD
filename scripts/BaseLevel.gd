@@ -23,7 +23,10 @@ func _ready():
 	spawnEnemies(enemiesInWave)
 	
 func _process(delta):
-	if (!levelIsFinished):
+	if(levelIsFinished):
+		print("Game over")
+		get_tree().reload_current_scene()
+	else:
 		var enemiesKilled = 0
 		var enemiesPass = 0
 		if (isWaveWalking):
@@ -55,9 +58,6 @@ func _process(delta):
 				print("Died")
 				levelIsFinished = true
 				return
-	else:
-		print("Game over")
-		get_tree().reload_current_scene()
 
 func _on_NextWaveTriggerTimer_timeout():
 	nextWaveTimer.stop()
