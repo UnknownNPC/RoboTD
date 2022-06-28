@@ -6,7 +6,7 @@
 
 [node name="AssaultTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-damageValue = 25
+damageValue = 15
 unitName = "Assault"
 
 [node name="Animation" parent="." index="0"]
