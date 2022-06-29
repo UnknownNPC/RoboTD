@@ -30,6 +30,11 @@ func _on_SelectSprite_input_event(viewport, event, shape_idx):
 		spriteSelect.visible = true
 		attackRadiusIntance.visible = true
 		$"/root/Utils".addInfoPanel(self)
-		
 		$"/root/Utils".addTowerSelectPanel(self)
 		
+func _towerLevelWasIncreased():
+	currentLevel += 1
+	$"/root/Utils".initTowerSelectPanel(self)
+
+func _towerWasRemoved():
+	queue_free()

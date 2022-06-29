@@ -2,26 +2,29 @@ extends Node
 
 var enemyInfoUrl = "res://scenes/UI/EnemyInfoUI.tscn"
 var towerInfoUrl = "res://scenes/UI/TowerInfoUI.tscn"
-
 var towerSelectUiUrl = "res://scenes/UI/TowerSelectUI.tscn"
 
 var currentInfoPanel
 var currentTowerSelectPanel
-var entity
 
 func addTowerSelectPanel(tower):
 	var towerSelect = load(towerSelectUiUrl).instance()
-	towerSelect.global_position.x = tower.global_position.x
-	towerSelect.global_position.y = tower.global_position.y
-	towerSelect.global_position += Vector2(30, 30)
+	towerSelect.global_position = tower.global_position
+	towerSelect.global_position += Vector2(50, -50)
+	towerSelect.scale = Vector2(0.6, 0.6)
+	towerSelect.connect("towerWasRemoved", tower, "_towerWasRemoved")
+	towerSelect.connect("towerLevelWasIncreased", tower, "_towerLevelWasIncreased")
 
 	get_parent().add_child(towerSelect)
-	move_child(towerSelect, 0)
-	# Spawn 
-	var isMaxLevel = tower.currentLevel >= tower.maxLevel
-	var nextLevelCost = tower.level2Cost if tower.currentLevel == 1 else tower.level3Cost
-	towerSelect.init(isMaxLevel, nextLevelCost)
+	# set settings
 	currentTowerSelectPanel = towerSelect
+	initTowerSelectPanel(tower)
+
+func initTowerSelectPanel(tower):
+	if(is_instance_valid(currentTowerSelectPanel)):
+		var isMaxLevel = tower.currentLevel >= tower.maxLevel
+		var nextLevelCost = tower.level2Cost if tower.currentLevel == 1 else tower.level3Cost
+		currentTowerSelectPanel.init(isMaxLevel, nextLevelCost)
 
 func addInfoPanel(entity):
 	var isEnemy = entity.is_in_group("enemies")

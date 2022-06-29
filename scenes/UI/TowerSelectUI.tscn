@@ -68,7 +68,12 @@ text = "200"
 [node name="ResetClickSprite" type="Timer" parent="Up"]
 wait_time = 0.1
 
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
 [connection signal="input_event" from="Remove" to="." method="_on_Remove_input_event"]
 [connection signal="timeout" from="Remove/ResetClickSprite" to="." method="_on_RemoveResetClickSprite_timeout"]
 [connection signal="input_event" from="Up" to="." method="_on_Up_input_event"]
 [connection signal="timeout" from="Up/ResetClickSprite" to="." method="_on_UpResetClickSprite_timeout"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="_on_QueueFreeTimer_timeout"]
