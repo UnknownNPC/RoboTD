@@ -32,15 +32,15 @@ animations = [ {
 "name": "hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "fire",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "crawl",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 6 ) ],
 "loop": true,

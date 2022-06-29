@@ -6,11 +6,17 @@ export (int) var attackRadius = 120
 export (float) var attackCooldown = 1.0
 export (String) var unitName
 
+export (int) var level2Cost = 10
+export (int) var level3Cost = 15
+
 onready var spriteSelect = $SelectSprite/Select
 onready var spriteShape = $SelectSprite/Collision
 
 var attackRadiusCircleScene = preload("res://scenes/AttackRadiusCircle.tscn")
 var attackRadiusIntance
+
+var currentLevel = 1
+var maxLevel = 3
 
 func _ready():
 	attackRadiusIntance = attackRadiusCircleScene.instance()
@@ -24,3 +30,6 @@ func _on_SelectSprite_input_event(viewport, event, shape_idx):
 		spriteSelect.visible = true
 		attackRadiusIntance.visible = true
 		$"/root/Utils".addInfoPanel(self)
+		
+		$"/root/Utils".addTowerSelectPanel(self)
+		

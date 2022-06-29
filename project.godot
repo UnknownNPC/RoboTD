@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Utils="*res://scripts/Utils.gd"
+Utils="*res://scripts/ScreenUISingleton.gd"
 
 [display]
 

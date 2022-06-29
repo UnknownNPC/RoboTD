@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/number49.png-f6fff1a8c361a4b89228897fd04f6b57.stex"
+path="res://.import/remove_press.png-3ffc2c4094735811953a523f590dcc13.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/UI/numbers/number49.png"
-dest_files=[ "res://.import/number49.png-f6fff1a8c361a4b89228897fd04f6b57.stex" ]
+source_file="res://tiles/UI/remove_press.png"
+dest_files=[ "res://.import/remove_press.png-3ffc2c4094735811953a523f590dcc13.stex" ]
 
 [params]
 

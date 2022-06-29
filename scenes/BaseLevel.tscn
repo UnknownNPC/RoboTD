@@ -514,7 +514,7 @@ position = Vector2( 262, 406 )
 position = Vector2( 118, 215 )
 
 [node name="AssaultTower3" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 122, 453 )
+position = Vector2( 120, 456 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )

@@ -8,6 +8,7 @@
 script = ExtResource( 2 )
 damageValue = 15
 unitName = "Assault"
+level2Cost = 300
 
 [node name="Animation" parent="." index="0"]
 frames = ExtResource( 3 )

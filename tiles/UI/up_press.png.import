@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon8.png-fac96c635b9a2b0dfd32bae78034d58d.stex"
+path="res://.import/up_press.png-a7e0721f77357d511c2b2a83f7602505.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/UI/icon8.png"
-dest_files=[ "res://.import/icon8.png-fac96c635b9a2b0dfd32bae78034d58d.stex" ]
+source_file="res://tiles/UI/up_press.png"
+dest_files=[ "res://.import/up_press.png-a7e0721f77357d511c2b2a83f7602505.stex" ]
 
 [params]
 

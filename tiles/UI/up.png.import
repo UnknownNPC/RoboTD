@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/number52.png-bd3d8c21eceae5939ec392a3ef7e3d42.stex"
+path="res://.import/up.png-b9d661e67868f8b05775e502eef37f7d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/UI/numbers/number52.png"
-dest_files=[ "res://.import/number52.png-bd3d8c21eceae5939ec392a3ef7e3d42.stex" ]
+source_file="res://tiles/UI/up.png"
+dest_files=[ "res://.import/up.png-b9d661e67868f8b05775e502eef37f7d.stex" ]
 
 [params]
 
