@@ -11,12 +11,20 @@ func addTowerSelectPanel(tower):
 	_removePanel(currentTowerSelectPanel)
 	var towerSelect = load(towerSelectUiUrl).instance()
 	towerSelect.global_position = tower.global_position
-	towerSelect.global_position += Vector2(50, -50)
 	towerSelect.scale = Vector2(0.6, 0.6)
 	towerSelect.connect("towerWasRemoved", tower, "_towerWasRemoved")
 	towerSelect.connect("towerLevelWasIncreased", tower, "_towerLevelWasIncreased")
 
 	get_parent().add_child(towerSelect)
+	
+	## X should be inside viewport
+	var selectBorder = towerSelect.get_node("Border")
+	var borderWidth = selectBorder.get_used_rect().size.x * selectBorder.cell_size.x * selectBorder.scale.x	
+	var borderRightLimit = towerSelect.global_position.x + borderWidth
+	var isOutsideRightViewport = get_viewport().size.x <= borderRightLimit
+#	if (isOutsideRightViewport):
+	
+	
 	# set settings
 	currentTowerSelectPanel = towerSelect
 	initTowerSelectPanel(tower)
