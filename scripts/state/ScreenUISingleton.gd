@@ -22,7 +22,7 @@ func addTowerSelectPanel(tower):
 	var borderWidth = selectBorder.get_used_rect().size.x * selectBorder.cell_size.x * selectBorder.scale.x	
 	var borderRightLimit = towerSelect.global_position.x + borderWidth
 	var isOutsideRightViewport = get_viewport().size.x <= borderRightLimit
-	var offset = tower.currentAnimation.frames.get_frame("idle", 0).get_width()
+	var offset = tower.animation.frames.get_frame("idle", 0).get_width()
 	if (isOutsideRightViewport):
 		#spawn right from tower
 		towerSelect.global_position.x -=  borderWidth / 2 * towerSelect.scale.x + offset

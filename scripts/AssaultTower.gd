@@ -1,6 +1,5 @@
 extends "res://scripts/BaseTower.gd"
 
-onready var animation = $AnimationLv1
 onready var attackTimer = $AttackTimer
 
 var attackTarget = null
