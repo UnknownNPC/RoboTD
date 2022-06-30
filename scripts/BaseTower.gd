@@ -23,6 +23,9 @@ func _ready():
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
+		
+		$"/root/ScreenUISingleton"._resetUi()
+		
 		spriteSelect.show()
 		$"/root/ScreenUISingleton".addInfoPanel(self)
 		$"/root/ScreenUISingleton".addTowerSelectPanel(self)

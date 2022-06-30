@@ -37,5 +37,4 @@ unitName = "Assault"
 
 [node name="Animation" parent="." index="0"]
 frames = SubResource( 1 )
-animation = "die"
-frame = 1
+animation = "idle"

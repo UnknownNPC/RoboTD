@@ -513,6 +513,12 @@ position = Vector2( 312, 408 )
 [node name="AssaultTower2" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 118, 215 )
 
+[node name="AssaultTower4" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 214, 214 )
+
+[node name="AssaultTower5" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 264, 214 )
+
 [node name="AssaultTower3" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 120, 456 )
 

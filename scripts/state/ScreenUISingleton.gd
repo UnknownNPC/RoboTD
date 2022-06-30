@@ -62,7 +62,6 @@ func _resetUi():
 		_cleanupMouseSelection()
 		_removePanel(currentInfoPanel)
 		_removePanel(currentTowerSelectPanel)
-		
 
 func _cleanupMouseSelection():
 	var allSelectable = get_tree().get_nodes_in_group("selectable")

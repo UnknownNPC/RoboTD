@@ -36,6 +36,7 @@ func _on_DeadBodyRelease_timeout():
 
 func _on_SelectSprite_input_event2(viewport, event, shape_idx):
 	if (event.is_pressed()):
+		$"/root/ScreenUISingleton"._resetUi()
 		spriteSelect.visible = true
 		$"/root/ScreenUISingleton".addInfoPanel(self)
 
