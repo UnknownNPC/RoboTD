@@ -8,6 +8,7 @@ var currentInfoPanel
 var currentTowerSelectPanel
 
 func addTowerSelectPanel(tower):
+	_removePanel(currentTowerSelectPanel)
 	var towerSelect = load(towerSelectUiUrl).instance()
 	towerSelect.global_position = tower.global_position
 	towerSelect.global_position += Vector2(50, -50)
