@@ -508,7 +508,7 @@ position = Vector2( 24, 216 )
 [node name="Towers" type="Node" parent="."]
 
 [node name="AssaultTower" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 262, 406 )
+position = Vector2( 312, 408 )
 
 [node name="AssaultTower2" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 118, 215 )

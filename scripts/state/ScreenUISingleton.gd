@@ -17,15 +17,19 @@ func addTowerSelectPanel(tower):
 
 	get_parent().add_child(towerSelect)
 	
-	## X should be inside viewport
+	## modify X positiin - it should be inside viewport
 	var selectBorder = towerSelect.get_node("Border")
 	var borderWidth = selectBorder.get_used_rect().size.x * selectBorder.cell_size.x * selectBorder.scale.x	
 	var borderRightLimit = towerSelect.global_position.x + borderWidth
 	var isOutsideRightViewport = get_viewport().size.x <= borderRightLimit
-#	if (isOutsideRightViewport):
-	
-	
-	# set settings
+	var offset = tower.get_node("Animation").frames.get_frame("idle", 0).get_width()
+	if (isOutsideRightViewport):
+		#spawn right from tower
+		towerSelect.global_position.x -=  borderWidth / 2 * towerSelect.scale.x + offset
+	else:
+		#spawn left from tower
+		towerSelect.global_position.x +=  borderWidth / 2 * towerSelect.scale.x + offset
+
 	currentTowerSelectPanel = towerSelect
 	initTowerSelectPanel(tower)
 

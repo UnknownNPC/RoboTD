@@ -16,10 +16,11 @@ z_index = 2
 script = ExtResource( 6 )
 
 [node name="Border" parent="." instance=ExtResource( 1 )]
+position = Vector2( -68, -20 )
 tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 2, -65535, 2, 1, -65534, 2, 1, -65533, 2, 2, -65532, 2, 2, -65531, 2, 2, -65530, 2, 2, -65529, 2, 3, 65535, 2, 65536, 0, 2, 65537, 1, 2, 131073, 2, 2, 65538, 3, 2, 131073, 4, 2, 65537, 5, 2, 65538, 6, 2, 131074, 7, 2, 131075, 131071, 2, 131072, 65536, 2, 131073, 65537, 2, 65538, 65538, 2, 65538, 65539, 2, 65537, 65540, 2, 131073, 65541, 2, 65537, 65542, 2, 65537, 65543, 2, 65539, 196607, 2, 196608, 131072, 2, 196610, 131073, 2, 196609, 131074, 2, 196609, 131075, 2, 196610, 131076, 2, 196610, 131077, 2, 196609, 131078, 2, 196610, 131079, 2, 196611 )
 
 [node name="Remove" type="Area2D" parent="."]
-position = Vector2( -4, 22 )
+position = Vector2( -72, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Remove"]
 position = Vector2( 18, -2 )
@@ -40,7 +41,7 @@ texture = ExtResource( 3 )
 wait_time = 0.1
 
 [node name="Up" type="Area2D" parent="."]
-position = Vector2( 60, -52 )
+position = Vector2( -8, -72 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Up"]
 position = Vector2( 8, 72 )
