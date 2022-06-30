@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/assault_tile20.png-1fa3ce68af01fb13caa02d26d8fb7cb2.stex"
+path="res://.import/idle1.png-2dd910a6243f7cab503565d33002bec4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/towers/assault/assault_tile20.png"
-dest_files=[ "res://.import/assault_tile20.png-1fa3ce68af01fb13caa02d26d8fb7cb2.stex" ]
+source_file="res://tiles/towers/assault/lv1/idle1.png"
+dest_files=[ "res://.import/idle1.png-2dd910a6243f7cab503565d33002bec4.stex" ]
 
 [params]
 

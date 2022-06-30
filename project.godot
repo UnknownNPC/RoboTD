@@ -31,6 +31,10 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray(  )
 
+[global]
+
+view=false
+
 [physics]
 
 common/enable_pause_aware_picking=true
