@@ -7,19 +7,8 @@ onready var energyValue = $EnergyBox/EnergyValue
 var energyFormat = "%04d"
 var waveFormat = "%02d"
 
-var maxWaveCounterVal
-
-func init(initHealthVal, maxWaveValue, initEnergyVal):
-	maxWaveCounterVal = maxWaveValue
-	healthValue.text = str(initHealthVal)
-	waveValue.text = str(waveFormat % maxWaveCounterVal) + "/" + str(waveFormat % 1)
-	energyValue.text = str(energyFormat % initEnergyVal)
-
-func setEnergy(value):
-	energyValue.text = energyFormat % value
-	
-func setWaveValue(value):
-	waveValue.text = str(waveFormat % maxWaveCounterVal) + "/" + str(waveFormat % value)
-
-func setHealth(value):
-	healthValue.text = str(value)
+func _process(delta):
+	if ($"/root/GameProcessState".isReady):
+		healthValue.text = str($"/root/GameProcessState".healthCounter)
+		waveValue.text = str(waveFormat % $"/root/GameProcessState".maxWaveCounter) + "/" + str(waveFormat % $"/root/GameProcessState".currentWaveCounter)
+		energyValue.text = str(energyFormat % $"/root/GameProcessState".energyCounter)

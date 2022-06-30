@@ -3,23 +3,22 @@ extends Node
 onready var spawnBox = $RuntimeSpawnBox
 onready var nextWaveTimer = $NextWaveTriggerTimer
 onready var basePath = $BaseWavePath
-onready var levelStateUI = $LevelStateUI
 
 var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
 
 var paths = []
 var isWaveWalking = true
 
-var currentWaveCounter = 1
-var maxWaveCounter = 20
-var healthCounter = 10
-var energyCounter = 0
-
 var enemiesInWave = 1
 var levelIsFinished = false
 
+onready var GAME_STATE = $"/root/GameProcessState"
+
 func _ready():
-	levelStateUI.init(healthCounter, maxWaveCounter, energyCounter)
+	var maxWaveCounter = 20
+	var healthCounter = 10
+	var energyCounter = 0
+	GAME_STATE.init(1, maxWaveCounter, healthCounter, energyCounter)
 	spawnEnemies(enemiesInWave)
 	
 func _process(delta):
@@ -38,8 +37,7 @@ func _process(delta):
 						follow.offset += abstractEnemy.speed * delta
 						if (follow.unit_offset >= 1):
 							### Enemy moved to the end
-							healthCounter -= 1
-							levelStateUI.setHealth(healthCounter)
+							GAME_STATE.dicreaseHealth()
 							enemiesPass += 1
 				else:
 					###Enemy died and was removed
@@ -49,22 +47,21 @@ func _process(delta):
 			if (paths.size() == enemiesKilled + enemiesPass):
 				isWaveWalking = false
 				_cleanupWaveResources()
-				if (currentWaveCounter == maxWaveCounter):
+				if (GAME_STATE.currentWaveCounter == 
+						GAME_STATE.maxWaveCounter):
 					levelIsFinished = true
 					return
 				nextWaveTimer.start()
 			
-			if (healthCounter <= 0):
+			if (GAME_STATE.healthCounter <= 0):
 				print("Died")
 				levelIsFinished = true
-				return
 
 func _on_NextWaveTriggerTimer_timeout():
 	nextWaveTimer.stop()
 	
 	#Prepare next wave
-	currentWaveCounter += 1
-	levelStateUI.setWaveValue(currentWaveCounter)
+	GAME_STATE.increaseCurrentWave()
 	enemiesInWave += 1
 	print("Starting new wave with " + str(enemiesInWave) + " enemies")
 	spawnEnemies(enemiesInWave)
@@ -103,8 +100,7 @@ func spawnEnemies(count):
 		paths.append(new_path)
 
 func _processRewardForKill(rewardCount):
-	energyCounter += rewardCount
-	levelStateUI.setEnergy(energyCounter)
+	GAME_STATE.addEnergy(rewardCount)
 
 #Should be run when stopProcessingMovement = true
 func _cleanupWaveResources():

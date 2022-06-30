@@ -27,6 +27,8 @@ func initTowerSelectPanel(tower):
 		currentTowerSelectPanel.init(isMaxLevel, nextLevelCost)
 
 func addInfoPanel(entity):
+	if (is_instance_valid(currentInfoPanel)):
+		_removePanel(currentInfoPanel)
 	var isEnemy = entity.is_in_group("enemies")
 	var url = enemyInfoUrl if isEnemy else towerInfoUrl
 	currentInfoPanel = _addInfoUI(entity, url)

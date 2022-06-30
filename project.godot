@@ -16,7 +16,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Utils="*res://scripts/ScreenUISingleton.gd"
+ScreenUISingleton="*res://scripts/state/ScreenUISingleton.gd"
+GameProcessState="*res://scripts/state/GameProcessState.gd"
 
 [display]
 

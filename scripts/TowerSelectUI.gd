@@ -44,6 +44,5 @@ func _on_RemoveResetClickSprite_timeout():
 	removeBtn.show()
 	removeBtnPress.hide()
 
-
 func _on_QueueFreeTimer_timeout():
 	queue_free()
