@@ -2,6 +2,10 @@ extends Node2D
 
 export (float) var attackRadius
 
+func init(attackRadiusVal):
+	hide()
+	attackRadius = attackRadiusVal
+
 func _draw():
 	draw_circle_donut_poly(
 		Vector2.ZERO, 

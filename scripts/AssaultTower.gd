@@ -17,6 +17,8 @@ func _ready():
 	
 
 func _process(delta):
+	if (attackTimer.wait_time != attackCooldown):
+		attackTimer.wait_time = attackCooldown
 	
 	### Attack
 	if (!is_instance_valid(attackTarget)):

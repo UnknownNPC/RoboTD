@@ -55,8 +55,8 @@ func _cleanupMouseSelection():
 	var allSelectable = get_tree().get_nodes_in_group("selectable")
 	for selectable in allSelectable:
 		selectable.spriteSelect.visible = false
-		if "attackRadiusIntance" in selectable:
-			selectable.attackRadiusIntance.visible = false
+		if "attackRadiusShape" in selectable:
+			selectable.attackRadiusShape.hide()
 
 func _removePanel(panel):
 	if (is_instance_valid(panel)):
