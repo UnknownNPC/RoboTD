@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire1.png-c56e1dcdc9c2c69ed5e567fcabbe48e9.stex"
+path="res://.import/lv3_fire1.png-a566522e73883c444ea5f1b8e509f559.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/towers/assault/fire1.png"
-dest_files=[ "res://.import/fire1.png-c56e1dcdc9c2c69ed5e567fcabbe48e9.stex" ]
+source_file="res://tiles/towers/assault/lv3/lv3_fire1.png"
+dest_files=[ "res://.import/lv3_fire1.png-a566522e73883c444ea5f1b8e509f559.stex" ]
 
 [params]
 

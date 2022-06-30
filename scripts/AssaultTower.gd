@@ -7,7 +7,7 @@ var canMakeShoot = true
 
 func _ready():
 	attackTimer.wait_time = attackCooldown
-	animation.animation = "idle"
+	currentAnimation.animation = "idle"
 	spriteSelect.scale = Vector2(1.2, 1.2)
 
 	var clickShape = CircleShape2D.new()
@@ -37,21 +37,21 @@ func _process(delta):
 		
 		var isEmemyOnTheLeft = global_position.x - attackTarget.global_position.x > 0
 		if (isEmemyOnTheLeft):
-			animation.flip_h = true
+			currentAnimation.flip_h = true
 		else:
-			animation.flip_h = false
+			currentAnimation.flip_h = false
 
 		# Shoot action
 		if (canMakeShoot):
-			animation.animation = "fire"
-			animation.frame = 0
+			currentAnimation.animation = "fire"
+			currentAnimation.frame = 0
 			
 			attackTarget.add_damage(damageValue)
 			attackTimer.start()
 			canMakeShoot = false
 	
 	if (!is_instance_valid(attackTarget)):
-		animation.animation = "idle"
+		currentAnimation.animation = "idle"
 
 func _on_AttackTimer_timeout():
 	canMakeShoot = true
