@@ -6,9 +6,9 @@
 
 [node name="EnemyInfoUI" type="Control"]
 margin_left = 40.0
-margin_top = 520.0
+margin_top = 530.0
 margin_right = 40.0
-margin_bottom = 520.0
+margin_bottom = 530.0
 script = ExtResource( 3 )
 
 [node name="BaseInfoUI" parent="." instance=ExtResource( 2 )]

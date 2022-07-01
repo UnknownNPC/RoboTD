@@ -17,7 +17,6 @@ onready var animationLv1 = $AnimationLv1
 onready var animationLv2 = $AnimationLv2
 onready var animationLv3 = $AnimationLv3
 
-
 var currentAnimation
 var currentLevel = 1
 var maxLevel = 3
@@ -28,25 +27,22 @@ func _ready():
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
-		
 		$"/root/ScreenUISingleton"._resetUi()
-		
 		spriteSelect.show()
 		$"/root/ScreenUISingleton".addInfoPanel(self)
-		$"/root/ScreenUISingleton".addTowerSelectPanel(self)
 		attackRadiusShape.show()
 		
 func _towerLevelWasIncreased():
 	currentLevel += 1
 	initCurrentAnimation()
 	levelUpParams()
-	$"/root/ScreenUISingleton".initTowerSelectPanel(self)
 	$"/root/ScreenUISingleton".addInfoPanel(self)
 	attackRadiusShape.init(attackRadius)
 	attackRadiusShape.show()
 
 func _towerWasRemoved():
 	queue_free()
+	$"/root/ScreenUISingleton"._resetUi()
 
 func levelUpParams():
 	damageValue += 5
