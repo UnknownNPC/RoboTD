@@ -6,8 +6,15 @@ export (int) var attackRadius = 120
 export (float) var attackCooldown = 1.0
 export (String) var unitName
 
+var level1NamePrefix = "RT "
+var level2NamePrefix = "SGT "
+var level3NamePrefix = "SGM "
+
+var fullUnitName = ""
+
 export (int) var level2Cost = 10
 export (int) var level3Cost = 15
+
 
 onready var spriteSelect = $SelectSprite/Select
 onready var spriteShape = $SelectSprite/Collision
@@ -24,6 +31,7 @@ var maxLevel = 3
 func _ready():
 	attackRadiusShape.init(attackRadius)
 	initCurrentAnimation()
+	initFullUnitName()
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
@@ -34,11 +42,13 @@ func _on_SelectSprite_input_event(viewport, event, shape_idx):
 		
 func _towerLevelWasIncreased():
 	currentLevel += 1
+	initFullUnitName()
 	initCurrentAnimation()
 	levelUpParams()
 	$"/root/ScreenUISingleton".addInfoPanel(self)
 	attackRadiusShape.init(attackRadius)
 	attackRadiusShape.show()
+	$"/root/GameProcessState".getEnergy(getNextLvlCost())
 
 func _towerWasRemoved():
 	queue_free()
@@ -62,4 +72,16 @@ func initCurrentAnimation():
 		animationLv3.show()
 		currentAnimation = animationLv3
 		currentAnimation.flip_h = animationLv2.flip_h
+		
+func getNextLvlCost():
+	return self.level2Cost if self.currentLevel == 1 else self.level3Cost
+
+
+func initFullUnitName():
+	if (currentLevel == 1):
+		fullUnitName = level1NamePrefix + unitName
+	elif (currentLevel == 2):
+		fullUnitName = level2NamePrefix + unitName 
+	else:
+		fullUnitName = level3NamePrefix + unitName 
 		

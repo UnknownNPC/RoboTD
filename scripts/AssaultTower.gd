@@ -14,7 +14,6 @@ func _ready():
 	clickShape.set_radius(16)
 	spriteShape.set_shape(clickShape)
 	
-
 func _process(delta):
 	if (attackTimer.wait_time != attackCooldown):
 		attackTimer.wait_time = attackCooldown

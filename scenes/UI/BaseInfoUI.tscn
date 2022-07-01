@@ -65,14 +65,14 @@
 [node name="BaseInfoUI" type="Control"]
 
 [node name="Animation" type="AnimatedSprite" parent="."]
-position = Vector2( 191, 50 )
+position = Vector2( 192, 49 )
 z_index = 2
 playing = true
 
 [node name="Border" parent="." instance=ExtResource( 1 )]
 
 [node name="Focus" type="TileMap" parent="."]
-position = Vector2( 7, 3 )
+position = Vector2( 8, 2 )
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 4, 4 )

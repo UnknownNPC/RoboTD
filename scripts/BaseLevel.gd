@@ -86,15 +86,14 @@ func spawnEnemies(count):
 		new_follow.add_child(enemy)
 		
 		var new_path = Path2D.new()
+		new_path.position = basePath.position
 		new_path.add_child(new_follow)
+
 		var basePathPoints = basePath.curve.get_baked_points()
 		for point in basePathPoints:
-			new_path.curve.add_point(
-				Vector2(
-					point.x + lerpX,
-					point.y + lerpY
-				)
-			)
+			var newPoint = Vector2(point.x + lerpX, point.y + lerpY )
+			new_path.curve.add_point(newPoint)
+		
 		spawnBox.add_child(new_path)
 
 		paths.append(new_path)

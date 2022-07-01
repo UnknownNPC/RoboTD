@@ -21,10 +21,12 @@ func _process(delta):
 		var targetAnimation = tower.currentAnimation.animation
 		animation.animation = targetAnimation
 		animation.frames.set_animation_loop(targetAnimation, true)
+		
+		initBtnStates()
 
 func init(targetTower):
 	tower = targetTower
-	nameValue.text = tower.unitName
+	nameValue.text = tower.fullUnitName
 	damageValue.text = str(tower.damageValue)
 	aRateValue.text = str(tower.attackCooldown)
 	radiusValue.text = str(tower.attackRadius)
@@ -36,18 +38,36 @@ func init(targetTower):
 	connect("towerLevelBump", targetTower, "_towerLevelWasIncreased")
 	connect("towerKill", targetTower, "_towerWasRemoved")
 	
-	var isMax = targetTower.currentLevel >= targetTower.maxLevel
+	initBtnStates()
+
+func _on_Upgrade_pressed():
+	emit_signal("towerLevelBump")
+
+func _on_Remove_pressed():
+	emit_signal("towerKill")
+
+func initBtnStates():
+	var isMax = isMaxLvl()
 	if (isMax):
 		upgradeBtn.text = "Max Rank"
 		upgradeBtn.disabled = true
 	else:
-		var nextLevelCost = tower.level2Cost if tower.currentLevel == 1 else tower.level3Cost
+		var nextLevelCost = getNextLvlCost()
 		upgradeBtn.text = upgradeBtnText + str(nextLevelCost)
-
-func _on_Upgrade_pressed():
-	print("press")
-	emit_signal("towerLevelBump")
-
-func _on_Remove_pressed():
-	print("press")
-	emit_signal("towerKill")
+		var isEnoughEnergy = $"/root/GameProcessState".energyCounter >= nextLevelCost
+		if (isEnoughEnergy):
+			upgradeBtn.disabled = false
+		else:
+			upgradeBtn.disabled = true
+			
+func isMaxLvl():
+	if (is_instance_valid(tower)):
+		return tower.currentLevel >= tower.maxLevel
+	else:
+		return true
+		
+func getNextLvlCost():
+	if (is_instance_valid(tower)):
+		return tower.level2Cost if tower.currentLevel == 1 else tower.level3Cost
+	else:
+		return 0
