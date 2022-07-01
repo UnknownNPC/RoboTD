@@ -9,7 +9,7 @@ var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
 var paths = []
 var isWaveWalking = true
 
-var enemiesInWave = 1
+var enemiesInWave = 10
 var levelIsFinished = false
 
 onready var GAME_STATE = $"/root/GameProcessState"

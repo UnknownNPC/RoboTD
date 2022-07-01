@@ -510,6 +510,9 @@ position = Vector2( 24, 216 )
 [node name="AssaultTower" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 312, 408 )
 
+[node name="AssaultTower6" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 168, 550 )
+
 [node name="AssaultTower2" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 118, 215 )
 
@@ -522,7 +525,7 @@ position = Vector2( 264, 214 )
 [node name="AssaultTower3" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 120, 456 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="LevelTileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
 z_index = -1
 tile_set = SubResource( 1 )

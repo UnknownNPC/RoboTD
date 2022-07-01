@@ -1,9 +1,54 @@
-[gd_resource type="Theme" load_steps=3 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://tiles/font/haxorville.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://tiles/UI/rect/range12.png" type="Texture" id=2]
+[ext_resource path="res://tiles/font/game_font_small.tres" type="DynamicFont" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 3.57255
+margin_right = 3.44151
+margin_top = 2.26209
+margin_bottom = 2.0
+modulate_color = Color( 0.552941, 0.427451, 0.427451, 1 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 3.57255
+margin_right = 3.44151
+margin_top = 2.26209
+margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 3.57255
+margin_right = 3.44151
+margin_top = 2.26209
+margin_bottom = 2.0
+modulate_color = Color( 0.803922, 0.698039, 0.698039, 1 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 3.57255
+margin_right = 3.44151
+margin_top = 2.26209
+margin_bottom = 2.0
+draw_center = false
+
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 1 )
+default_font = SubResource( 2 )
+Button/colors/font_color_disabled = Color( 0.439216, 0.435294, 0.435294, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 3 )
+Button/styles/disabled = SubResource( 6 )
+Button/styles/focus = null
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
