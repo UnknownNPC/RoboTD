@@ -80,7 +80,6 @@ margin_bottom = 42.0
 theme = ExtResource( 6 )
 text = "Rank Up - 10"
 icon = ExtResource( 5 )
-clip_text = true
 expand_icon = true
 
 [node name="Remove" type="Button" parent="Actions"]

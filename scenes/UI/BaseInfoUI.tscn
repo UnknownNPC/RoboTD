@@ -63,6 +63,8 @@
 3/z_index = 0
 
 [node name="BaseInfoUI" type="Control"]
+margin_right = -3.84
+margin_bottom = -7.68
 
 [node name="Animation" type="AnimatedSprite" parent="."]
 position = Vector2( 192, 49 )
