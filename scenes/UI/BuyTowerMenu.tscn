@@ -100,64 +100,61 @@ margin_top = -2.0
 margin_right = 40.0
 margin_bottom = 38.0
 
-[node name="NameLabel" type="Label" parent="Header"]
-margin_left = 52.0
-margin_top = 508.0
-margin_right = 84.0
-margin_bottom = 522.0
-size_flags_horizontal = 0
+[node name="RowSample" type="GridContainer" parent="Header"]
+margin_left = 36.0
+margin_top = 509.0
+margin_right = 284.0
+margin_bottom = 529.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+columns = 5
+
+[node name="NameLabel" type="Label" parent="Header/RowSample"]
+margin_right = 46.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 text = "Name"
 align = 1
 
-[node name="DmgLabel" type="Label" parent="Header"]
-margin_left = 111.0
-margin_top = 508.0
-margin_right = 135.0
-margin_bottom = 522.0
-size_flags_horizontal = 0
+[node name="DmgLabel" type="Label" parent="Header/RowSample"]
+margin_left = 50.0
+margin_right = 96.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 text = "Dmg"
 align = 1
 
-[node name="RateLabel" type="Label" parent="Header"]
-margin_left = 142.0
-margin_top = 508.0
-margin_right = 190.0
-margin_bottom = 522.0
-size_flags_horizontal = 0
+[node name="RateLabel" type="Label" parent="Header/RowSample"]
+margin_left = 100.0
+margin_right = 146.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 text = "Rate"
 align = 1
 
-[node name="RangeLabel" type="Label" parent="Header"]
-margin_left = 184.0
-margin_top = 508.0
-margin_right = 232.0
-margin_bottom = 522.0
-size_flags_horizontal = 0
+[node name="RangeLabel" type="Label" parent="Header/RowSample"]
+margin_left = 150.0
+margin_right = 196.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 4 )
 text = "Range"
 align = 1
 
-[node name="BuyLabel" type="Label" parent="Header"]
-margin_left = 233.0
-margin_top = 508.0
-margin_right = 281.0
-margin_bottom = 522.0
-size_flags_horizontal = 0
+[node name="BuyLabel" type="Label" parent="Header/RowSample"]
+margin_left = 200.0
+margin_right = 246.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 4 )
-text = "Buy"
+text = " Buy"
 align = 1
-
-[node name="Seprarator" type="HSeparator" parent="Header"]
-margin_left = 44.0
-margin_top = 525.0
-margin_right = 281.0
-margin_bottom = 529.0
-theme = ExtResource( 2 )
