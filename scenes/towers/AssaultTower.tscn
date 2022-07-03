@@ -56,8 +56,8 @@ animations = [ {
 
 [node name="AssaultTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-damageValue = 15
 unitName = "Assault"
+damageValue = 15
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )

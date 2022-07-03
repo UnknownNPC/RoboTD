@@ -7,6 +7,8 @@ onready var hiddenRowSample = $ScrollContainer/HorizontalScroll/RowSample
 
 onready var rows = []
 
+signal towerBuy(resourcePath)
+
 func _ready():
 	for tower in towers:
 		var row = hiddenRowSample.duplicate()
@@ -15,11 +17,12 @@ func _ready():
 		row.get_node("DmgVal").text = str(towerInstance.damageValue)
 		row.get_node("RateVal").text = str(towerInstance.attackCooldown)
 		row.get_node("RangeVal").text = str(towerInstance.attackRadius)
+		row.get_node("BuyBtn").text = str(towerInstance.buyCost)
 		row.show()
 		rows.append(row)
-		
+
 		var buyBtn = row.get_node("BuyBtn")
-		buyBtn.connect("pressed", self, "_onButtonPressed", [buyBtn])
+		buyBtn.connect("pressed", self, "_onButtonPressed", [tower.resource_path])
 
 		horizontalScroll.add_child(row)
 
@@ -31,5 +34,5 @@ func _process(delta):
 		else:
 			buyBtn.disabled = true
 
-func _onButtonPressed(btn):
-	print(btn.name)
+func _onButtonPressed(resourcePath):
+	emit_signal("towerBuy", resourcePath)

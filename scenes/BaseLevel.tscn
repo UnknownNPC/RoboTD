@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/SpawnPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/terrain/tileset_arranged.png" type="Texture" id=2]
-[ext_resource path="res://scenes/towers/AssaultTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/BaseLevel.gd" type="Script" id=4]
 [ext_resource path="res://scenes/UI/LevelStateUI.tscn" type="PackedScene" id=5]
 
@@ -503,31 +502,52 @@ curve = SubResource( 2 )
 [node name="SpawnPoint" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
 position = Vector2( 72, 168 )
 
+[node name="SpawnPoint4" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 120, 168 )
+
 [node name="SpawnPoint3" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
 position = Vector2( 168, 168 )
+
+[node name="SpawnPoint5" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 217, 168 )
+
+[node name="SpawnPoint6" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 265, 168 )
+
+[node name="SpawnPoint7" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 265, 216 )
+
+[node name="SpawnPoint8" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 265, 265 )
+
+[node name="SpawnPoint9" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 265, 313 )
+
+[node name="SpawnPoint10" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 265, 361 )
+
+[node name="SpawnPoint11" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 121, 361 )
+
+[node name="SpawnPoint12" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 121, 312 )
+
+[node name="SpawnPoint13" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 72, 312 )
+
+[node name="SpawnPoint14" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 23, 312 )
+
+[node name="SpawnPoint15" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 120, 409 )
+
+[node name="SpawnPoint16" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
+position = Vector2( 120, 456 )
 
 [node name="SpawnPoint2" parent="TowerSpawnPoints" instance=ExtResource( 1 )]
 position = Vector2( 24, 168 )
 
 [node name="Towers" type="Node" parent="."]
-
-[node name="AssaultTower" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 264, 356 )
-
-[node name="AssaultTower6" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 120, 400 )
-
-[node name="AssaultTower2" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 118, 167 )
-
-[node name="AssaultTower4" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 214, 166 )
-
-[node name="AssaultTower5" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 264, 166 )
-
-[node name="AssaultTower3" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 120, 356 )
 
 [node name="LevelTileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )

@@ -1,10 +1,13 @@
 ### Should be AFTER WAVE_SPAWNER
 extends Node2D
 
+var spawnPointScene = "res://scenes/SpawnPoint.tscn"
+onready var spawnPointsNode = $"/root/BaseLevel/TowerSpawnPoints"
+
+export (String) var unitName
 export (int) var damageValue = 100
 export (int) var attackRadius = 120
 export (float) var attackCooldown = 1.0
-export (String) var unitName
 
 var level1NamePrefix = "RT "
 var level2NamePrefix = "SGT "
@@ -12,9 +15,9 @@ var level3NamePrefix = "SGM "
 
 var fullUnitName = ""
 
+export (int) var buyCost = 25
 export (int) var level2Cost = 10
 export (int) var level3Cost = 15
-
 
 onready var spriteSelect = $SelectSprite/Select
 onready var spriteShape = $SelectSprite/Collision
@@ -35,6 +38,9 @@ func _ready():
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
+		selfSelect()
+
+func selfSelect():
 		$"/root/ScreenUISingleton"._resetUi()
 		spriteSelect.show()
 		$"/root/ScreenUISingleton".addInfoPanel(self)
@@ -51,6 +57,9 @@ func _towerLevelWasIncreased():
 	$"/root/GameProcessState".getEnergy(getNextLvlCost())
 
 func _towerWasRemoved():
+	var spawnPoint = load(spawnPointScene).instance()
+	spawnPoint.global_position = self.global_position
+	spawnPointsNode.add_child(spawnPoint)
 	queue_free()
 	$"/root/ScreenUISingleton"._resetUi()
 

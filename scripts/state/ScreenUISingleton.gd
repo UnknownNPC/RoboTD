@@ -12,6 +12,7 @@ func addBuyTowerMenuPanel():
 	var buyMenuUi = load(towerBuyMenuUrl).instance()
 	get_parent().add_child(buyMenuUi)
 	currentPanel = buyMenuUi
+	return buyMenuUi
 
 func addInfoPanel(entity):
 	if (is_instance_valid(currentPanel)):
