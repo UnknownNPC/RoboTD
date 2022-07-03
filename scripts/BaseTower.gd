@@ -47,6 +47,7 @@ func selfSelect():
 		attackRadiusShape.show()
 		
 func _towerLevelWasIncreased():
+	$"/root/GameProcessState".getEnergy(getNextLvlCost())
 	currentLevel += 1
 	initFullUnitName()
 	initCurrentAnimation()
@@ -54,7 +55,6 @@ func _towerLevelWasIncreased():
 	$"/root/ScreenUISingleton".addInfoPanel(self)
 	attackRadiusShape.init(attackRadius)
 	attackRadiusShape.show()
-	$"/root/GameProcessState".getEnergy(getNextLvlCost())
 
 func _towerWasRemoved():
 	var spawnPoint = load(spawnPointScene).instance()
@@ -84,7 +84,6 @@ func initCurrentAnimation():
 		
 func getNextLvlCost():
 	return self.level2Cost if self.currentLevel == 1 else self.level3Cost
-
 
 func initFullUnitName():
 	if (currentLevel == 1):
