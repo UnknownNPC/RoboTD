@@ -38,7 +38,7 @@ margin_top = 52.0
 margin_right = 64.0
 margin_bottom = 66.0
 custom_fonts/font = ExtResource( 1 )
-text = "A.Rate"
+text = "Rate"
 
 [node name="ARateValue" type="Label" parent="."]
 margin_left = 70.0
@@ -54,7 +54,7 @@ margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 82.0
 custom_fonts/font = ExtResource( 1 )
-text = "Radius"
+text = "Range"
 
 [node name="RadiusValue" type="Label" parent="."]
 margin_left = 70.0
@@ -89,7 +89,7 @@ margin_right = 224.0
 margin_bottom = 42.0
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 1 )
-text = "Kill"
+text = "Remove"
 
 [connection signal="pressed" from="Actions/Upgrade" to="." method="_on_Upgrade_pressed"]
 [connection signal="pressed" from="Actions/Remove" to="." method="_on_Remove_pressed"]

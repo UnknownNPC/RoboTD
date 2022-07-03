@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://tiles/font/haxorville.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://tiles/UI/rect/range12.png" type="Texture" id=2]
@@ -39,6 +39,10 @@ margin_top = 2.26209
 margin_bottom = 2.0
 draw_center = false
 
+[sub_resource type="StyleBoxLine" id=7]
+color = Color( 0, 1, 0, 0.235294 )
+thickness = 4
+
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
@@ -52,3 +56,4 @@ Button/styles/focus = null
 Button/styles/hover = SubResource( 5 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
+HSeparator/styles/separator = SubResource( 7 )

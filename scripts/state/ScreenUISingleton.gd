@@ -2,16 +2,23 @@ extends Node
 
 var enemyInfoUrl = "res://scenes/UI/EnemyInfoUI.tscn"
 var towerInfoUrl = "res://scenes/UI/TowerInfoUI.tscn"
-var towerSelectUiUrl = "res://scenes/UI/TowerSelectUI.tscn"
+var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
 
-var currentInfoPanel
+var currentPanel
+
+func addBuyTowerMenuPanel():
+	if (is_instance_valid(currentPanel)):
+		_removePanel(currentPanel)
+	var buyMenuUi = load(towerBuyMenuUrl).instance()
+	get_parent().add_child(buyMenuUi)
+	currentPanel = buyMenuUi
 
 func addInfoPanel(entity):
-	if (is_instance_valid(currentInfoPanel)):
-		_removePanel(currentInfoPanel)
+	if (is_instance_valid(currentPanel)):
+		_removePanel(currentPanel)
 	var isEnemy = entity.is_in_group("enemies")
 	var url = enemyInfoUrl if isEnemy else towerInfoUrl
-	currentInfoPanel = _addInfoUI(entity, url)
+	currentPanel = _addInfoUI(entity, url)
 
 func _unhandled_input(event):
 	## reset all panels
@@ -20,7 +27,7 @@ func _unhandled_input(event):
 
 func _resetUi():
 		_cleanupMouseSelection()
-		_removePanel(currentInfoPanel)
+		_removePanel(currentPanel)
 
 func _cleanupMouseSelection():
 	var allSelectable = get_tree().get_nodes_in_group("selectable")
