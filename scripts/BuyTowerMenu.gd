@@ -16,8 +16,10 @@ func _ready():
 		row.get_node("RateVal").text = str(towerInstance.attackCooldown)
 		row.get_node("RangeVal").text = str(towerInstance.attackRadius)
 		row.show()
-		
 		rows.append(row)
+		
+		var buyBtn = row.get_node("BuyBtn")
+		buyBtn.connect("pressed", self, "_onButtonPressed", [buyBtn])
 
 		horizontalScroll.add_child(row)
 
@@ -28,3 +30,6 @@ func _process(delta):
 			buyBtn.disabled = false
 		else:
 			buyBtn.disabled = true
+
+func _onButtonPressed(btn):
+	print(btn.name)
