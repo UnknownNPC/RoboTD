@@ -1,9 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
 [ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tiles/UI/icon2.png" type="Texture" id=3]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion5.png" type="Texture" id=4]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion4.png" type="Texture" id=6]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion1.png" type="Texture" id=7]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion0.png" type="Texture" id=8]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion3.png" type="Texture" id=9]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion1.png" type="Texture" id=10]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion6.png" type="Texture" id=11]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion7.png" type="Texture" id=12]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion3.png" type="Texture" id=13]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion2.png" type="Texture" id=14]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion7.png" type="Texture" id=15]
 [ext_resource path="res://scenes/EnemyHealthBar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion5.png" type="Texture" id=17]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion6.png" type="Texture" id=18]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion4.png" type="Texture" id=19]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion0.png" type="Texture" id=20]
+[ext_resource path="res://tiles/effects/small_explosion/small_explosion8.png" type="Texture" id=21]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion8.png" type="Texture" id=22]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion9.png" type="Texture" id=23]
+[ext_resource path="res://tiles/effects/big_explosion/big-explosion10.png" type="Texture" id=24]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -74,6 +94,24 @@ tracks/2/keys = {
 } ]
 }
 
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "big_explosion",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "small_explosion",
+"speed": 10.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nothing",
+"speed": 5.0
+} ]
+
 [node name="BaseEnemy" type="Node2D" groups=["enemies", "selectable"]]
 script = ExtResource( 1 )
 unitName = "EnemyName"
@@ -96,6 +134,10 @@ anims/reward = SubResource( 2 )
 [node name="AP_RawardIcon" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
+
+[node name="ExplosionAnimation" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "nothing"
 
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
 [connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event2"]

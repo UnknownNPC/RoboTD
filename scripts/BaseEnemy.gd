@@ -17,6 +17,7 @@ onready var deadBodyRelease = $DeadBodyRelease
 onready var spriteSelect = $SelectSprite/Select
 onready var spriteShape = $SelectSprite/Collision
 onready var animationPlayer = $AnimationPlayer
+onready var explosionAnimation = $ExplosionAnimation
 
 func _ready():
 	animation.animation = "walk"
@@ -25,8 +26,18 @@ func add_damage(damage):
 	currentHealth = max(currentHealth - damage, 0)
 	heathBar.update_healthbar(damage)
 	if (currentHealth <= 0 && !isDead):
-		animation.animation = "die"
+		
+		#stop movement
 		isDead = true
+	
+		#die animation time
+		animation.animation = "die"
+		
+		#explosion
+		explosionAnimation.play("big_explosion")
+		yield( explosionAnimation, "animation_finished" )
+		explosionAnimation.hide()
+		
 		emit_signal("rewardForKill", self.energyReward)
 		animationPlayer.play("reward")
 		deadBodyRelease.start()
