@@ -58,6 +58,9 @@ animations = [ {
 script = ExtResource( 2 )
 unitName = "Assault"
 damageValue = 15
+attackRadius = 100
+level2Cost = 35
+level3Cost = 50
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
@@ -74,3 +77,6 @@ visible = false
 frames = SubResource( 3 )
 animation = "fire"
 frame = 1
+
+[node name="AttackTimer" parent="." index="3"]
+wait_time = 0.5
