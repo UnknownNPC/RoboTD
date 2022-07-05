@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "AssaultTower",
 "language": "GDScript",
 "path": "res://scripts/AssaultTower.gd"
+}, {
+"base": "Node2D",
+"class": "HeavyTower",
+"language": "GDScript",
+"path": "res://scripts/HeavyTower.gd"
+}, {
+"base": "Node2D",
+"class": "SpiderEnemy",
+"language": "GDScript",
+"path": "res://scripts/SpiderEnemy.gd"
 } ]
 _global_script_class_icons={
-"AssaultTower": ""
+"AssaultTower": "",
+"HeavyTower": "",
+"SpiderEnemy": ""
 }
 
 [application]

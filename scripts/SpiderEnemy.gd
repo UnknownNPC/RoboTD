@@ -1,5 +1,7 @@
 extends "res://scripts/BaseEnemy.gd"
 
+class_name SpiderEnemy
+
 func _ready():
 	selectSprite.scale = Vector2(0.6, 0.6)
 	

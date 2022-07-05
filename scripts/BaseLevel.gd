@@ -32,14 +32,13 @@ func _process(delta):
 			for path in paths:
 				var follow = path.get_child(0) if is_instance_valid(path) and path.get_child_count() > 0 else null
 				var abstractEnemy = follow.get_child(0) if is_instance_valid(follow) and follow.get_child_count() > 0 else null
-				if (is_instance_valid(abstractEnemy)):
-					if(!abstractEnemy.isDead):
-						follow.offset += abstractEnemy.speed * delta
-						if (follow.unit_offset >= 1):
-							### Enemy moved to the end
-							GAME_STATE.dicreaseHealth()
-							print("new health state: " + str(GAME_STATE.healthCounter))
-							enemiesPass += 1
+				if (is_instance_valid(abstractEnemy) and !abstractEnemy.isDead):
+					follow.offset += abstractEnemy.speed * delta
+					if (follow.unit_offset >= 1):
+						### Enemy moved to the end
+						GAME_STATE.dicreaseHealth()
+						print("new health state: " + str(GAME_STATE.healthCounter))
+						enemiesPass += 1
 				else:
 					###Enemy died and was removed
 					enemiesKilled += 1
@@ -47,6 +46,7 @@ func _process(delta):
 			if (GAME_STATE.healthCounter <= 0):
 				print("Died")
 				levelIsFinished = true
+				return
 			
 			### All enemies were prcoessed
 			if (paths.size() == enemiesKilled + enemiesPass):
