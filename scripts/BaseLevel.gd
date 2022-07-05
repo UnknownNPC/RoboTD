@@ -23,7 +23,7 @@ func _ready():
 	
 func _process(delta):
 	if(levelIsFinished):
-		print("Game over")
+		print("Game over. Reloading")
 		get_tree().reload_current_scene()
 	else:
 		var enemiesKilled = 0
@@ -38,11 +38,16 @@ func _process(delta):
 						if (follow.unit_offset >= 1):
 							### Enemy moved to the end
 							GAME_STATE.dicreaseHealth()
+							print("new health state: " + str(GAME_STATE.healthCounter))
 							enemiesPass += 1
 				else:
 					###Enemy died and was removed
 					enemiesKilled += 1
 
+			if (GAME_STATE.healthCounter <= 0):
+				print("Died")
+				levelIsFinished = true
+			
 			### All enemies were prcoessed
 			if (paths.size() == enemiesKilled + enemiesPass):
 				isWaveWalking = false
@@ -51,11 +56,9 @@ func _process(delta):
 						GAME_STATE.maxWaveCounter):
 					levelIsFinished = true
 					return
+				
 				nextWaveTimer.start()
-			
-			if (GAME_STATE.healthCounter <= 0):
-				print("Died")
-				levelIsFinished = true
+
 
 func _on_NextWaveTriggerTimer_timeout():
 	nextWaveTimer.stop()

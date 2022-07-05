@@ -19,8 +19,10 @@ export (int) var buyCost = 25
 export (int) var level2Cost = 10
 export (int) var level3Cost = 15
 
-onready var spriteSelect = $SelectSprite/Select
-onready var spriteShape = $SelectSprite/Collision
+onready var selectSprite = $SelectSprite/Select
+onready var selectShapeCollision = $SelectSprite/Collision
+
+
 onready var attackRadiusShape = $AttackRadiusCircle
 
 onready var animationLv1 = $AnimationLv1
@@ -38,9 +40,11 @@ var canMakeShoot = true
 
 func _ready():
 	attackTimer.wait_time = attackCooldown
-	currentAnimation.animation = "idle"
-	attackRadiusShape.init(attackRadius)
+
 	initCurrentAnimation()
+	currentAnimation.animation = "idle"
+
+	attackRadiusShape.init(attackRadius)
 	initFullUnitName()
 
 func _process(delta):
@@ -87,7 +91,7 @@ func _on_SelectSprite_input_event(viewport, event, shape_idx):
 
 func selfSelect():
 		$"/root/ScreenUISingleton"._resetUi()
-		spriteSelect.show()
+		selectSprite.show()
 		$"/root/ScreenUISingleton".addInfoPanel(self)
 		attackRadiusShape.show()
 		

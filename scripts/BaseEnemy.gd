@@ -14,8 +14,9 @@ onready var heathBar = $HealthBar
 onready var animation = $Animation
 onready var deadBodyRelease = $DeadBodyRelease
 
-onready var spriteSelect = $SelectSprite/Select
-onready var spriteShape = $SelectSprite/Collision
+onready var selectSprite = $SelectSprite/Select
+onready var selectShapeCollision = $SelectSprite/Collision
+
 onready var animationPlayer = $AnimationPlayer
 onready var explosionAnimation = $ExplosionAnimation
 
@@ -48,6 +49,6 @@ func _on_DeadBodyRelease_timeout():
 func _on_SelectSprite_input_event2(viewport, event, shape_idx):
 	if (event.is_pressed()):
 		$"/root/ScreenUISingleton"._resetUi()
-		spriteSelect.visible = true
+		selectSprite.visible = true
 		$"/root/ScreenUISingleton".addInfoPanel(self)
 

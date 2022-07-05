@@ -28,4 +28,4 @@ func isEnergyEnough(value):
 	return energyCounter >= value
 
 func dicreaseHealth():
-	healthCounter -= 1	
+	healthCounter -= 1
