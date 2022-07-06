@@ -4,7 +4,7 @@ signal rocketExplosion(radius)
 
 onready var animation = $Animation
 
-export var damageRadius = 30
+export var damageRadius = 25
 
 var fromPoint = Vector2.ZERO
 var targetPoint = Vector2(100, 100)
@@ -23,8 +23,8 @@ func _ready():
 
 func init(initTargetPoint, initDirection):
 	targetPoint = initTargetPoint
-	direction = initDirection 
-	
+	direction = initDirection
+	animation.flip_h = false if direction == 1 else true
 
 func _process(delta):
 	if (isFlying):

@@ -51,7 +51,6 @@ func _process(delta):
 			### All enemies were prcoessed
 			if (paths.size() == enemiesKilled + enemiesPass):
 				isWaveWalking = false
-				_cleanupWaveResources()
 				if (GAME_STATE.currentWaveCounter == 
 						GAME_STATE.maxWaveCounter):
 					levelIsFinished = true
@@ -62,6 +61,9 @@ func _process(delta):
 
 func _on_NextWaveTriggerTimer_timeout():
 	nextWaveTimer.stop()
+	
+	## bodies should be removed before next wave
+	_cleanupWaveResources()
 	
 	#Prepare next wave
 	GAME_STATE.increaseCurrentWave()

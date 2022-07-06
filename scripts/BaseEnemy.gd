@@ -27,7 +27,7 @@ func add_damage(damage):
 	currentHealth = max(currentHealth - damage, 0)
 	heathBar.update_healthbar(damage)
 	if (currentHealth <= 0 && !isDead):
-		
+
 		#stop movement
 		isDead = true
 	
@@ -35,10 +35,8 @@ func add_damage(damage):
 		animation.animation = "die"
 		
 		#explosion
-		explosionAnimation.play("big_explosion")
-		yield( explosionAnimation, "animation_finished" )
-		explosionAnimation.hide()
-		
+		explosionAnimation.play("small_explosion")
+
 		emit_signal("rewardForKill", self.energyReward)
 		animationPlayer.play("reward")
 		deadBodyRelease.start()
@@ -52,3 +50,7 @@ func _on_SelectSprite_input_event2(viewport, event, shape_idx):
 		selectSprite.visible = true
 		$"/root/ScreenUISingleton".addInfoPanel(self)
 
+
+
+func _on_ExplosionAnimation_animation_finished():
+	explosionAnimation.hide()

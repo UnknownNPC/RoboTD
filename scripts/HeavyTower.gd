@@ -17,10 +17,11 @@ func howToDamage():
 	attackPoint = Vector2(attackTarget.global_position.x, attackTarget.global_position.y)
 
 	var rocket = load(rocketSceneUrl).instance()
+	rocket.scale = Vector2(1.2, 1.2)
 	rocket.connect("rocketExplosion", self, "_rocketExplosion")
 	var direction = -1 if currentAnimation.flip_h else 1
-	rocket.init(attackPoint, direction)
 	add_child(rocket)
+	rocket.init(attackPoint, direction)
 
 func _rocketExplosion(radius):
 	var allEnemies = get_tree().get_nodes_in_group("enemies")
