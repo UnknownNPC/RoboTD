@@ -77,13 +77,15 @@ func _process(delta):
 		if (canMakeShoot):
 			currentAnimation.animation = "fire"
 			currentAnimation.frame = 0
-			
-			attackTarget.add_damage(damageValue)
+			howToDamage()
 			attackTimer.start()
 			canMakeShoot = false
 	
 	if (!is_instance_valid(attackTarget)):
 		currentAnimation.animation = "idle"
+
+func howToDamage():
+	attackTarget.add_damage(damageValue)
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):

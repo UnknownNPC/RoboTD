@@ -72,7 +72,6 @@ animation = "idle"
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
