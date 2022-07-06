@@ -3,32 +3,43 @@ extends Control
 export (Array, PackedScene) var towers
 
 onready var horizontalScroll = $ScrollContainer/HorizontalScroll
-onready var hiddenRowSample = $ScrollContainer/HorizontalScroll/RowSample
+onready var grid = $ScrollContainer/HorizontalScroll/Grid
 
-onready var rows = []
+onready var buyButtons = []
 
 signal towerBuy(resourcePath)
 
 func _ready():
 	for tower in towers:
-		var row = hiddenRowSample.duplicate()
 		var towerInstance = tower.instance()
-		row.get_node("NameVal").text = towerInstance.unitName
-		row.get_node("DmgVal").text = str(towerInstance.damageValue)
-		row.get_node("RateVal").text = str(towerInstance.attackCooldown)
-		row.get_node("RangeVal").text = str(towerInstance.attackRadius)
-		row.get_node("BuyBtn").text = str(towerInstance.buyCost)
-		row.show()
-		rows.append(row)
-
-		var buyBtn = row.get_node("BuyBtn")
+		
+		var nameVal = copySampleNode("NameValSample", towerInstance.unitName)
+		grid.add_child(nameVal)
+		
+		var dmgVal = copySampleNode("DmgValSample", towerInstance.damageValue)
+		grid.add_child(dmgVal)
+		
+		var rateVal = copySampleNode("RateValSample", towerInstance.attackCooldown)
+		grid.add_child(rateVal)
+		
+		var rangeVal = copySampleNode("RangeValSample", towerInstance.attackRadius)
+		grid.add_child(rangeVal)
+		
+		var buyBtn = copySampleNode("BuyBtnSample", towerInstance.buyCost)
+		grid.add_child(buyBtn)
 		buyBtn.connect("pressed", self, "_onButtonPressed", [tower.resource_path])
+		
+		buyButtons.append(buyBtn)
 
-		horizontalScroll.add_child(row)
+
+func copySampleNode(nodeName, textField):
+	var newNode = grid.get_node(nodeName).duplicate()
+	newNode.text = str(textField)
+	newNode.show()
+	return newNode
 
 func _process(delta):
-	for row in rows:
-		var buyBtn = row.get_node("BuyBtn")
+	for buyBtn in buyButtons:
 		if ($"/root/GameProcessState".energyCounter >= int(buyBtn.text)):
 			buyBtn.disabled = false
 		else:

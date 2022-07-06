@@ -34,27 +34,26 @@ margin_bottom = 88.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RowSample" type="GridContainer" parent="ScrollContainer/HorizontalScroll"]
-visible = false
+[node name="Grid" type="GridContainer" parent="ScrollContainer/HorizontalScroll"]
 margin_right = 248.0
-margin_bottom = 20.0
 theme = ExtResource( 2 )
 columns = 5
 
-[node name="NameVal" type="Label" parent="ScrollContainer/HorizontalScroll/RowSample"]
+[node name="NameValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
+visible = false
 margin_top = 3.0
-margin_right = 64.0
+margin_right = 56.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 4 )
-text = " Assault"
+text = "Assault"
 align = 1
 
-[node name="DmgVal" type="Label" parent="ScrollContainer/HorizontalScroll/RowSample"]
-margin_left = 68.0
+[node name="DmgValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
+visible = false
 margin_top = 3.0
-margin_right = 107.0
+margin_right = 45.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
@@ -62,10 +61,10 @@ custom_fonts/font = ExtResource( 4 )
 text = "100"
 align = 1
 
-[node name="RateVal" type="Label" parent="ScrollContainer/HorizontalScroll/RowSample"]
-margin_left = 111.0
+[node name="RateValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
+visible = false
 margin_top = 3.0
-margin_right = 150.0
+margin_right = 45.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
@@ -73,10 +72,10 @@ custom_fonts/font = ExtResource( 4 )
 text = "1"
 align = 1
 
-[node name="RangeVal" type="Label" parent="ScrollContainer/HorizontalScroll/RowSample"]
-margin_left = 154.0
+[node name="RangeValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
+visible = false
 margin_top = 3.0
-margin_right = 193.0
+margin_right = 45.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
@@ -84,10 +83,10 @@ custom_fonts/font = ExtResource( 4 )
 text = "120"
 align = 1
 
-[node name="BuyBtn" type="Button" parent="ScrollContainer/HorizontalScroll/RowSample"]
-margin_left = 197.0
+[node name="BuyBtnSample" type="Button" parent="ScrollContainer/HorizontalScroll/Grid"]
+visible = false
 margin_top = -1.0
-margin_right = 246.014
+margin_right = 49.0141
 margin_bottom = 19.2621
 size_flags_horizontal = 3
 size_flags_vertical = 4
