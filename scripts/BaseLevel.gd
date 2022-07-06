@@ -9,8 +9,8 @@ var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
 var paths = []
 var isWaveWalking = true
 
-var enemiesInWave = 2
-var levelIsFinished = false
+var enemiesInWave = 5
+var gameIsFinished = false
 
 onready var GAME_STATE = $"/root/GameProcessState"
 
@@ -22,7 +22,7 @@ func _ready():
 	spawnEnemies(enemiesInWave)
 	
 func _process(delta):
-	if(levelIsFinished):
+	if(gameIsFinished):
 		print("Game over. Reloading")
 		get_tree().reload_current_scene()
 	else:
@@ -45,7 +45,7 @@ func _process(delta):
 
 			if (GAME_STATE.healthCounter <= 0):
 				print("Died")
-				levelIsFinished = true
+				gameIsFinished = true
 				return
 			
 			### All enemies were prcoessed
@@ -53,7 +53,7 @@ func _process(delta):
 				isWaveWalking = false
 				if (GAME_STATE.currentWaveCounter == 
 						GAME_STATE.maxWaveCounter):
-					levelIsFinished = true
+					gameIsFinished = true
 					return
 				
 				nextWaveTimer.start()
