@@ -562,4 +562,7 @@ tile_data = PoolIntArray( 0, 36, 0, 1, 36, 0, 2, 36, 0, 3, 36, 0, 4, 36, 0, 5, 3
 [node name="NextWaveTriggerTimer" type="Timer" parent="."]
 wait_time = 4.0
 
+[node name="NextEnemySpawn" type="Timer" parent="."]
+
 [connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]
+[connection signal="timeout" from="NextEnemySpawn" to="." method="_on_NextEnemySpawn_timeout"]

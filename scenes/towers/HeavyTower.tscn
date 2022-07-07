@@ -57,8 +57,8 @@ animations = [ {
 [node name="HeavyTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Heavy"
-damageValue = 30
-attackRadius = 110
+damageValue = 20
+attackRadius = 100
 attackCooldown = 1.5
 buyCost = 30
 level2Cost = 40

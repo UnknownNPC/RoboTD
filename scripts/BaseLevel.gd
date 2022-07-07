@@ -2,6 +2,7 @@ extends Node
 
 onready var spawnBox = $RuntimeSpawnBox
 onready var nextWaveTimer = $NextWaveTriggerTimer
+onready var nextEnemySpawnTimer = $NextEnemySpawn
 onready var basePath = $BaseWavePath
 
 var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
@@ -11,6 +12,8 @@ var isWaveWalking = true
 
 var enemiesInWave = 5
 var gameIsFinished = false
+
+var spawnedEnemiesInWaveLeft = 0
 
 onready var GAME_STATE = $"/root/GameProcessState"
 
@@ -28,16 +31,16 @@ func _process(delta):
 	else:
 		var enemiesKilled = 0
 		var enemiesPass = 0
-		if (isWaveWalking):
+		if (isWaveWalking and paths.size() > 0):
 			for path in paths:
 				var follow = path.get_child(0) if is_instance_valid(path) and path.get_child_count() > 0 else null
 				var abstractEnemy = follow.get_child(0) if is_instance_valid(follow) and follow.get_child_count() > 0 else null
 				if (is_instance_valid(abstractEnemy) and !abstractEnemy.isDead):
 					follow.offset += abstractEnemy.speed * delta
 					if (follow.unit_offset >= 1):
+						path.queue_free()
 						### Enemy moved to the end
 						GAME_STATE.dicreaseHealth()
-						print("new health state: " + str(GAME_STATE.healthCounter))
 						enemiesPass += 1
 				else:
 					###Enemy died and was removed
@@ -55,7 +58,7 @@ func _process(delta):
 						GAME_STATE.maxWaveCounter):
 					gameIsFinished = true
 					return
-				
+				print("Waiting " + str(nextWaveTimer.wait_time) + " before next wave")
 				nextWaveTimer.start()
 
 
@@ -73,14 +76,30 @@ func _on_NextWaveTriggerTimer_timeout():
 	isWaveWalking = true
 
 func spawnEnemies(count):
-	var rawEnemy = load(enemyUrl)
+	spawnedEnemiesInWaveLeft = count
+	print("Start enemies spawning")
+	nextEnemySpawnTimer.start()
+
+func _processRewardForKill(rewardCount):
+	GAME_STATE.addEnergy(rewardCount)
+
+#Should be run when stopProcessingMovement = true
+func _cleanupWaveResources():
+			for path in paths:
+				if (is_instance_valid(path)):
+					path.queue_free()
+			paths = []
+			spawnedEnemiesInWaveLeft = 0
+
+func _on_NextEnemySpawn_timeout():
+	if (spawnedEnemiesInWaveLeft > 0):
+		print("Spawning enemy #" + str(spawnedEnemiesInWaveLeft))
+		var rawEnemy = load(enemyUrl)
 	
-	for i in range(0, count):
-		
 		randomize()
 		
-		var lerpX = lerp(-30, 30, randf())
-		var lerpY = lerp(-30, 30, randf())
+		var lerpX = lerp(-10, 10, randf())
+		var lerpY = lerp(-10, 10, randf())
 		
 		var enemy = rawEnemy.instance()
 		enemy.connect("rewardForKill", self, "_processRewardForKill")
@@ -100,14 +119,8 @@ func spawnEnemies(count):
 			new_path.curve.add_point(newPoint)
 		
 		spawnBox.add_child(new_path)
-
 		paths.append(new_path)
-
-func _processRewardForKill(rewardCount):
-	GAME_STATE.addEnergy(rewardCount)
-
-#Should be run when stopProcessingMovement = true
-func _cleanupWaveResources():
-			for path in paths:
-				path.queue_free()
-			paths = []
+		spawnedEnemiesInWaveLeft -= 1
+	else:
+		print("Stop enemy spawning")
+		nextEnemySpawnTimer.stop()
