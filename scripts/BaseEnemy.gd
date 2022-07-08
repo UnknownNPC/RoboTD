@@ -5,6 +5,7 @@ export(int) var maxHealth = 100
 export(int) var speed = 100
 export(int) var energyReward = 10
 var currentHealth = maxHealth
+var slownessModifier = 1
 
 var isDead = false
 

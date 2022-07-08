@@ -36,7 +36,7 @@ func _process(delta):
 				var follow = path.get_child(0) if is_instance_valid(path) and path.get_child_count() > 0 else null
 				var abstractEnemy = follow.get_child(0) if is_instance_valid(follow) and follow.get_child_count() > 0 else null
 				if (is_instance_valid(abstractEnemy) and !abstractEnemy.isDead):
-					follow.offset += abstractEnemy.speed * delta
+					follow.offset += abstractEnemy.speed * abstractEnemy.slownessModifier * delta
 					if (follow.unit_offset >= 1):
 						path.queue_free()
 						### Enemy moved to the end

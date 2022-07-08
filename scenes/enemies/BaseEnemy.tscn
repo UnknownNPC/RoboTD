@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
 [ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
@@ -112,7 +112,10 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="BaseEnemy" type="Node2D" groups=["enemies", "selectable"]]
+[sub_resource type="CircleShape2D" id=4]
+radius = 8.0
+
+[node name="BaseEnemy" type="Area2D" groups=["enemies", "selectable"]]
 script = ExtResource( 1 )
 unitName = "EnemyName"
 
@@ -138,6 +141,9 @@ texture = ExtResource( 3 )
 [node name="ExplosionAnimation" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "nothing"
+
+[node name="BaseCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
 
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
 [connection signal="input_event" from="SelectSprite" to="." method="_on_SelectSprite_input_event2"]
