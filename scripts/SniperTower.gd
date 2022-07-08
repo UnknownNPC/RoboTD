@@ -3,6 +3,7 @@ extends "res://scripts/BaseTower.gd"
 # enables export var inheritence
 class_name SniperTower
 
+
 func _ready():
 	selectSprite.scale = Vector2(1.2, 1.2)
 

@@ -48,7 +48,7 @@ script = ExtResource( 17 )
 [node name="Animation" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="SmokeArea" type="Area2D" parent="."]
@@ -59,7 +59,7 @@ visible = false
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "smoke_action"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmokeArea"]

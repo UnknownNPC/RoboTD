@@ -12,6 +12,7 @@ var defaultValue = 100
 
 onready var healthbar = $HealthBar
 
+
 func _ready():
 	hide()
 	if get_parent() and get_parent().get("maxHealth"):
@@ -26,10 +27,11 @@ func _ready():
 	currentBarRed = barRedLarge
 
 	healthbar.texture_progress = currentBarGreen
-		
-		
+
+
 func _process(delta):
 	global_rotation = 0
+
 
 func update_healthbar(value):
 	show()
