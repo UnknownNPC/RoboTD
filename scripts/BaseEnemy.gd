@@ -4,7 +4,7 @@ export(String) var unitName
 export(int) var maxHealth = 100
 export(int) var speed = 100
 export(int) var energyReward = 10
-var currentHealth = maxHealth
+var currentHealth
 var slownessModifier = 1
 
 var isDead = false
@@ -23,6 +23,7 @@ onready var explosionAnimation = $ExplosionAnimation
 
 
 func _ready():
+	currentHealth = maxHealth
 	animation.animation = "walk"
 
 

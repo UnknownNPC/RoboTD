@@ -5,25 +5,26 @@ onready var nextWaveTimer = $NextWaveTriggerTimer
 onready var nextEnemySpawnTimer = $NextEnemySpawn
 onready var basePath = $BaseWavePath
 
-var enemyUrl = "res://scenes/enemies/SpiderEnemy.tscn"
-
-var paths = []
 var isWaveWalking = true
-
-var enemiesInWave = 5
 var gameIsFinished = false
 
+var paths = []
 var spawnedEnemiesInWaveLeft = 0
 
 onready var GAME_STATE = $"/root/GameProcessState"
+onready var LEVEL_SETTINGS_READER = $"/root/LevelSettingsReader"
 
 
 func _ready():
-	var maxWaveCounter = 20
-	var healthCounter = 10
-	var energyCounter = 0
-	GAME_STATE.init(1, maxWaveCounter, healthCounter, energyCounter)
-	spawnEnemies(enemiesInWave)
+	LEVEL_SETTINGS_READER.init("1")
+
+	var healthCounter = LEVEL_SETTINGS_READER.getHealthOnStart()
+	var maxWaveCounter = LEVEL_SETTINGS_READER.getNumberOfWaves()
+	var energyCounter = LEVEL_SETTINGS_READER.getEnergyOnStart()
+	GAME_STATE.init(maxWaveCounter, healthCounter, energyCounter)
+
+	LEVEL_SETTINGS_READER.setCurrentWave(GAME_STATE.currentWaveCounter)
+	spawnEnemies(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesCount())
 
 
 func _process(delta):
@@ -69,6 +70,7 @@ func _process(delta):
 					return
 				print("Waiting " + str(nextWaveTimer.wait_time) + " before next wave")
 				nextWaveTimer.start()
+				GAME_STATE.addEnergy(LEVEL_SETTINGS_READER.getCurrentWaveReward())
 
 
 func _on_NextWaveTriggerTimer_timeout():
@@ -79,14 +81,21 @@ func _on_NextWaveTriggerTimer_timeout():
 
 	#Prepare next wave
 	GAME_STATE.increaseCurrentWave()
-	enemiesInWave += 1
-	print("Starting new wave with " + str(enemiesInWave) + " enemies")
-	spawnEnemies(enemiesInWave)
+	LEVEL_SETTINGS_READER.setCurrentWave(GAME_STATE.currentWaveCounter)
+
+	print(
+		(
+			"Starting new wave with "
+			+ str(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesCount())
+			+ " enemies"
+		)
+	)
+	spawnEnemies(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesCount())
 	isWaveWalking = true
 
 
-func spawnEnemies(count):
-	spawnedEnemiesInWaveLeft = count
+func spawnEnemies(enemiesCount):
+	spawnedEnemiesInWaveLeft = enemiesCount
 	print("Start enemies spawning")
 	nextEnemySpawnTimer.start()
 
@@ -107,7 +116,7 @@ func _cleanupWaveResources():
 func _on_NextEnemySpawn_timeout():
 	if spawnedEnemiesInWaveLeft > 0:
 		print("Spawning enemy #" + str(spawnedEnemiesInWaveLeft))
-		var rawEnemy = load(enemyUrl)
+		var rawEnemy = load(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesSceneUrl())
 
 		randomize()
 

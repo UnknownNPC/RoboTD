@@ -30,15 +30,21 @@ _global_script_classes=[ {
 "path": "res://scripts/SniperTower.gd"
 }, {
 "base": "Node2D",
-"class": "SpiderEnemy",
+"class": "SpiderBoss",
 "language": "GDScript",
 "path": "res://scripts/SpiderEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "SpiderEnemy",
+"language": "GDScript",
+"path": "res://scripts/SpiderBoss.gd"
 } ]
 _global_script_class_icons={
 "AssaultTower": "",
 "GrenadierTower": "",
 "HeavyTower": "",
 "SniperTower": "",
+"SpiderBoss": "",
 "SpiderEnemy": ""
 }
 
@@ -50,8 +56,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-ScreenUISingleton="*res://scripts/state/ScreenUISingleton.gd"
-GameProcessState="*res://scripts/state/GameProcessState.gd"
+ScreenUISingleton="*res://scripts/singletone/ScreenUISingleton.gd"
+GameProcessState="*res://scripts/singletone/GameProcessState.gd"
+LevelSettingsReader="*res://scripts/singletone/LevelSettingsReader.gd"
 
 [display]
 

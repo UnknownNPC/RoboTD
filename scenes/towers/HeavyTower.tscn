@@ -58,11 +58,11 @@ animations = [ {
 script = ExtResource( 2 )
 unitName = "Heavy"
 damageValue = 20
-attackRadius = 100
+attackRadius = 80
 attackCooldown = 1.5
-buyCost = 30
-level2Cost = 40
-level3Cost = 60
+buyCost = 45
+level2Cost = 80
+level3Cost = 150
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )

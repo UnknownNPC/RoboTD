@@ -57,25 +57,24 @@ animations = [ {
 [node name="SniperTower" instance=ExtResource( 1 )]
 script = ExtResource( 14 )
 unitName = "Sniper"
-damageValue = 60
-attackRadius = 150
-attackCooldown = 3.0
-buyCost = 50
+damageValue = 25
+attackRadius = 100
+attackCooldown = 2.5
+buyCost = 20
 level2Cost = 70
 level3Cost = 100
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1

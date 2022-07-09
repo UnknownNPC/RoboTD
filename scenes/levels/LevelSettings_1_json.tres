@@ -1,0 +1,31 @@
+{
+   "healthOnStart":10,
+   "energyOnStart":100,
+   "enemiesWave":[
+	  {
+		 "count":5,
+		 "reward": 20,
+		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+	  },
+	  {
+		 "count":7,
+		 "reward": 20,
+		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+	  },
+	  {
+		 "count":10,
+		 "reward": 25,
+		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+	  },
+	  {
+		 "count":15,
+		 "reward": 30,
+		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+	  },
+	  {
+		 "count":1,
+		 "reward": 0,
+		 "sceneUrl":"res://scenes/enemies/SpiderBoss.tscn"
+	  }
+   ]
+}

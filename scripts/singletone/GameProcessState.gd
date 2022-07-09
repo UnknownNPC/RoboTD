@@ -8,11 +8,11 @@ var energyCounter
 var isReady = false
 
 
-func init(startWaveCounter, maxWaveCounterVal, healthCounterVal, startEnergyCounter):
-	currentWaveCounter = startWaveCounter
+func init(maxWaveCounterVal, healthCounterVal, startEnergyCounter):
+	currentWaveCounter = 1
 	maxWaveCounter = maxWaveCounterVal
 	healthCounter = healthCounterVal
-	energyCounter = startEnergyCounter + 5000
+	energyCounter = startEnergyCounter
 
 	isReady = true
 
