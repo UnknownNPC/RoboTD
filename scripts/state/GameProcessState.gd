@@ -12,7 +12,7 @@ func init(startWaveCounter, maxWaveCounterVal, healthCounterVal, startEnergyCoun
 	currentWaveCounter = startWaveCounter
 	maxWaveCounter = maxWaveCounterVal
 	healthCounter = healthCounterVal
-	energyCounter = startEnergyCounter + 50
+	energyCounter = startEnergyCounter + 5000
 
 	isReady = true
 

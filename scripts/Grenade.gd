@@ -8,7 +8,6 @@ onready var smokeCloudAnimation = $SmokeArea/SmokeAnimation
 
 export var grandeSlownessModifier = 0.6
 
-
 func _ready():
 	duration = 0.4
 

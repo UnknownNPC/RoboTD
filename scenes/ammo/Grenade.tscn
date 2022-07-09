@@ -48,7 +48,6 @@ script = ExtResource( 17 )
 [node name="Animation" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
-frame = 4
 playing = true
 
 [node name="SmokeArea" type="Area2D" parent="."]

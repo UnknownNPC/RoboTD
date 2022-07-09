@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/SpawnPoint.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 24 )
+extents = Vector2( 16, 16 )
 
 [node name="SpawnPoint" type="Area2D" groups=["selectable"]]
 script = ExtResource( 2 )
