@@ -1,7 +1,6 @@
 extends Node
 
 var currentLevelJson
-var currentWave
 
 
 func init(levelNum):
@@ -27,17 +26,13 @@ func getHealthOnStart():
 	return currentLevelJson["healthOnStart"]
 
 
-func setCurrentWave(currentWaveCount):
-	currentWave = currentLevelJson["enemiesWave"][currentWaveCount - 1]
+func getCurrentWaveEnemiesCount(waveCount):
+	return currentLevelJson["enemiesWave"][waveCount - 1]["count"]
 
 
-func getCurrentWaveEnemiesCount():
-	return currentWave["count"]
+func getCurrentWaveEnemiesSceneUrl(waveCount):
+	return currentLevelJson["enemiesWave"][waveCount - 1]["sceneUrl"]
 
 
-func getCurrentWaveEnemiesSceneUrl():
-	return currentWave["sceneUrl"]
-
-
-func getCurrentWaveReward():
-	return currentWave["reward"]
+func getCurrentWaveReward(waveCount):
+	return currentLevelJson["enemiesWave"][waveCount - 1]["reward"]
