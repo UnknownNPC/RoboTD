@@ -69,9 +69,12 @@ func _process(delta):
 					return
 				print("Waiting " + str(nextWaveTimer.wait_time) + " before next wave")
 				nextWaveTimer.start()
-				GAME_STATE.addEnergy(
-					LEVEL_SETTINGS_READER.getCurrentWaveReward(GAME_STATE.currentWaveCounter)
+
+				var waveReward = LEVEL_SETTINGS_READER.getCurrentWaveReward(
+					GAME_STATE.currentWaveCounter
 				)
+				GAME_STATE.addEnergy(waveReward)
+				$"/root/ScreenUISingleton".showLevelBonusMenu(waveReward)
 
 
 func _on_NextWaveTriggerTimer_timeout():

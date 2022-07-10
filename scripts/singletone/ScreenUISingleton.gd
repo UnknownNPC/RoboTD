@@ -3,8 +3,15 @@ extends Node
 var enemyInfoUrl = "res://scenes/UI/EnemyInfoUI.tscn"
 var towerInfoUrl = "res://scenes/UI/TowerInfoUI.tscn"
 var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
+var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
 
 var currentPanel
+
+
+func showLevelBonusMenu(energySize):
+	var waveBonus = load(waveBonusUrl).instance()
+	get_parent().add_child(waveBonus)
+	waveBonus.display(energySize)
 
 
 func addBuyTowerMenuPanel():
