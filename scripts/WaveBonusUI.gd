@@ -1,15 +1,16 @@
 extends Control
 
 onready var showTime = $ShowTime
-onready var energyValue = $TextHContainer/EnergyBox/EnergyValue
+onready var energyValue = $Body/BonusContainer/EnergyBox/EnergyValue
+onready var nextWaveSecondsValue = $Body/NextWaveContainer/SecondsValue
 
 
-func display(energySize):
+func display(energySize, nextWaveSeconds):
 	energyValue.text = str(energySize)
-	self.show()
+	nextWaveSecondsValue.text = str(nextWaveSeconds)
 	showTime.start()
 
 
 func _on_ShowTime_timeout():
 	showTime.stop()
-	self.hide()
+	self.queue_free()

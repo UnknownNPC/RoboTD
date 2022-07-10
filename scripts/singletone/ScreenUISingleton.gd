@@ -8,10 +8,10 @@ var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
 var currentPanel
 
 
-func showLevelBonusMenu(energySize):
+func showLevelBonusMenu(energySize, nextWaveSeconds):
 	var waveBonus = load(waveBonusUrl).instance()
 	get_parent().add_child(waveBonus)
-	waveBonus.display(energySize)
+	waveBonus.display(energySize, nextWaveSeconds)
 
 
 func addBuyTowerMenuPanel():

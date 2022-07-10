@@ -74,7 +74,7 @@ func _process(delta):
 					GAME_STATE.currentWaveCounter
 				)
 				GAME_STATE.addEnergy(waveReward)
-				$"/root/ScreenUISingleton".showLevelBonusMenu(waveReward)
+				$"/root/ScreenUISingleton".showLevelBonusMenu(waveReward, nextWaveTimer.wait_time)
 
 
 func _on_NextWaveTriggerTimer_timeout():
