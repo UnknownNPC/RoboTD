@@ -26,9 +26,8 @@ scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 2 )
 unitName = "Scarab"
 speed = 20
-energyReward = 1
+energyReward = 2
 
 [node name="Animation" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
