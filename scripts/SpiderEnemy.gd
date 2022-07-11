@@ -1,6 +1,6 @@
 extends "res://scripts/BaseEnemy.gd"
 
-class_name SpiderBoss
+class_name SpiderEnemy
 
 
 func _ready():

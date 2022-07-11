@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://scripts/HeavyTower.gd"
 }, {
 "base": "Node2D",
+"class": "ScarabEnemy",
+"language": "GDScript",
+"path": "res://scripts/ScarabEnemy.gd"
+}, {
+"base": "Node2D",
 "class": "SniperTower",
 "language": "GDScript",
 "path": "res://scripts/SniperTower.gd"
@@ -32,17 +37,18 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SpiderBoss",
 "language": "GDScript",
-"path": "res://scripts/SpiderEnemy.gd"
+"path": "res://scripts/SpiderBoss.gd"
 }, {
 "base": "Node2D",
 "class": "SpiderEnemy",
 "language": "GDScript",
-"path": "res://scripts/SpiderBoss.gd"
+"path": "res://scripts/SpiderEnemy.gd"
 } ]
 _global_script_class_icons={
 "AssaultTower": "",
 "GrenadierTower": "",
 "HeavyTower": "",
+"ScarabEnemy": "",
 "SniperTower": "",
 "SpiderBoss": "",
 "SpiderEnemy": ""

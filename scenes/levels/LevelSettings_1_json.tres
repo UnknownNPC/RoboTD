@@ -5,7 +5,7 @@
 	  {
 		 "count":5,
 		 "reward": 20,
-		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+		 "sceneUrl":"res://scenes/enemies/ScarabEnemy.tscn"
 	  },
 	  {
 		 "count":7,

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider_tile10.png-bf6ba4fb2c1af9f7950fc96eec75d9ae.stex"
+path="res://.import/scarab5.png-018fcdb8484578fdb0e042f901f8d8a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/enemies/spider/spider_tile10.png"
-dest_files=[ "res://.import/spider_tile10.png-bf6ba4fb2c1af9f7950fc96eec75d9ae.stex" ]
+source_file="res://tiles/enemies/scarab/scarab5.png"
+dest_files=[ "res://.import/scarab5.png-018fcdb8484578fdb0e042f901f8d8a7.stex" ]
 
 [params]
 
