@@ -32,3 +32,4 @@ energyReward = 2
 [node name="Animation" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
+frame = 3

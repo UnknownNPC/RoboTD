@@ -17,6 +17,11 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "CiclopeEnemy",
 "language": "GDScript",
+"path": "res://scripts/CiclopeEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "EggEnemy",
+"language": "GDScript",
 "path": "res://scripts/EggEnemy.gd"
 }, {
 "base": "Node2D",
@@ -52,6 +57,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AssaultTower": "",
 "CiclopeEnemy": "",
+"EggEnemy": "",
 "GrenadierTower": "",
 "HeavyTower": "",
 "ScarabEnemy": "",

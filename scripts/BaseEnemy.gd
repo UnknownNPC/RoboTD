@@ -45,8 +45,10 @@ func add_damage(damage):
 		animationPlayer.play("reward")
 		deadBodyRelease.start()
 
+
 func getExplosion():
 	return "small_explosion"
+
 
 func _on_DeadBodyRelease_timeout():
 	queue_free()

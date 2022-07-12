@@ -1,6 +1,6 @@
 extends "res://scripts/BaseEnemy.gd"
 
-class_name CiclopeEnemy
+class_name EggEnemy
 
 
 func _ready():

@@ -30,8 +30,8 @@ func getCurrentWaveEnemiesCount(waveCount):
 	return currentLevelJson["enemiesWave"][waveCount - 1]["count"]
 
 
-func getCurrentWaveEnemiesSceneUrl(waveCount):
-	return currentLevelJson["enemiesWave"][waveCount - 1]["sceneUrl"]
+func getCurrentWaveEnemiesSceneUrls(waveCount):
+	return currentLevelJson["enemiesWave"][waveCount - 1]["scenes"]
 
 
 func getCurrentWaveReward(waveCount):

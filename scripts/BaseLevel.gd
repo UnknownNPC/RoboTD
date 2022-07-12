@@ -115,17 +115,19 @@ func _cleanupWaveResources():
 
 func _on_NextEnemySpawn_timeout():
 	if spawnedEnemiesInWaveLeft > 0:
-		print("Spawning enemy #" + str(spawnedEnemiesInWaveLeft))
-		var rawEnemy = load(
-			LEVEL_SETTINGS_READER.getCurrentWaveEnemiesSceneUrl(GAME_STATE.currentWaveCounter)
+		randomize()
+
+		var enemiesUrls = LEVEL_SETTINGS_READER.getCurrentWaveEnemiesSceneUrls(
+			GAME_STATE.currentWaveCounter
 		)
 
-		randomize()
+		var randomEnemyUrl = enemiesUrls[randi() % enemiesUrls.size()]
+		print("Spawning enemy #" + str(spawnedEnemiesInWaveLeft) + ": " + randomEnemyUrl)
 
 		var lerpX = lerp(-10, 10, randf())
 		var lerpY = lerp(-10, 10, randf())
 
-		var enemy = rawEnemy.instance()
+		var enemy = load(randomEnemyUrl).instance()
 		enemy.connect("rewardForKill", self, "_processRewardForKill")
 
 		var new_follow = PathFollow2D.new()

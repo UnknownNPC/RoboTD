@@ -5,27 +5,49 @@
 	  {
 		 "count":15,
 		 "reward": 20,
-		 "sceneUrl":"res://scenes/enemies/EggEnemy.tscn"
+		 "scenes": [
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+		 	"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
 	  },
 	  {
 		 "count":7,
 		 "reward": 20,
-		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+		 "scenes": [
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+		 	"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
 	  },
 	  {
 		 "count":10,
 		 "reward": 25,
-		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+		 "scenes": [
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+		 	"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
 	  },
 	  {
 		 "count":15,
 		 "reward": 30,
-		 "sceneUrl":"res://scenes/enemies/SpiderEnemy.tscn"
+		 "scenes": [
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+		 	"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
 	  },
 	  {
 		 "count":1,
 		 "reward": 0,
-		 "sceneUrl":"res://scenes/enemies/SpiderBoss.tscn"
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderBoss.tscn"
+		  ]
 	  }
    ]
 }

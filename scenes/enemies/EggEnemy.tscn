@@ -13,7 +13,7 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
@@ -32,4 +32,4 @@ energyReward = 1
 [node name="Animation" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 2
