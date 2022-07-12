@@ -82,17 +82,17 @@ format = 1
 tile_data = PoolIntArray( 131091, 0, 0, 131097, 1, 0, 524307, 2, 0, 524313, 3, 0 )
 
 [node name="Name" type="Label" parent="."]
-margin_left = 16.0
+margin_left = 18.0
 margin_top = 19.0
-margin_right = 57.0
-margin_bottom = 33.0
+margin_right = 59.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
 text = "Name"
 
 [node name="NameValue" type="Label" parent="."]
-margin_left = 70.0
+margin_left = 72.0
 margin_top = 19.0
-margin_right = 126.0
-margin_bottom = 33.0
+margin_right = 130.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
 text = "Genetic"
