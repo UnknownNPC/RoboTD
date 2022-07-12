@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "ArahnaEnemy",
+"language": "GDScript",
+"path": "res://scripts/ArahnaEnemy.gd"
+}, {
+"base": "Node2D",
 "class": "AssaultTower",
 "language": "GDScript",
 "path": "res://scripts/AssaultTower.gd"
@@ -55,6 +60,7 @@ _global_script_classes=[ {
 "path": "res://scripts/SpiderEnemy.gd"
 } ]
 _global_script_class_icons={
+"ArahnaEnemy": "",
 "AssaultTower": "",
 "CiclopeEnemy": "",
 "EggEnemy": "",

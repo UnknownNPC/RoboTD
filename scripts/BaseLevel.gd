@@ -5,10 +5,9 @@ onready var nextWaveTimer = $NextWaveTriggerTimer
 onready var nextEnemySpawnTimer = $NextEnemySpawn
 onready var basePath = $BaseWavePath
 
-var enableProcessing = true
+var enableProcessing = false
 var gameover = false
 
-var paths = []
 var spawnedEnemiesInWaveLeft = 0
 
 onready var GAME_STATE = $"/root/GameProcessState"
@@ -31,30 +30,16 @@ func _process(delta):
 		print("Game over. Reloading")
 		get_tree().reload_current_scene()
 	else:
-		var enemiesKilled = 0
-		var enemiesPass = 0
-		if enableProcessing and paths.size() > 0:
-			for path in paths:
-				var follow = (
-					path.get_child(0)
-					if is_instance_valid(path) and path.get_child_count() > 0
-					else null
-				)
-				var abstractEnemy = (
-					follow.get_child(0)
-					if is_instance_valid(follow) and follow.get_child_count() > 0
-					else null
-				)
-				if is_instance_valid(abstractEnemy) and !abstractEnemy.isDead:
-					follow.offset += abstractEnemy.speed * abstractEnemy.slownessModifier * delta
+		if enableProcessing:
+			var allEnemies = get_tree().get_nodes_in_group("enemies")
+			for enemy in allEnemies:
+				if !enemy.isDead:
+					var follow = enemy.get_parent()
+					follow.offset += enemy.speed * enemy.slownessModifier * delta
 					if follow.unit_offset >= 1:
-						path.queue_free()
+						enemy.queue_free()
 						### Enemy moved to the end
 						GAME_STATE.dicreaseHealth()
-						enemiesPass += 1
-				else:
-					###Enemy died and was removed
-					enemiesKilled += 1
 
 			if GAME_STATE.healthCounter <= 0:
 				print("Died")
@@ -62,7 +47,7 @@ func _process(delta):
 				return
 
 			### All enemies were prcoessed
-			if paths.size() == enemiesKilled + enemiesPass:
+			if allEnemies.size() == 0:
 				enableProcessing = false
 				if GAME_STATE.currentWaveCounter == GAME_STATE.maxWaveCounter:
 					gameover = true
@@ -91,7 +76,6 @@ func _on_NextWaveTriggerTimer_timeout():
 	)
 	print("Starting new wave with " + str(currentWaveEnemiesCount) + " enemies")
 	spawnEnemies(currentWaveEnemiesCount)
-	enableProcessing = true
 
 
 func spawnEnemies(enemiesCount):
@@ -106,10 +90,9 @@ func _processRewardForKill(rewardCount):
 
 #Should be run when stopProcessingMovement = true
 func _cleanupWaveResources():
-	for path in paths:
-		if is_instance_valid(path):
-			path.queue_free()
-	paths = []
+	print("_cleanupWaveResources: cleanup spawnbox - " + str(spawnBox.get_child_count()))
+	for child in spawnBox.get_children():
+		child.queue_free()
 	spawnedEnemiesInWaveLeft = 0
 
 
@@ -145,8 +128,10 @@ func _on_NextEnemySpawn_timeout():
 			new_path.curve.add_point(newPoint)
 
 		spawnBox.add_child(new_path)
-		paths.append(new_path)
 		spawnedEnemiesInWaveLeft -= 1
+
+		## need to to trigger on the first spawn. but whatever
+		enableProcessing = true
 	else:
 		print("Stop enemy spawning")
 		nextEnemySpawnTimer.stop()

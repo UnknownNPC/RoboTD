@@ -56,7 +56,7 @@ animations = [ {
 
 [node name="GrenadierTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-unitName = "Grenadier"
+unitName = "Desolator"
 damageValue = 5
 attackRadius = 70
 attackCooldown = 3.0
@@ -67,16 +67,13 @@ level3Cost = 100
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1

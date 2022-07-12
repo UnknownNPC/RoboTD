@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/centipede112.png-b9b63d21241f2734799c6bdda658b60e.stex"
+path="res://.import/spider_tile20.png-8b373685160e7f6bb0481d0b8d0b550c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/enemies/centipede112.png"
-dest_files=[ "res://.import/centipede112.png-b9b63d21241f2734799c6bdda658b60e.stex" ]
+source_file="res://tiles/enemies/arahna/spider_tile20.png"
+dest_files=[ "res://.import/spider_tile20.png-8b373685160e7f6bb0481d0b8d0b550c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
