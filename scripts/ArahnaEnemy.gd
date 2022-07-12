@@ -14,6 +14,7 @@ func _ready():
 	clickShape.set_radius(10)
 	selectShapeCollision.set_shape(clickShape)
 
+
 func dieSideEffects():
 	var eggEnemy = load(eggEnemySceneUrl).instance()
 	var eggEnemy2 = load(eggEnemySceneUrl).instance()
@@ -22,9 +23,11 @@ func dieSideEffects():
 	addEnemyToBaseLevel(eggEnemy)
 	addEnemyToBaseLevel(eggEnemy2)
 
+
+#should be moved to base level
 func addEnemyToBaseLevel(enemy):
 	var arahnaFollow = get_parent()
-	
+
 	var new_follow = PathFollow2D.new()
 	new_follow.rotate = false
 	new_follow.loop = false
@@ -37,5 +40,5 @@ func addEnemyToBaseLevel(enemy):
 	new_path.position = arahnaPath.position
 	new_path.curve = arahnaPath.curve
 	new_path.add_child(new_follow)
-	
+
 	baseLevelSpawnBox.add_child(new_path)

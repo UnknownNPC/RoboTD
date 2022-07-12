@@ -3,10 +3,11 @@
    "energyOnStart":100,
    "enemiesWave":[
 	  {
-		 "count":1,
-		 "reward": 20,
+		 "count":3,
+		 "reward": 30,
 		 "scenes": [
-		 	"res://scenes/enemies/ArahnaEnemy.tscn"
+		 	"res://scenes/enemies/ArahnaEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn"
 		  ]
 	  },
 	  {

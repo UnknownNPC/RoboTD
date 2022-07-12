@@ -33,7 +33,7 @@ func _process(delta):
 		if enableProcessing:
 			var allEnemies = get_tree().get_nodes_in_group("enemies")
 			for enemy in allEnemies:
-				if (!enemy.isDead):
+				if !enemy.isDead:
 					var follow = enemy.get_parent()
 					follow.offset += enemy.speed * enemy.slownessModifier * delta
 					if follow.unit_offset >= 1:
@@ -129,7 +129,7 @@ func _on_NextEnemySpawn_timeout():
 
 		spawnBox.add_child(new_path)
 		spawnedEnemiesInWaveLeft -= 1
-		
+
 		## need to to trigger on the first spawn. but whatever
 		enableProcessing = true
 	else:
