@@ -1,5 +1,7 @@
 extends "res://scripts/BaseEnemy.gd"
 
+onready var baseLevelSpawnBox = $"/root/BaseLevel/RuntimeSpawnBox"
+
 var eggEnemySceneUrl = "res://scenes/enemies/EggEnemy.tscn"
 
 class_name ArahnaEnemy
@@ -14,7 +16,11 @@ func _ready():
 
 func dieSideEffects():
 	var eggEnemy = load(eggEnemySceneUrl).instance()
-	eggEnemy.global_position = self.global_position
-	var pathFollow = get_parent()
-	if pathFollow is PathFollow2D:
-		pathFollow.add_child(eggEnemy)
+	eggEnemy.position = position
+	
+	var selfPathFollow = get_parent()
+	var runtimePathFollow = selfPathFollow.duplicate()
+	runtimePathFollow.add_child(eggEnemy)
+	
+	var selfPath = selfPathFollow.get_parent()
+	selfPath.add_child(runtimePathFollow)
