@@ -61,8 +61,10 @@ func _process(delta):
 				gameover = true
 				return
 
+			# can be spawner after death
+			var allEnemies = get_tree().get_nodes_in_group("enemies")
 			### All enemies were prcoessed
-			if paths.size() == enemiesKilled + enemiesPass:
+			if enemies.size() == enemiesKilled + enemiesPass:
 				enableProcessing = false
 				if GAME_STATE.currentWaveCounter == GAME_STATE.maxWaveCounter:
 					gameover = true

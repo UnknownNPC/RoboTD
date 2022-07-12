@@ -43,8 +43,14 @@ func add_damage(damage):
 
 		emit_signal("rewardForKill", self.energyReward)
 		animationPlayer.play("reward")
+		
+		## some actions
+		dieSideEffects()
+		
 		deadBodyRelease.start()
 
+func dieSideEffects():
+	pass
 
 func getExplosion():
 	return "small_explosion"
