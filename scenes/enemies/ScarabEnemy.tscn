@@ -10,15 +10,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": false,
-"name": "die",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
 } ]
 
 [node name="ScarabEnemy" instance=ExtResource( 1 )]
@@ -26,9 +26,9 @@ scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 2 )
 unitName = "Scarab"
 speed = 20
-energyReward = 2
+energyReward = 1
 
 [node name="Animation" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 1

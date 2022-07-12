@@ -3,9 +3,9 @@
    "energyOnStart":100,
    "enemiesWave":[
 	  {
-		 "count":5,
+		 "count":15,
 		 "reward": 20,
-		 "sceneUrl":"res://scenes/enemies/ScarabEnemy.tscn"
+		 "sceneUrl":"res://scenes/enemies/EggEnemy.tscn"
 	  },
 	  {
 		 "count":7,
