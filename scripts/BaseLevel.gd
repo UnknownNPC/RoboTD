@@ -33,8 +33,8 @@ func _process(delta):
 		if enableProcessing:
 			var allEnemies = get_tree().get_nodes_in_group("enemies")
 			for enemy in allEnemies:
-				var follow = enemy.get_parent()
 				if (!enemy.isDead):
+					var follow = enemy.get_parent()
 					follow.offset += enemy.speed * enemy.slownessModifier * delta
 					if follow.unit_offset >= 1:
 						enemy.queue_free()
