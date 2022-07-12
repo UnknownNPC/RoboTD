@@ -7,7 +7,11 @@
 [node name="SpiderBoss" instance=ExtResource( 1 )]
 scale = Vector2( 3, 3 )
 script = ExtResource( 3 )
-unitName = ""
+unitName = "Spider Boss"
+maxHealth = 1500
+speed = 20
+energyReward = 30
 
 [node name="Animation" parent="." index="0"]
 frames = ExtResource( 2 )
+animation = "walk"

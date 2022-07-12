@@ -38,12 +38,14 @@ func add_damage(damage):
 		animation.animation = "die"
 
 		#explosion
-		explosionAnimation.play("small_explosion")
+		explosionAnimation.play(getExplosion())
 
 		emit_signal("rewardForKill", self.energyReward)
 		animationPlayer.play("reward")
 		deadBodyRelease.start()
 
+func getExplosion():
+	return "small_explosion"
 
 func _on_DeadBodyRelease_timeout():
 	queue_free()

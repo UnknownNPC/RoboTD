@@ -15,4 +15,4 @@ energyReward = 2
 [node name="Animation" parent="." index="0"]
 frames = ExtResource( 2 )
 animation = "walk"
-frame = 2
+frame = 1
