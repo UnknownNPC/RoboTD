@@ -14,6 +14,7 @@
 		 "count":7,
 		 "reward": 20,
 		 "scenes": [
+		 	"res://scenes/enemies/ArahnaEnemy.tscn",
 		 	"res://scenes/enemies/CiclopeEnemy.tscn",
 		 	"res://scenes/enemies/EggEnemy.tscn",
 		 	"res://scenes/enemies/SpiderEnemy.tscn",
@@ -24,6 +25,7 @@
 		 "count":10,
 		 "reward": 25,
 		 "scenes": [
+		 	"res://scenes/enemies/ArahnaEnemy.tscn",
 		 	"res://scenes/enemies/CiclopeEnemy.tscn",
 		 	"res://scenes/enemies/EggEnemy.tscn",
 		 	"res://scenes/enemies/SpiderEnemy.tscn",
@@ -34,6 +36,7 @@
 		 "count":15,
 		 "reward": 30,
 		 "scenes": [
+		 	"res://scenes/enemies/ArahnaEnemy.tscn",
 		 	"res://scenes/enemies/CiclopeEnemy.tscn",
 		 	"res://scenes/enemies/EggEnemy.tscn",
 		 	"res://scenes/enemies/SpiderEnemy.tscn",
