@@ -2,7 +2,7 @@
 extends Node2D
 
 var spawnPointScene = "res://scenes/SpawnPoint.tscn"
-onready var spawnPointsNode = $"/root/BaseLevel/TowerSpawnPoints"
+onready var spawnPointsNode = get_tree().get_root().find_node("TowerSpawnPoints", true, false)
 
 export(String) var unitName
 export(int) var damageValue = 100

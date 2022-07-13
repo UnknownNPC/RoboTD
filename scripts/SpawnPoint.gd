@@ -3,8 +3,7 @@ extends Area2D
 onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
 
-onready var towersNode = $"/root/BaseLevel/Towers"
-
+onready var towersNode = get_tree().get_root().find_node("Towers", true, false)
 
 func _ready():
 	selectSprite.scale = Vector2(1, 1)

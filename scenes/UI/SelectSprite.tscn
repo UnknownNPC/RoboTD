@@ -61,6 +61,7 @@
 4/z_index = 0
 
 [node name="SelectSprite" type="Area2D"]
+z_index = 99
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 

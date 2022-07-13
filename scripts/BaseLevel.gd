@@ -15,7 +15,7 @@ onready var LEVEL_SETTINGS_READER = $"/root/LevelSettingsReader"
 
 
 func _ready():
-	LEVEL_SETTINGS_READER.init("1")
+	LEVEL_SETTINGS_READER.init(levelNum())
 
 	GAME_STATE.init(
 		LEVEL_SETTINGS_READER.getNumberOfWaves(),
@@ -24,6 +24,9 @@ func _ready():
 	)
 	spawnEnemies(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesCount(GAME_STATE.currentWaveCounter))
 
+### should be overriden
+func levelNum():
+	return "-999999"
 
 func _process(delta):
 	if gameover:

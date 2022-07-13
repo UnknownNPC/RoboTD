@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Level1.gd" type="Script" id=2]
+[ext_resource path="res://scenes/SpawnPoint.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -27, 352, 0, 0, 0, 0, 183, 351, -19.3552, 0.66742, 19.3552, -0.66742, 213, 333, 0, 0, 0, 0, 248, 352, 0, 0, 0, 0, 351, 352 )
+}
+
+[node name="Level1" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="BaseWavePath" parent="." index="0"]
+curve = SubResource( 1 )
+
+[node name="SpawnPoint" parent="TowerSpawnPoints" index="0" instance=ExtResource( 3 )]
+position = Vector2( 16, 304 )
+
+[node name="SpawnPoint2" parent="TowerSpawnPoints" index="1" instance=ExtResource( 3 )]
+position = Vector2( 48, 304 )
+
+[node name="SpawnPoint3" parent="TowerSpawnPoints" index="2" instance=ExtResource( 3 )]
+position = Vector2( 16, 400 )
+
+[node name="SpawnPoint4" parent="TowerSpawnPoints" index="3" instance=ExtResource( 3 )]
+position = Vector2( 48, 400 )
+
+[node name="SpawnPoint5" parent="TowerSpawnPoints" index="4" instance=ExtResource( 3 )]
+position = Vector2( 112, 400 )
+
+[node name="SpawnPoint6" parent="TowerSpawnPoints" index="5" instance=ExtResource( 3 )]
+position = Vector2( 144, 400 )
+
+[node name="SpawnPoint7" parent="TowerSpawnPoints" index="6" instance=ExtResource( 3 )]
+position = Vector2( 176, 400 )
+
+[node name="SpawnPoint8" parent="TowerSpawnPoints" index="7" instance=ExtResource( 3 )]
+position = Vector2( 208, 400 )
+
+[node name="SpawnPoint9" parent="TowerSpawnPoints" index="8" instance=ExtResource( 3 )]
+position = Vector2( 240, 400 )
+
+[node name="SpawnPoint10" parent="TowerSpawnPoints" index="9" instance=ExtResource( 3 )]
+position = Vector2( 304, 400 )
+
+[node name="SpawnPoint21" parent="TowerSpawnPoints" index="10" instance=ExtResource( 3 )]
+position = Vector2( 16, 432 )
+
+[node name="SpawnPoint22" parent="TowerSpawnPoints" index="11" instance=ExtResource( 3 )]
+position = Vector2( 48, 432 )
+
+[node name="SpawnPoint29" parent="TowerSpawnPoints" index="12" instance=ExtResource( 3 )]
+position = Vector2( 80, 432 )
+
+[node name="SpawnPoint23" parent="TowerSpawnPoints" index="13" instance=ExtResource( 3 )]
+position = Vector2( 112, 432 )
+
+[node name="SpawnPoint24" parent="TowerSpawnPoints" index="14" instance=ExtResource( 3 )]
+position = Vector2( 144, 432 )
+
+[node name="SpawnPoint25" parent="TowerSpawnPoints" index="15" instance=ExtResource( 3 )]
+position = Vector2( 176, 432 )
+
+[node name="SpawnPoint26" parent="TowerSpawnPoints" index="16" instance=ExtResource( 3 )]
+position = Vector2( 208, 432 )
+
+[node name="SpawnPoint27" parent="TowerSpawnPoints" index="17" instance=ExtResource( 3 )]
+position = Vector2( 240, 432 )
+
+[node name="SpawnPoint30" parent="TowerSpawnPoints" index="18" instance=ExtResource( 3 )]
+position = Vector2( 272, 432 )
+
+[node name="SpawnPoint28" parent="TowerSpawnPoints" index="19" instance=ExtResource( 3 )]
+position = Vector2( 304, 432 )
+
+[node name="SpawnPoint11" parent="TowerSpawnPoints" index="20" instance=ExtResource( 3 )]
+position = Vector2( 304, 304 )
+
+[node name="SpawnPoint12" parent="TowerSpawnPoints" index="21" instance=ExtResource( 3 )]
+position = Vector2( 240, 304 )
+
+[node name="SpawnPoint13" parent="TowerSpawnPoints" index="22" instance=ExtResource( 3 )]
+position = Vector2( 208, 304 )
+
+[node name="SpawnPoint14" parent="TowerSpawnPoints" index="23" instance=ExtResource( 3 )]
+position = Vector2( 176, 304 )
+
+[node name="SpawnPoint15" parent="TowerSpawnPoints" index="24" instance=ExtResource( 3 )]
+position = Vector2( 16, 272 )
+
+[node name="SpawnPoint16" parent="TowerSpawnPoints" index="25" instance=ExtResource( 3 )]
+position = Vector2( 48, 272 )
+
+[node name="SpawnPoint17" parent="TowerSpawnPoints" index="26" instance=ExtResource( 3 )]
+position = Vector2( 304, 272 )
+
+[node name="SpawnPoint18" parent="TowerSpawnPoints" index="27" instance=ExtResource( 3 )]
+position = Vector2( 240, 272 )
+
+[node name="SpawnPoint31" parent="TowerSpawnPoints" index="28" instance=ExtResource( 3 )]
+position = Vector2( 272, 272 )
+
+[node name="SpawnPoint19" parent="TowerSpawnPoints" index="29" instance=ExtResource( 3 )]
+position = Vector2( 208, 272 )
+
+[node name="SpawnPoint20" parent="TowerSpawnPoints" index="30" instance=ExtResource( 3 )]
+position = Vector2( 176, 272 )
+
+[node name="SpawnPoint32" parent="TowerSpawnPoints" index="31" instance=ExtResource( 3 )]
+position = Vector2( 144, 272 )
+
+[node name="SpawnPoint33" parent="TowerSpawnPoints" index="32" instance=ExtResource( 3 )]
+position = Vector2( 112, 272 )
+
+[node name="LevelTileMap" parent="." index="5"]
+tile_data = PoolIntArray( 0, 13, 0, 3, 28, 0, 4, 28, 0, 5, 28, 0, 6, 28, 0, 7, 28, 0, 8, 28, 0, 9, 29, 0, 65539, 38, 0, 65540, 38, 0, 65541, 38, 0, 65542, 38, 0, 65543, 14, 0, 65545, 31, 0, 131075, 38, 0, 131076, 38, 0, 131077, 38, 0, 131078, 40, 0, 131081, 31, 0, 196608, 14, 0, 196610, 38, 0, 196611, 38, 0, 196612, 41, 0, 196613, 38, 0, 196614, 38, 0, 196615, 40, 0, 196616, 38, 0, 196617, 31, 0, 262146, 38, 0, 262147, 38, 0, 262148, 38, 0, 262149, 38, 0, 262150, 34, 0, 262151, 32, 0, 262152, 38, 0, 262153, 31, 0, 327680, 36, 0, 327681, 38, 0, 327682, 38, 0, 327683, 40, 0, 327684, 38, 0, 327685, 38, 0, 327686, 58, 0, 327687, 55, 0, 327688, 38, 0, 327689, 31, 0, 393216, 40, 0, 393217, 40, 0, 393218, 40, 0, 393219, 41, 0, 393220, 38, 0, 393221, 41, 0, 393222, 56, 0, 393223, 57, 0, 393224, 38, 0, 393225, 31, 0, 458752, 40, 0, 458753, 38, 0, 458754, 38, 0, 458755, 36, 0, 458756, 38, 0, 458757, 38, 0, 458758, 29, 0, 458759, 27, 0, 458760, 38, 0, 458761, 31, 0, 524288, 36, 0, 524289, 33, 0, 524290, 40, 0, 524291, 33, 0, 524292, 40, 0, 524293, 33, 0, 524294, 33, 0, 524295, 33, 0, 524296, 36, 0, 524297, 34, 0, 589824, 16, 0, 589825, 19, 0, 589826, 16, 0, 589827, 18, 0, 589828, 16, 0, 589829, 11, 0, 589830, 16, 0, 589831, 11, 0, 589832, 20, 0, 589833, 16, 0, 720895, 26, 0, 655360, 21, 0, 655361, 21, 0, 655362, 21, 0, 655363, 21, 0, 655364, 21, 0, 655365, 21, 0, 655366, 21, 0, 655367, 21, 0, 655368, 21, 0, 655369, 21, 0, 655370, 25, 0, 786432, 16, 0, 786433, 11, 0, 786434, 16, 0, 786435, 16, 0, 786436, 11, 0, 786437, 16, 0, 786438, 17, 0, 786439, 16, 0, 786440, 16, 0, 786441, 11, 0, 851968, 27, 0, 851969, 28, 0, 851970, 36, 0, 851971, 28, 0, 851972, 40, 0, 851973, 36, 0, 851974, 28, 0, 851975, 36, 0, 851976, 36, 0, 851977, 29, 0, 917504, 30, 0, 917505, 38, 0, 917506, 41, 0, 917507, 38, 0, 917508, 15, 0, 917509, 41, 0, 917510, 39, 0, 917511, 14, 0, 917513, 31, 0, 983040, 30, 0, 983041, 38, 0, 983042, 41, 0, 983043, 38, 0, 983044, 38, 0, 983045, 39, 0, 983046, 40, 0, 983049, 38, 0, 1048576, 30, 0, 1048577, 38, 0, 1048578, 38, 0, 1048579, 38, 0, 1048580, 41, 0, 1048581, 38, 0, 1048582, 38, 0, 1048583, 38, 0, 1048584, 38, 0, 1048585, 31, 0, 1114112, 30, 0, 1114113, 14, 0, 1114115, 41, 0, 1114116, 38, 0, 1114117, 38, 0, 1114118, 41, 0, 1114119, 41, 0, 1114120, 41, 0, 1114121, 40, 0, 1179648, 30, 0, 1179651, 38, 0, 1179652, 41, 0, 1179653, 40, 0, 1179654, 41, 0, 1179655, 40, 0, 1179656, 41, 0, 1179657, 31, 0, 1245184, 32, 0, 1245185, 33, 0, 1245186, 36, 0, 1245187, 33, 0, 1245188, 36, 0, 1245189, 40, 0, 1245190, 33, 0, 1245191, 33, 0, 1245192, 40, 0, 1245193, 34, 0 )
+
+[node name="ObstaclesTileMap" parent="." index="6"]
+scale = Vector2( 1.5, 1.5 )
+tile_data = PoolIntArray( 131075, 6, 0, 196612, 34, 0, 262145, 4, 0, 262149, 4, 0, 327681, 0, 0, 327683, 8, 0, 393218, 16, 0, 393221, 1, 0, 458753, 0, 0, 458756, 26, 0, 458757, 0, 0, 655361, 4, 0, 720901, 4, 0, 786435, 4, 0 )

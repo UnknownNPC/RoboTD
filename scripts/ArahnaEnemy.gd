@@ -1,6 +1,6 @@
 extends "res://scripts/BaseEnemy.gd"
 
-onready var baseLevelSpawnBox = $"/root/BaseLevel/RuntimeSpawnBox"
+onready var baseLevelSpawnBox = get_tree().get_root().find_node("RuntimeSpawnBox", true, false)
 
 var eggEnemySceneUrl = "res://scenes/enemies/EggEnemy.tscn"
 
