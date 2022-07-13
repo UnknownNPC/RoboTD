@@ -100,7 +100,4 @@ size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
 text = "sec"
 
-[node name="NextWaveTimer" type="Timer" parent="."]
-wait_time = 0.001
-
 [connection signal="gui_input" from="." to="." method="_on_WaveBonusUI_gui_input"]
