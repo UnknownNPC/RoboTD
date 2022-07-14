@@ -20,24 +20,11 @@ func howToDamage():
 
 	var rocket = load(rocketSceneUrl).instance()
 	rocket.scale = Vector2(1.2, 1.2)
-	rocket.connect("rocketExplosion", self, "_rocketExplosion")
+	rocket.connect("enemyInTheExplosionArea", self, "_enemyInTheExplosionArea")
 	var direction = -1 if currentAnimation.flip_h else 1
 	add_child(rocket)
 	rocket.init(attackPoint, direction)
 
 
-func _rocketExplosion(radius):
-	var allEnemies = get_tree().get_nodes_in_group("enemies")
-	for enemy in allEnemies:
-		if isEnemyInsideExplosionRadius(enemy, attackPoint, radius):
-			enemy.add_damage(damageValue)
-
-
-func isEnemyInsideExplosionRadius(enemy, targetPoint, radius):
-	return (
-		(
-			pow(enemy.global_position.x - targetPoint.x, 2)
-			+ pow(enemy.global_position.y - targetPoint.y, 2)
-		)
-		<= pow(radius, 2)
-	)
+func _enemyInTheExplosionArea(enemy):
+	enemy.add_damage(damageValue)
