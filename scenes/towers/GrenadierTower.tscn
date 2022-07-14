@@ -57,7 +57,7 @@ animations = [ {
 [node name="GrenadierTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Desolator"
-damageValue = 5
+damageValue = 0
 attackRadius = 70
 attackCooldown = 3.0
 buyCost = 35

@@ -17,11 +17,6 @@ func howToDamage():
 
 	var grenade = load(grenadeSceneUrl).instance()
 	grenade.scale = Vector2(1.2, 1.2)
-	grenade.connect("enemyInCloud", self, "_enemyInCloud")
 	var direction = -1 if currentAnimation.flip_h else 1
 	add_child(grenade)
 	grenade.init(attackPoint, direction)
-
-
-func _enemyInCloud(enemy):
-	enemy.add_damage(damageValue)

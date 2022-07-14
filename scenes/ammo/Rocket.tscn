@@ -38,6 +38,7 @@ script = ExtResource( 15 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="ExplosionCollision" type="CollisionShape2D" parent="."]

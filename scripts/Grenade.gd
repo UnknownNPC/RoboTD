@@ -1,7 +1,5 @@
 extends "res://scripts/BaseFlyingAmmo.gd"
 
-signal enemyInCloud(enemy)
-
 onready var smokeCloudTimer = $SmokeCloudTimer
 onready var smokeArea = $SmokeArea
 onready var smokeCloudAnimation = $SmokeArea/SmokeAnimation
@@ -16,7 +14,6 @@ func _ready():
 func _on_SmokeArea_area_entered(area):
 	if area.is_in_group("enemies"):
 		area.slownessModifier = grandeSlownessModifier
-		emit_signal("enemyInCloud", area)
 
 
 func _on_SmokeArea_area_exited(area):

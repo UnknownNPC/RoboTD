@@ -29,7 +29,8 @@ func _process(delta):
 func init(targetTower):
 	tower = targetTower
 	nameValue.text = tower.fullUnitName
-	damageValue.text = str(tower.damageValue)
+	var dmgV = "-" if tower.damageValue == 0 else tower.damageValue
+	damageValue.text = str(dmgV)
 	aRateValue.text = str(tower.attackCooldown)
 	radiusValue.text = str(tower.attackRadius)
 

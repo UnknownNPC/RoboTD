@@ -17,7 +17,8 @@ func _ready():
 		var nameVal = copySampleNode("NameValSample", towerInstance.unitName)
 		grid.add_child(nameVal)
 
-		var dmgVal = copySampleNode("DmgValSample", towerInstance.damageValue)
+		var dmgV = "-" if towerInstance.damageValue == 0 else towerInstance.damageValue
+		var dmgVal = copySampleNode("DmgValSample", dmgV)
 		grid.add_child(dmgVal)
 
 		var rateVal = copySampleNode("RateValSample", towerInstance.attackCooldown)
