@@ -14,11 +14,7 @@ func _ready():
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
-		$"/root/ScreenUISingleton"._resetUi()
-		var buyMenuUi = $"/root/ScreenUISingleton".addBuyTowerMenuPanel()
-		buyMenuUi.connect("towerBuy", self, "_towerBuy")
-		selectSprite.visible = true
-
+		selfSelect()
 
 func _towerBuy(resourcePath):
 	var newTower = load(resourcePath).instance()
@@ -27,3 +23,9 @@ func _towerBuy(resourcePath):
 	$"/root/GameProcessState".getEnergy(newTower.buyCost)
 	newTower.selfSelect()
 	queue_free()
+
+func selfSelect():
+		$"/root/ScreenUISingleton"._resetUi()
+		var buyMenuUi = $"/root/ScreenUISingleton".addBuyTowerMenuPanel()
+		buyMenuUi.connect("towerBuy", self, "_towerBuy")
+		selectSprite.visible = true

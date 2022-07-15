@@ -15,9 +15,9 @@ var level3NamePrefix = "SGM "
 
 var fullUnitName = ""
 
-export(int) var buyCost = 25
-export(int) var level2Cost = 10
-export(int) var level3Cost = 15
+export(int) var buyCost = 0
+export(int) var level2Cost = 0
+export(int) var level3Cost = 0
 
 onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
@@ -118,7 +118,7 @@ func _towerWasRemoved():
 	spawnPoint.global_position = self.global_position
 	spawnPointsNode.add_child(spawnPoint)
 	queue_free()
-	$"/root/ScreenUISingleton"._resetUi()
+	spawnPoint.selfSelect()
 
 
 func levelUpParams():
