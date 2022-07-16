@@ -66,6 +66,7 @@ level3Cost = 50
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
@@ -76,8 +77,7 @@ frame = 1
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
-animation = "fire"
-frame = 1
+animation = "idle"
 
 [node name="AttackTimer" parent="." index="3"]
 wait_time = 0.5
