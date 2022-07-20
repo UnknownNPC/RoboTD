@@ -1,4 +1,4 @@
-extends "res://scripts/BaseTower.gd"
+extends "res://scripts/AttackTower.gd"
 
 # enables export var inheritence
 class_name SniperTower

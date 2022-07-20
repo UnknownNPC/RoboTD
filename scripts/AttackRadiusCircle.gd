@@ -1,15 +1,15 @@
 extends Node2D
 
-export(float) var attackRadius
+export(float) var effectRadius
 
 
-func init(attackRadiusVal):
+func init(effectRadiusVal):
 	hide()
-	attackRadius = attackRadiusVal
+	effectRadius = effectRadiusVal
 
 
 func _draw():
-	draw_circle_donut_poly(Vector2.ZERO, attackRadius, attackRadius + 2, 0, 360, Color.darkcyan)
+	draw_circle_donut_poly(Vector2.ZERO, effectRadius, effectRadius + 2, 0, 360, Color.darkcyan)
 
 
 func draw_circle_donut_poly(center, inner_radius, outer_radius, angle_from, angle_to, color):

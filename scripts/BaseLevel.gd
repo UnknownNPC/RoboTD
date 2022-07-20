@@ -24,9 +24,11 @@ func _ready():
 	)
 	spawnEnemies(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesCount(GAME_STATE.currentWaveCounter))
 
+
 ### should be overriden
 func levelNum():
 	return "-999999"
+
 
 func _process(delta):
 	if gameover:

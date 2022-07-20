@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://scenes/towers/BaseTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/towers/AttackTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/towers/sniper/lv1/idle1.png" type="Texture" id=2]
 [ext_resource path="res://tiles/towers/sniper/lv1/idle2.png" type="Texture" id=3]
 [ext_resource path="res://tiles/towers/sniper/lv1/fire1.png" type="Texture" id=4]
@@ -57,12 +57,11 @@ animations = [ {
 [node name="SniperTower" instance=ExtResource( 1 )]
 script = ExtResource( 14 )
 unitName = "Sniper"
-damageValue = 25
-attackRadius = 100
-attackCooldown = 2.5
 buyCost = 20
 level2Cost = 70
 level3Cost = 100
+damageValue = 25
+attackCooldown = 2.5
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )

@@ -1,4 +1,4 @@
-extends "res://scripts/BaseTower.gd"
+extends "res://scripts/AttackTower.gd"
 
 var rocketSceneUrl = "res://scenes/ammo/Rocket.tscn"
 

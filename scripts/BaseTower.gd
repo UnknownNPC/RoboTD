@@ -1,13 +1,7 @@
-### Should be AFTER WAVE_SPAWNER
 extends Node2D
 
 var spawnPointScene = "res://scenes/SpawnPoint.tscn"
 onready var spawnPointsNode = get_tree().get_root().find_node("TowerSpawnPoints", true, false)
-
-export(String) var unitName
-export(int) var damageValue = 100
-export(int) var attackRadius = 120
-export(float) var attackCooldown = 1.0
 
 var level1NamePrefix = "RT "
 var level2NamePrefix = "SGT "
@@ -15,79 +9,29 @@ var level3NamePrefix = "SGM "
 
 var fullUnitName = ""
 
+export(String) var unitName
 export(int) var buyCost = 0
 export(int) var level2Cost = 0
 export(int) var level3Cost = 0
 
 onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
-
-onready var attackRadiusShape = $AttackRadiusCircle
-
+onready var radiusShape = $RadiusCircle
 onready var animationLv1 = $AnimationLv1
 onready var animationLv2 = $AnimationLv2
 onready var animationLv3 = $AnimationLv3
-
-onready var attackTimer = $AttackTimer
 
 var currentAnimation
 var currentLevel = 1
 var maxLevel = 3
 
-var attackTarget = null
-var canMakeShoot = true
+export(int) var effectRadius = 120
 
 
 func _ready():
-	attackTimer.wait_time = attackCooldown
-
+	radiusShape.init(effectRadius)
 	initCurrentAnimation()
-	currentAnimation.animation = "idle"
-
-	attackRadiusShape.init(attackRadius)
 	initFullUnitName()
-
-
-func _process(delta):
-	if attackTimer.wait_time != attackCooldown:
-		attackTimer.wait_time = attackCooldown
-
-	### Attack
-	if !is_instance_valid(attackTarget):
-		var allEnemies = get_tree().get_nodes_in_group("enemies")
-		for enemy in allEnemies:
-			var isEnemyInsideRadius = isEnemyInsideAttackRadius(enemy)
-			if !enemy.isDead && isEnemyInsideRadius:
-				attackTarget = enemy
-				break
-			else:
-				attackTarget = null
-	else:
-		var isEnemyStilInside = isEnemyInsideAttackRadius(attackTarget)
-		if !isEnemyStilInside || attackTarget.isDead:
-			attackTarget = null
-			return
-
-		var isEmemyOnTheLeft = global_position.x - attackTarget.global_position.x > 0
-		if isEmemyOnTheLeft:
-			currentAnimation.flip_h = true
-		else:
-			currentAnimation.flip_h = false
-
-		# Shoot action
-		if canMakeShoot:
-			currentAnimation.animation = "fire"
-			currentAnimation.frame = 0
-			howToDamage()
-			attackTimer.start()
-			canMakeShoot = false
-
-	if !is_instance_valid(attackTarget):
-		currentAnimation.animation = "idle"
-
-
-func howToDamage():
-	attackTarget.add_damage(damageValue)
 
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
@@ -99,7 +43,16 @@ func selfSelect():
 	$"/root/ScreenUISingleton"._resetUi()
 	selectSprite.show()
 	$"/root/ScreenUISingleton".addInfoPanel(self)
-	attackRadiusShape.show()
+	radiusShape.show()
+
+
+## EXTERNAL SIGNALS!!!
+func _towerWasRemoved():
+	var spawnPoint = load(spawnPointScene).instance()
+	spawnPoint.global_position = self.global_position
+	spawnPointsNode.add_child(spawnPoint)
+	queue_free()
+	spawnPoint.selfSelect()
 
 
 func _towerLevelWasIncreased():
@@ -109,27 +62,25 @@ func _towerLevelWasIncreased():
 	initCurrentAnimation()
 	levelUpParams()
 	$"/root/ScreenUISingleton".addInfoPanel(self)
-	attackRadiusShape.init(attackRadius)
-	attackRadiusShape.show()
+	radiusShape.init(effectRadius)
+	radiusShape.show()
 
 
-func _towerWasRemoved():
-	var spawnPoint = load(spawnPointScene).instance()
-	spawnPoint.global_position = self.global_position
-	spawnPointsNode.add_child(spawnPoint)
-	queue_free()
-	spawnPoint.selfSelect()
+## EXTERNAL SIGNALS END!!!
 
 
 func levelUpParams():
-	damageValue += 5
-	attackRadius += 10
-	attackCooldown -= 0.1
+	print("OVERRIDE ME")
+
+
+func getNextLvlCost():
+	return self.level2Cost if self.currentLevel == 1 else self.level3Cost
 
 
 func initCurrentAnimation():
 	if currentLevel == 1:
 		currentAnimation = animationLv1
+		currentAnimation.animation = "idle"
 	elif currentLevel == 2:
 		animationLv1.hide()
 		animationLv2.show()
@@ -142,10 +93,6 @@ func initCurrentAnimation():
 		currentAnimation.flip_h = animationLv2.flip_h
 
 
-func getNextLvlCost():
-	return self.level2Cost if self.currentLevel == 1 else self.level3Cost
-
-
 func initFullUnitName():
 	if currentLevel == 1:
 		fullUnitName = level1NamePrefix + unitName
@@ -153,17 +100,3 @@ func initFullUnitName():
 		fullUnitName = level2NamePrefix + unitName
 	else:
 		fullUnitName = level3NamePrefix + unitName
-
-
-func _on_AttackTimer_timeout():
-	canMakeShoot = true
-
-
-func isEnemyInsideAttackRadius(enemy):
-	return (
-		(
-			pow(enemy.global_position.x - global_position.x, 2)
-			+ pow(enemy.global_position.y - global_position.y, 2)
-		)
-		<= pow(attackRadius, 2)
-	)

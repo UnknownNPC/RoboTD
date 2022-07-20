@@ -4,6 +4,7 @@ onready var rocket = $"."
 
 signal enemyInTheExplosionArea(enemy)
 
+
 func ammoAction():
 	only_once = false
 	isFlying = false

@@ -32,7 +32,7 @@ func init(targetTower):
 	var dmgV = "-" if tower.damageValue == 0 else tower.damageValue
 	damageValue.text = str(dmgV)
 	aRateValue.text = str(tower.attackCooldown)
-	radiusValue.text = str(tower.attackRadius)
+	radiusValue.text = str(tower.effectRadius)
 
 	animation.frames = tower.currentAnimation.frames.duplicate()
 	animation.animation = tower.currentAnimation.animation

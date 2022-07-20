@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://scenes/towers/BaseTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/towers/AttackTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/HeavyTower.gd" type="Script" id=2]
 [ext_resource path="res://tiles/towers/heavy/lv1/idle1.png" type="Texture" id=3]
 [ext_resource path="res://tiles/towers/heavy/lv1/idle2.png" type="Texture" id=4]
@@ -57,24 +57,24 @@ animations = [ {
 [node name="HeavyTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Heavy"
-damageValue = 20
-attackRadius = 80
-attackCooldown = 1.5
 buyCost = 45
 level2Cost = 80
 level3Cost = 150
+damageValue = 20
+attackCooldown = 1.5
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1

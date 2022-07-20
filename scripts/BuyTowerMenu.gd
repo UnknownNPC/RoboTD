@@ -24,8 +24,8 @@ func _ready():
 		var rateVal = copySampleNode("RateValSample", towerInstance.attackCooldown)
 		grid.add_child(rateVal)
 
-		var rangeVal = copySampleNode("RangeValSample", towerInstance.attackRadius)
-		grid.add_child(rangeVal)
+		var effectVal = copySampleNode("RangeValSample", towerInstance.effectRadius)
+		grid.add_child(effectVal)
 
 		var buyBtn = copySampleNode("BuyBtnSample", towerInstance.buyCost)
 		grid.add_child(buyBtn)

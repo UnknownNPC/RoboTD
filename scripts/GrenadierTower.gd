@@ -1,4 +1,4 @@
-extends "res://scripts/BaseTower.gd"
+extends "res://scripts/AttackTower.gd"
 
 var grenadeSceneUrl = "res://scenes/ammo/Grenade.tscn"
 class_name GrenadierTower
