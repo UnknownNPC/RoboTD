@@ -35,9 +35,9 @@ func init(targetTower):
 	nameValue.text = tower.fullUnitName
 
 	if targetTower.is_in_group("attackTowers"):
-		var dmgV = "-" if tower.damageValue == 0 else tower.damageValue
+		var dmgV = "-" if tower.damageValue == 0 else tower.calcDamage()
 		damageValue.text = str(dmgV)
-		aRateValue.text = str(tower.attackCooldown)
+		aRateValue.text = str(tower.calcCooldown())
 	elif targetTower.is_in_group("bufferTowers"):
 		damageValue.text = getPercentFromFloat(tower.damageBufferPercentValue)
 		aRateValue.text = getPercentFromFloat(tower.attackBufferPercentCooldown)

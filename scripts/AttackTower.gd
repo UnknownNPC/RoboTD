@@ -9,6 +9,8 @@ onready var attackTimer = $AttackTimer
 var attackTarget = null
 var canMakeShoot = true
 
+var buffersAround = {}
+
 
 func _ready():
 	attackTimer.wait_time = attackCooldown
@@ -22,14 +24,14 @@ func _process(delta):
 	if !is_instance_valid(attackTarget):
 		var allEnemies = get_tree().get_nodes_in_group("enemies")
 		for enemy in allEnemies:
-			var isEnemyInsideRadius = isEnemyInsideAttackRadius(enemy)
+			var isEnemyInsideRadius = isSmthInsideRadius(self, enemy, effectRadius)
 			if !enemy.isDead && isEnemyInsideRadius:
 				attackTarget = enemy
 				break
 			else:
 				attackTarget = null
 	else:
-		var isEnemyStilInside = isEnemyInsideAttackRadius(attackTarget)
+		var isEnemyStilInside = isSmthInsideRadius(self, attackTarget, effectRadius)
 		if !isEnemyStilInside || attackTarget.isDead:
 			attackTarget = null
 			return
@@ -51,9 +53,42 @@ func _process(delta):
 	if !is_instance_valid(attackTarget):
 		currentAnimation.animation = "idle"
 
+	### check if we have a buffer around
+	var allBuffersAround = get_tree().get_nodes_in_group("bufferTowers")
+	for bufferOnMap in allBuffersAround:
+		# check if im inside buffer radius
+		var bufferHash = hash(bufferOnMap)
+		if (
+			isSmthInsideRadius(bufferOnMap, self, bufferOnMap.effectRadius)
+			and !buffersAround.has(bufferHash)
+		):
+			buffersAround[bufferHash] = bufferOnMap
+
+	## remove dead buffers
+	for bufferAroundMeHash in buffersAround:
+		var bufferArround = buffersAround[bufferAroundMeHash]
+		if !is_instance_valid(bufferArround):
+			buffersAround.erase(bufferAroundMeHash)
+
 
 func howToDamage():
 	attackTarget.add_damage(damageValue)
+
+
+func calcDamage():
+	var newDamage = damageValue
+	for bufferAroundMeHash in buffersAround:
+		var bufferArround = buffersAround[bufferAroundMeHash]
+		newDamage += newDamage * bufferArround.damageBufferPercentValue
+	return newDamage
+
+
+func calcCooldown():
+	var newAttackCooldown = attackCooldown
+	for bufferAroundMeHash in buffersAround:
+		var bufferArround = buffersAround[bufferAroundMeHash]
+		newAttackCooldown -= newAttackCooldown * bufferArround.attackBufferPercentCooldown
+	return newAttackCooldown
 
 
 func levelUpParams():
@@ -66,11 +101,11 @@ func _on_AttackTimer_timeout():
 	canMakeShoot = true
 
 
-func isEnemyInsideAttackRadius(enemy):
+func isSmthInsideRadius(obj, targetObj, radius):
 	return (
 		(
-			pow(enemy.global_position.x - global_position.x, 2)
-			+ pow(enemy.global_position.y - global_position.y, 2)
+			pow(targetObj.global_position.x - obj.global_position.x, 2)
+			+ pow(targetObj.global_position.y - obj.global_position.y, 2)
 		)
-		<= pow(effectRadius, 2)
+		<= pow(radius, 2)
 	)

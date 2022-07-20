@@ -27,4 +27,4 @@ func howToDamage():
 
 
 func _enemyInTheExplosionArea(enemy):
-	enemy.add_damage(damageValue)
+	enemy.add_damage(calcDamage())
