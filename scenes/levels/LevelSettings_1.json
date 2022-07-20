@@ -1,0 +1,44 @@
+{
+   "healthOnStart":5,
+   "energyOnStart":50,
+   "enemiesWave":[
+	  {
+		 "count":1,
+		 "reward": 30,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":5,
+		 "reward": 20,
+		 "scenes": [
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":8,
+		 "reward": 25,
+		 "scenes": [
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn",
+		 	"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":3,
+		 "reward": 30,
+		 "scenes": [
+		 	"res://scenes/enemies/ArahnaEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":1,
+		 "reward": 0,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderBoss.tscn"
+		  ]
+	  }
+   ]
+}

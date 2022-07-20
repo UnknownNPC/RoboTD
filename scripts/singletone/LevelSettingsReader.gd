@@ -5,7 +5,7 @@ var currentLevelJson
 
 func init(levelNum):
 	var file = File.new()
-	var jsonFilePath = "res://scenes/levels/LevelSettings_" + str(levelNum) + "_json.tres"
+	var jsonFilePath = "res://scenes/levels/LevelSettings_" + str(levelNum) + ".json"
 	file.open(jsonFilePath, file.READ)
 	var text_json = file.get_as_text()
 	var json = JSON.parse(text_json).result

@@ -2,4 +2,4 @@ extends "res://scripts/BaseLevel.gd"
 
 
 func levelNum():
-	return "1"
+	return "2"

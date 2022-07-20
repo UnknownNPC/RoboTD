@@ -88,12 +88,14 @@ func calcCooldown():
 	var newAttackCooldown = attackCooldown
 	for bufferAroundMeHash in buffersAround:
 		var bufferArround = buffersAround[bufferAroundMeHash]
-		newAttackCooldown -= newAttackCooldown * bufferArround.attackBufferPercentCooldown
+		if is_instance_valid(bufferArround):
+			newAttackCooldown -= newAttackCooldown * bufferArround.attackBufferPercentCooldown
 	return newAttackCooldown
 
 
 func levelUpParams():
-	damageValue += 5
+	if damageValue > 0:
+		damageValue += 5
 	effectRadius += 10
 	attackCooldown -= 0.1
 
