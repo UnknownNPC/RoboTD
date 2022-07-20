@@ -17,6 +17,10 @@ signal towerLevelBump
 signal towerKill
 
 
+func getPercentFromFloat(val: float):
+	return "+" + str(val * 100) + "%"
+
+
 func _process(delta):
 	if is_instance_valid(tower):
 		var targetAnimation = tower.currentAnimation.animation
@@ -29,9 +33,15 @@ func _process(delta):
 func init(targetTower):
 	tower = targetTower
 	nameValue.text = tower.fullUnitName
-	var dmgV = "-" if tower.damageValue == 0 else tower.damageValue
-	damageValue.text = str(dmgV)
-	aRateValue.text = str(tower.attackCooldown)
+
+	if targetTower.is_in_group("attackTowers"):
+		var dmgV = "-" if tower.damageValue == 0 else tower.damageValue
+		damageValue.text = str(dmgV)
+		aRateValue.text = str(tower.attackCooldown)
+	elif targetTower.is_in_group("bufferTowers"):
+		damageValue.text = getPercentFromFloat(tower.damageBufferPercentValue)
+		aRateValue.text = getPercentFromFloat(tower.attackBufferPercentCooldown)
+
 	radiusValue.text = str(tower.effectRadius)
 
 	animation.frames = tower.currentAnimation.frames.duplicate()

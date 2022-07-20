@@ -10,6 +10,10 @@ onready var buyButtons = []
 signal towerBuy(resourcePath)
 
 
+func getPercentFromFloat(val: float):
+	return "+" + str(val * 100) + "%"
+
+
 func _ready():
 	for tower in towers:
 		var towerInstance = tower.instance()
@@ -17,12 +21,19 @@ func _ready():
 		var nameVal = copySampleNode("NameValSample", towerInstance.unitName)
 		grid.add_child(nameVal)
 
-		var dmgV = "-" if towerInstance.damageValue == 0 else towerInstance.damageValue
-		var dmgVal = copySampleNode("DmgValSample", dmgV)
-		grid.add_child(dmgVal)
-
-		var rateVal = copySampleNode("RateValSample", towerInstance.attackCooldown)
-		grid.add_child(rateVal)
+		if towerInstance.is_in_group("attackTowers"):
+			var dmgV = "-" if towerInstance.damageValue == 0 else towerInstance.damageValue
+			var dmgVal = copySampleNode("DmgValSample", dmgV)
+			grid.add_child(dmgVal)
+			var rateVal = copySampleNode("RateValSample", towerInstance.attackCooldown)
+			grid.add_child(rateVal)
+		elif towerInstance.is_in_group("bufferTowers"):
+			var dmgPercntBuff = getPercentFromFloat(towerInstance.damageBufferPercentValue)
+			var dmgVal = copySampleNode("DmgValSample", dmgPercntBuff)
+			grid.add_child(dmgVal)
+			var cooldownPercntBuff = getPercentFromFloat(towerInstance.attackBufferPercentCooldown)
+			var rateVal = copySampleNode("RateValSample", cooldownPercntBuff)
+			grid.add_child(rateVal)
 
 		var effectVal = copySampleNode("RangeValSample", towerInstance.effectRadius)
 		grid.add_child(effectVal)
