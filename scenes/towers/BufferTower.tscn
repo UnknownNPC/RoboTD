@@ -5,3 +5,6 @@
 
 [node name="BufferTower" groups=["bufferTowers"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+effectRadius = 50
+damageBufferPercentValue = 0.05
+attackBufferPercentCooldown = 0.05

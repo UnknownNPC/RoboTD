@@ -36,10 +36,9 @@ animations = [ {
 [node name="LeaderTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Captain"
-buyCost = 10
-level2Cost = 20
-level3Cost = 30
-effectRadius = 50
+buyCost = 50
+level2Cost = 100
+level3Cost = 150
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
