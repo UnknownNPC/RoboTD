@@ -13,6 +13,9 @@ export(String) var unitName
 export(int) var buyCost = 0
 export(int) var level2Cost = 0
 export(int) var level3Cost = 0
+# for demo menu settings
+export(bool) var demoMode = false
+export(int) var demoAnimationLevel = 1
 
 onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
@@ -32,6 +35,9 @@ func _ready():
 	radiusShape.init(effectRadius)
 	initCurrentAnimation()
 	initFullUnitName()
+	if demoMode:
+		selectSprite.queue_free()
+		selectShapeCollision.queue_free()
 
 
 func _on_SelectSprite_input_event(viewport, event, shape_idx):
@@ -78,19 +84,23 @@ func getNextLvlCost():
 
 
 func initCurrentAnimation():
-	if currentLevel == 1:
+	if (currentLevel == 1 and !demoMode) or (demoAnimationLevel == 1 and demoMode):
 		currentAnimation = animationLv1
-		currentAnimation.animation = "idle"
-	elif currentLevel == 2:
+	elif (currentLevel == 2 and !demoMode) or (demoAnimationLevel == 2 and demoMode):
 		animationLv1.hide()
 		animationLv2.show()
 		currentAnimation = animationLv2
 		currentAnimation.flip_h = animationLv1.flip_h
 	else:
+		animationLv1.hide()
 		animationLv2.hide()
 		animationLv3.show()
 		currentAnimation = animationLv3
 		currentAnimation.flip_h = animationLv2.flip_h
+
+	currentAnimation.animation = "idle"
+	if demoMode:
+		currentAnimation.frames.set_animation_loop(currentAnimation.animation, true)
 
 
 func initFullUnitName():

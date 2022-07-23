@@ -34,9 +34,10 @@ func _process(delta):
 
 
 func update_healthbar(value):
-	show()
-	healthbar.value -= value
-	if healthbar.value < healthbar.max_value * 0.7:
-		healthbar.texture_progress = currentBarYellow
-	if healthbar.value < healthbar.max_value * 0.35:
-		healthbar.texture_progress = currentBarRed
+	if value > 0:
+		show()
+		healthbar.value -= value
+		if healthbar.value < healthbar.max_value * 0.7:
+			healthbar.texture_progress = currentBarYellow
+		if healthbar.value < healthbar.max_value * 0.35:
+			healthbar.texture_progress = currentBarRed

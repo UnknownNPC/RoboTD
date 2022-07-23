@@ -21,7 +21,6 @@ func _process(delta):
 	if attackTimer.wait_time != cooldownWithBuffers:
 		attackTimer.wait_time = cooldownWithBuffers
 
-	### Attack
 	if !is_instance_valid(attackTarget):
 		var allEnemies = get_tree().get_nodes_in_group("enemies")
 		for enemy in allEnemies:
@@ -31,12 +30,12 @@ func _process(delta):
 				break
 			else:
 				attackTarget = null
+
 	else:
 		var isEnemyStilInside = isSmthInsideRadius(self, attackTarget, effectRadius)
 		if !isEnemyStilInside || attackTarget.isDead:
 			attackTarget = null
 			return
-
 		var isEmemyOnTheLeft = global_position.x - attackTarget.global_position.x > 0
 		if isEmemyOnTheLeft:
 			currentAnimation.flip_h = true
@@ -54,7 +53,6 @@ func _process(delta):
 	if !is_instance_valid(attackTarget):
 		currentAnimation.animation = "idle"
 
-	### check if we have a buffer around
 	var allBuffersAround = get_tree().get_nodes_in_group("bufferTowers")
 	for bufferOnMap in allBuffersAround:
 		# check if im inside buffer radius
@@ -73,10 +71,13 @@ func _process(delta):
 
 
 func howToDamage():
-	attackTarget.add_damage(damageValue)
+	attackTarget.add_damage(calcDamage())
 
 
 func calcDamage():
+	if demoMode:
+		return 0
+
 	var newDamage = damageValue
 	for bufferAroundMeHash in buffersAround:
 		var bufferArround = buffersAround[bufferAroundMeHash]

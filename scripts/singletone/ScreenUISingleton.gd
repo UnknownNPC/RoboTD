@@ -45,7 +45,8 @@ func _resetUi():
 func _cleanupMouseSelection():
 	var allSelectable = get_tree().get_nodes_in_group("selectable")
 	for selectable in allSelectable:
-		selectable.selectSprite.visible = false
+		if is_instance_valid(selectable.selectSprite):
+			selectable.selectSprite.visible = false
 		if "radiusShape" in selectable:
 			selectable.radiusShape.hide()
 

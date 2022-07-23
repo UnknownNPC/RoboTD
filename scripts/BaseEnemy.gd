@@ -4,6 +4,7 @@ export(String) var unitName
 export(int) var maxHealth = 100
 export(int) var speed = 100
 export(int) var energyReward = 10
+export(bool) var demoMode = false
 var currentHealth
 var slownessModifier = 1
 
@@ -25,6 +26,9 @@ onready var explosionAnimation = $ExplosionAnimation
 func _ready():
 	currentHealth = maxHealth
 	animation.animation = "walk"
+	if demoMode:
+		selectSprite.queue_free()
+		selectShapeCollision.queue_free()
 
 
 func add_damage(damage):
