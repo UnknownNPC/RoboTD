@@ -1684,7 +1684,7 @@ format = 1
 [node name="RuntimeSpawnBox" type="Node" parent="."]
 
 [node name="ObstaclesTileMap" type="TileMap" parent="."]
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 centered_textures = true

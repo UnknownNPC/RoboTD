@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "ArahnaBoss",
+"language": "GDScript",
+"path": "res://scripts/ArahnaBoss.gd"
+}, {
+"base": "Node2D",
 "class": "ArahnaEnemy",
 "language": "GDScript",
 "path": "res://scripts/ArahnaEnemy.gd"
@@ -60,6 +65,7 @@ _global_script_classes=[ {
 "path": "res://scripts/SpiderEnemy.gd"
 } ]
 _global_script_class_icons={
+"ArahnaBoss": "",
 "ArahnaEnemy": "",
 "AssaultTower": "",
 "CiclopeEnemy": "",
@@ -108,4 +114,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.160784, 0.101961, 0.443137, 1 )
 environment/default_environment="res://default_env.tres"

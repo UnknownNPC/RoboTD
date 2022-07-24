@@ -3,7 +3,7 @@ extends Node2D
 onready var animation = $Animation
 
 var fromPoint = Vector2.ZERO
-var targetPoint = Vector2(100, 100)
+var targetPoint = Vector2.ZERO
 var direction = 1
 
 var isFlying = true

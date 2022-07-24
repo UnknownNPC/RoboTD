@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://tiles/obstacles/obstacles-and-objects.png" type="Texture" id=1]
 [ext_resource path="res://tiles/terrain/tileset_arranged.png" type="Texture" id=2]
@@ -10,6 +10,17 @@
 [ext_resource path="res://scenes/enemies/EggEnemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/towers/LeaderTower.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/towers/HeavyTower.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/enemies/ScarabEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/towers/SniperTower.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/towers/GrenadierTower.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/enemies/ArahnaBoss.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=15]
+[ext_resource path="res://scenes/UI/BorderUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://tiles/font/game_font_menu_logo.tres" type="DynamicFont" id=17]
+[ext_resource path="res://scenes/UI/UI_theme.tres" type="Theme" id=18]
+[ext_resource path="res://tiles/UI/icon2.png" type="Texture" id=19]
+[ext_resource path="res://tiles/font/game_font_menu_buttons.tres" type="DynamicFont" id=20]
+[ext_resource path="res://tiles/font/game_font_small.tres" type="DynamicFont" id=21]
 
 [sub_resource type="TileSet" id=1]
 1/name = "road_turn_4"
@@ -1048,6 +1059,272 @@
 81/shape_one_way_margin = 0.0
 81/shapes = [  ]
 81/z_index = 0
+82/name = "tileset_arranged.png 82"
+82/texture = ExtResource( 2 )
+82/tex_offset = Vector2( 0, 0 )
+82/modulate = Color( 1, 1, 1, 1 )
+82/region = Rect2( 32, 0, 16, 16 )
+82/tile_mode = 0
+82/occluder_offset = Vector2( 0, 0 )
+82/navigation_offset = Vector2( 0, 0 )
+82/shape_offset = Vector2( 0, 0 )
+82/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+82/shape_one_way = false
+82/shape_one_way_margin = 0.0
+82/shapes = [  ]
+82/z_index = 0
+83/name = "tileset_arranged.png 83"
+83/texture = ExtResource( 2 )
+83/tex_offset = Vector2( 0, 0 )
+83/modulate = Color( 1, 1, 1, 1 )
+83/region = Rect2( 32, 16, 16, 16 )
+83/tile_mode = 0
+83/occluder_offset = Vector2( 0, 0 )
+83/navigation_offset = Vector2( 0, 0 )
+83/shape_offset = Vector2( 0, 0 )
+83/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+83/shape_one_way = false
+83/shape_one_way_margin = 0.0
+83/shapes = [  ]
+83/z_index = 0
+84/name = "tileset_arranged.png 84"
+84/texture = ExtResource( 2 )
+84/tex_offset = Vector2( 0, 0 )
+84/modulate = Color( 1, 1, 1, 1 )
+84/region = Rect2( 32, 32, 16, 16 )
+84/tile_mode = 0
+84/occluder_offset = Vector2( 0, 0 )
+84/navigation_offset = Vector2( 0, 0 )
+84/shape_offset = Vector2( 0, 0 )
+84/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+84/shape_one_way = false
+84/shape_one_way_margin = 0.0
+84/shapes = [  ]
+84/z_index = 0
+85/name = "tileset_arranged.png 85"
+85/texture = ExtResource( 2 )
+85/tex_offset = Vector2( 0, 0 )
+85/modulate = Color( 1, 1, 1, 1 )
+85/region = Rect2( 48, 32, 16, 16 )
+85/tile_mode = 0
+85/occluder_offset = Vector2( 0, 0 )
+85/navigation_offset = Vector2( 0, 0 )
+85/shape_offset = Vector2( 0, 0 )
+85/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+85/shape_one_way = false
+85/shape_one_way_margin = 0.0
+85/shapes = [  ]
+85/z_index = 0
+86/name = "tileset_arranged.png 86"
+86/texture = ExtResource( 2 )
+86/tex_offset = Vector2( 0, 0 )
+86/modulate = Color( 1, 1, 1, 1 )
+86/region = Rect2( 48, 16, 16, 16 )
+86/tile_mode = 0
+86/occluder_offset = Vector2( 0, 0 )
+86/navigation_offset = Vector2( 0, 0 )
+86/shape_offset = Vector2( 0, 0 )
+86/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+86/shape_one_way = false
+86/shape_one_way_margin = 0.0
+86/shapes = [  ]
+86/z_index = 0
+87/name = "tileset_arranged.png 87"
+87/texture = ExtResource( 2 )
+87/tex_offset = Vector2( 0, 0 )
+87/modulate = Color( 1, 1, 1, 1 )
+87/region = Rect2( 48, 0, 16, 16 )
+87/tile_mode = 0
+87/occluder_offset = Vector2( 0, 0 )
+87/navigation_offset = Vector2( 0, 0 )
+87/shape_offset = Vector2( 0, 0 )
+87/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+87/shape_one_way = false
+87/shape_one_way_margin = 0.0
+87/shapes = [  ]
+87/z_index = 0
+88/name = "tileset_arranged.png 88"
+88/texture = ExtResource( 2 )
+88/tex_offset = Vector2( 0, 0 )
+88/modulate = Color( 1, 1, 1, 1 )
+88/region = Rect2( 64, 0, 16, 16 )
+88/tile_mode = 0
+88/occluder_offset = Vector2( 0, 0 )
+88/navigation_offset = Vector2( 0, 0 )
+88/shape_offset = Vector2( 0, 0 )
+88/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+88/shape_one_way = false
+88/shape_one_way_margin = 0.0
+88/shapes = [  ]
+88/z_index = 0
+89/name = "tileset_arranged.png 89"
+89/texture = ExtResource( 2 )
+89/tex_offset = Vector2( 0, 0 )
+89/modulate = Color( 1, 1, 1, 1 )
+89/region = Rect2( 64, 16, 16, 16 )
+89/tile_mode = 0
+89/occluder_offset = Vector2( 0, 0 )
+89/navigation_offset = Vector2( 0, 0 )
+89/shape_offset = Vector2( 0, 0 )
+89/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+89/shape_one_way = false
+89/shape_one_way_margin = 0.0
+89/shapes = [  ]
+89/z_index = 0
+90/name = "tileset_arranged.png 90"
+90/texture = ExtResource( 2 )
+90/tex_offset = Vector2( 0, 0 )
+90/modulate = Color( 1, 1, 1, 1 )
+90/region = Rect2( 80, 16, 16, 16 )
+90/tile_mode = 0
+90/occluder_offset = Vector2( 0, 0 )
+90/navigation_offset = Vector2( 0, 0 )
+90/shape_offset = Vector2( 0, 0 )
+90/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+90/shape_one_way = false
+90/shape_one_way_margin = 0.0
+90/shapes = [  ]
+90/z_index = 0
+91/name = "tileset_arranged.png 91"
+91/texture = ExtResource( 2 )
+91/tex_offset = Vector2( 0, 0 )
+91/modulate = Color( 1, 1, 1, 1 )
+91/region = Rect2( 80, 0, 16, 16 )
+91/tile_mode = 0
+91/occluder_offset = Vector2( 0, 0 )
+91/navigation_offset = Vector2( 0, 0 )
+91/shape_offset = Vector2( 0, 0 )
+91/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+91/shape_one_way = false
+91/shape_one_way_margin = 0.0
+91/shapes = [  ]
+91/z_index = 0
+92/name = "tileset_arranged.png 92"
+92/texture = ExtResource( 2 )
+92/tex_offset = Vector2( 0, 0 )
+92/modulate = Color( 1, 1, 1, 1 )
+92/region = Rect2( 96, 0, 16, 16 )
+92/tile_mode = 0
+92/occluder_offset = Vector2( 0, 0 )
+92/navigation_offset = Vector2( 0, 0 )
+92/shape_offset = Vector2( 0, 0 )
+92/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+92/shape_one_way = false
+92/shape_one_way_margin = 0.0
+92/shapes = [  ]
+92/z_index = 0
+93/name = "tileset_arranged.png 93"
+93/texture = ExtResource( 2 )
+93/tex_offset = Vector2( 0, 0 )
+93/modulate = Color( 1, 1, 1, 1 )
+93/region = Rect2( 112, 0, 16, 16 )
+93/tile_mode = 0
+93/occluder_offset = Vector2( 0, 0 )
+93/navigation_offset = Vector2( 0, 0 )
+93/shape_offset = Vector2( 0, 0 )
+93/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+93/shape_one_way = false
+93/shape_one_way_margin = 0.0
+93/shapes = [  ]
+93/z_index = 0
+94/name = "tileset_arranged.png 94"
+94/texture = ExtResource( 2 )
+94/tex_offset = Vector2( 0, 0 )
+94/modulate = Color( 1, 1, 1, 1 )
+94/region = Rect2( 112, 16, 16, 16 )
+94/tile_mode = 0
+94/occluder_offset = Vector2( 0, 0 )
+94/navigation_offset = Vector2( 0, 0 )
+94/shape_offset = Vector2( 0, 0 )
+94/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+94/shape_one_way = false
+94/shape_one_way_margin = 0.0
+94/shapes = [  ]
+94/z_index = 0
+95/name = "tileset_arranged.png 95"
+95/texture = ExtResource( 2 )
+95/tex_offset = Vector2( 0, 0 )
+95/modulate = Color( 1, 1, 1, 1 )
+95/region = Rect2( 96, 16, 16, 16 )
+95/tile_mode = 0
+95/occluder_offset = Vector2( 0, 0 )
+95/navigation_offset = Vector2( 0, 0 )
+95/shape_offset = Vector2( 0, 0 )
+95/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+95/shape_one_way = false
+95/shape_one_way_margin = 0.0
+95/shapes = [  ]
+95/z_index = 0
+96/name = "tileset_arranged.png 96"
+96/texture = ExtResource( 2 )
+96/tex_offset = Vector2( 0, 0 )
+96/modulate = Color( 1, 1, 1, 1 )
+96/region = Rect2( 96, 32, 16, 16 )
+96/tile_mode = 0
+96/occluder_offset = Vector2( 0, 0 )
+96/navigation_offset = Vector2( 0, 0 )
+96/shape_offset = Vector2( 0, 0 )
+96/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+96/shape_one_way = false
+96/shape_one_way_margin = 0.0
+96/shapes = [  ]
+96/z_index = 0
+97/name = "tileset_arranged.png 97"
+97/texture = ExtResource( 2 )
+97/tex_offset = Vector2( 0, 0 )
+97/modulate = Color( 1, 1, 1, 1 )
+97/region = Rect2( 80, 32, 16, 16 )
+97/tile_mode = 0
+97/occluder_offset = Vector2( 0, 0 )
+97/navigation_offset = Vector2( 0, 0 )
+97/shape_offset = Vector2( 0, 0 )
+97/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+97/shape_one_way = false
+97/shape_one_way_margin = 0.0
+97/shapes = [  ]
+97/z_index = 0
+98/name = "tileset_arranged.png 98"
+98/texture = ExtResource( 2 )
+98/tex_offset = Vector2( 0, 0 )
+98/modulate = Color( 1, 1, 1, 1 )
+98/region = Rect2( 64, 32, 16, 16 )
+98/tile_mode = 0
+98/occluder_offset = Vector2( 0, 0 )
+98/navigation_offset = Vector2( 0, 0 )
+98/shape_offset = Vector2( 0, 0 )
+98/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+98/shape_one_way = false
+98/shape_one_way_margin = 0.0
+98/shapes = [  ]
+98/z_index = 0
+99/name = "tileset_arranged.png 99"
+99/texture = ExtResource( 2 )
+99/tex_offset = Vector2( 0, 0 )
+99/modulate = Color( 1, 1, 1, 1 )
+99/region = Rect2( 128, 64, 16, 16 )
+99/tile_mode = 0
+99/occluder_offset = Vector2( 0, 0 )
+99/navigation_offset = Vector2( 0, 0 )
+99/shape_offset = Vector2( 0, 0 )
+99/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+99/shape_one_way = false
+99/shape_one_way_margin = 0.0
+99/shapes = [  ]
+99/z_index = 0
+100/name = "tileset_arranged.png 100"
+100/texture = ExtResource( 2 )
+100/tex_offset = Vector2( 0, 0 )
+100/modulate = Color( 1, 1, 1, 1 )
+100/region = Rect2( 176, 64, 16, 16 )
+100/tile_mode = 0
+100/occluder_offset = Vector2( 0, 0 )
+100/navigation_offset = Vector2( 0, 0 )
+100/shape_offset = Vector2( 0, 0 )
+100/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+100/shape_one_way = false
+100/shape_one_way_margin = 0.0
+100/shapes = [  ]
+100/z_index = 0
 
 [sub_resource type="TileSet" id=2]
 0/name = "obstacles-and-objects.png 0"
@@ -1668,6 +1945,7 @@
 43/z_index = 0
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource( 15 )
 
 [node name="Background_1" type="Node2D" parent="."]
 
@@ -1680,14 +1958,14 @@ format = 1
 tile_data = PoolIntArray( 0, 39, 0, 1, 39, 0, 2, 39, 0, 3, 56, 0, 4, 22, 0, 6, 11, 0, 7, 20, 0, 8, 20, 0, 9, 11, 0, 65536, 39, 0, 65537, 15, 0, 65538, 39, 0, 65539, 56, 0, 65540, 22, 0, 65542, 11, 0, 65543, 20, 0, 65544, 11, 0, 65545, 20, 0, 131072, 39, 0, 131073, 39, 0, 131074, 39, 0, 131075, 56, 0, 131076, 22, 0, 131078, 37, 0, 131079, 36, 0, 131080, 11, 0, 131081, 20, 0, 196608, 30, 0, 196609, 39, 0, 196610, 41, 0, 196611, 34, 0, 196612, 22, 0, 196614, 76, 0, 196615, 39, 0, 196616, 40, 0, 196617, 11, 0, 262144, 39, 0, 262145, 41, 0, 262146, 31, 0, 262147, 11, 0, 262148, 22, 0, 262150, 76, 0, 262151, 39, 0, 262152, 39, 0, 262153, 35, 0, 327680, 40, 0, 327681, 41, 0, 327682, 31, 0, 327683, 18, 0, 327684, 22, 0, 327686, 76, 0, 327687, 40, 0, 327688, 39, 0, 327689, 39, 0, 393216, 40, 0, 393217, 40, 0, 393218, 39, 0, 393219, 11, 0, 393220, 22, 0, 393222, 18, 0, 393223, 30, 0, 393224, 15, 0, 393225, 39, 0, 458752, 39, 0, 458753, 41, 0, 458754, 31, 0, 458755, 18, 0, 458756, 22, 0, 458758, 11, 0, 458759, 40, 0, 458760, 40, 0, 458761, 39, 0, 524288, 39, 0, 524289, 14, 0, 524291, 29, 0, 524292, 22, 0, 524294, 18, 0, 524295, 39, 0, 524296, 39, 0, 524297, 39, 0, 589824, 30, 0, 589827, 56, 0, 589828, 22, 0, 589830, 27, 0, 589831, 40, 0, 589832, 39, 0, 589833, 39, 0, 655360, 39, 0, 655361, 39, 0, 655362, 41, 0, 655363, 75, 0, 655364, 22, 0, 655366, 18, 0, 655367, 39, 0, 655368, 39, 0, 655369, 39, 0, 720896, 39, 0, 720897, 39, 0, 720898, 54, 0, 720899, 49, 0, 720900, 22, 0, 720902, 18, 0, 720903, 30, 0, 720904, 39, 0, 720905, 39, 0, 786432, 30, 0, 786433, 41, 0, 786434, 58, 0, 786435, 11, 0, 786436, 22, 0, 786438, 20, 0, 786439, 39, 0, 786440, 40, 0, 786441, 41, 0, 851968, 39, 0, 851969, 39, 0, 851970, 58, 0, 851971, 19, 0, 851972, 22, 0, 851974, 66, 0, 851975, 39, 0, 851976, 40, 0, 851977, 39, 0, 917504, 30, 0, 917505, 39, 0, 917506, 70, 0, 917507, 18, 0, 917508, 22, 0, 917510, 20, 0, 917511, 30, 0, 917512, 39, 0, 917513, 39, 0, 983040, 41, 0, 983041, 39, 0, 983042, 39, 0, 983043, 11, 0, 983044, 22, 0, 983046, 20, 0, 983047, 39, 0, 983048, 40, 0, 983049, 39, 0, 1048576, 41, 0, 1048577, 15, 0, 1048578, 39, 0, 1048579, 70, 0, 1048580, 22, 0, 1048582, 19, 0, 1048583, 13, 0, 1114112, 30, 0, 1114113, 39, 0, 1114114, 41, 0, 1114115, 78, 0, 1114116, 22, 0, 1114118, 20, 0, 1179648, 30, 0, 1179649, 41, 0, 1179650, 41, 0, 1179651, 78, 0, 1179652, 22, 0, 1179654, 19, 0, 1245184, 39, 0, 1245185, 39, 0, 1245186, 39, 0, 1245187, 31, 0, 1245188, 22, 0, 1245190, 11, 0, 1245191, 39, 0, 1245192, 41, 0, 1245193, 39, 0 )
 
 [node name="ObstaclesTileMap" type="TileMap" parent="Background_1"]
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 196615, 31, 0, 262150, 30, 0, 393220, 2, 0, 1179656, 2, 0, 1507331, 2, 0 )
+tile_data = PoolIntArray( 0, 3, 0, 9, 24, 0, 65539, 0, 0, 65543, 0, 0, 65545, 17, 0, 196615, 31, 0, 262150, 30, 0, 393220, 2, 0, 1179656, 2, 0 )
 
-[node name="Enemies" type="Node" parent="Background_1"]
+[node name="Enemies" type="Node2D" parent="Background_1"]
 
 [node name="SpiderEnemy" parent="Background_1/Enemies" instance=ExtResource( 3 )]
 position = Vector2( 148, 238 )
@@ -1707,54 +1985,70 @@ demoMode = true
 
 [node name="ArahnaEnemy" parent="Background_1/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 40, 489 )
+demoMode = true
 
 [node name="ArahnaEnemy4" parent="Background_1/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 38, 537 )
+demoMode = true
 
 [node name="ArahnaEnemy2" parent="Background_1/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 103, 488 )
-scale = Vector2( -1.4, 1.4 )
+rotation = -3.14159
+scale = Vector2( 1.4, -1.4 )
+demoMode = true
 
 [node name="ArahnaEnemy3" parent="Background_1/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 96, 542 )
-scale = Vector2( -1.4, 1.4 )
+rotation = -3.14159
+scale = Vector2( 1.4, -1.4 )
+demoMode = true
 
 [node name="EggEnemy" parent="Background_1/Enemies" instance=ExtResource( 8 )]
 position = Vector2( 75, 494 )
+demoMode = true
 
 [node name="EggEnemy2" parent="Background_1/Enemies" instance=ExtResource( 8 )]
 position = Vector2( 56, 508 )
+demoMode = true
 
 [node name="EggEnemy3" parent="Background_1/Enemies" instance=ExtResource( 8 )]
 position = Vector2( 82, 515 )
+demoMode = true
 
 [node name="CiclopeEnemy" parent="Background_1/Enemies" instance=ExtResource( 7 )]
 position = Vector2( 70, 533 )
+demoMode = true
 
-[node name="Towers" type="Node" parent="Background_1"]
+[node name="Towers" type="Node2D" parent="Background_1"]
 
-[node name="AssaultTower" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
+[node name="AssaultTower" parent="Background_1/Towers" instance=ExtResource( 4 )]
 position = Vector2( 206, 236 )
 demoMode = true
 demoAnimationLevel = 2
 
-[node name="AssaultTower2" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
+[node name="AssaultTower2" parent="Background_1/Towers" instance=ExtResource( 4 )]
 position = Vector2( 230, 273 )
 demoMode = true
 
-[node name="AssaultTower3" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
+[node name="AssaultTower3" parent="Background_1/Towers" instance=ExtResource( 4 )]
 position = Vector2( 225, 202 )
 demoMode = true
 
 [node name="LeaderTower" parent="Background_1/Towers" instance=ExtResource( 9 )]
 position = Vector2( 257, 238 )
-scale = Vector2( -1, 1 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
 
-[node name="HeavyTower" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 10 )]
-position = Vector2( 174, 516 )
+[node name="HeavyTower" parent="Background_1/Towers" instance=ExtResource( 10 )]
+position = Vector2( 163, 500 )
+demoMode = true
+
+[node name="HeavyTower2" parent="Background_1/Towers" instance=ExtResource( 10 )]
+position = Vector2( 163, 538 )
 demoMode = true
 
 [node name="Background_2" type="Node2D" parent="."]
+position = Vector2( 0, -640 )
 
 [node name="LevelTileMap" type="TileMap" parent="Background_2"]
 scale = Vector2( 2, 2 )
@@ -1762,12 +2056,173 @@ z_index = -1
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262153, 36, 0 )
+tile_data = PoolIntArray( 0, 38, 0, 1, 38, 0, 2, 38, 0, 3, 38, 0, 4, 22, 0, 6, 17, 0, 7, 39, 0, 8, 39, 0, 9, 39, 0, 65536, 38, 0, 65537, 38, 0, 65538, 41, 0, 65539, 38, 0, 65540, 22, 0, 65542, 16, 0, 65543, 39, 0, 65544, 39, 0, 65545, 39, 0, 131072, 15, 0, 131073, 38, 0, 131074, 38, 0, 131075, 38, 0, 131076, 22, 0, 131078, 16, 0, 131079, 38, 0, 131080, 39, 0, 131081, 38, 0, 196608, 38, 0, 196609, 38, 0, 196610, 38, 0, 196611, 38, 0, 196612, 22, 0, 196614, 17, 0, 196615, 38, 0, 196616, 15, 0, 196617, 38, 0, 262144, 13, 0, 262147, 15, 0, 262148, 22, 0, 262150, 16, 0, 262151, 38, 0, 262152, 38, 0, 262153, 38, 0, 327683, 38, 0, 327684, 22, 0, 327686, 16, 0, 327687, 41, 0, 327688, 41, 0, 327689, 38, 0, 393219, 38, 0, 393220, 22, 0, 393222, 16, 0, 393223, 38, 0, 393224, 38, 0, 393225, 38, 0, 458752, 98, 0, 458753, 98, 0, 458754, 91, 0, 458755, 99, 0, 458756, 22, 0, 458758, 11, 0, 458759, 38, 0, 458760, 15, 0, 458761, 38, 0, 524288, 39, 0, 524289, 39, 0, 524290, 86, 0, 524291, 71, 0, 524292, 22, 0, 524294, 11, 0, 524295, 38, 0, 524296, 38, 0, 524297, 38, 0, 589824, 98, 0, 589825, 39, 0, 589826, 93, 0, 589827, 100, 0, 589828, 22, 0, 589830, 11, 0, 589831, 38, 0, 589832, 38, 0, 589833, 38, 0, 655360, 39, 0, 655361, 39, 0, 655362, 83, 0, 655363, 99, 0, 655364, 22, 0, 655366, 11, 0, 655367, 38, 0, 655368, 38, 0, 655369, 38, 0, 720896, 39, 0, 720897, 78, 0, 720898, 16, 0, 720899, 19, 0, 720900, 22, 0, 720902, 11, 0, 720903, 38, 0, 720904, 41, 0, 720905, 38, 0, 786432, 39, 0, 786433, 39, 0, 786434, 96, 0, 786435, 100, 0, 786436, 22, 0, 786438, 38, 0, 786439, 13, 0, 851968, 39, 0, 851969, 78, 0, 851970, 16, 0, 851971, 17, 0, 851972, 22, 0, 851974, 38, 0, 917504, 39, 0, 917505, 39, 0, 917506, 87, 0, 917507, 99, 0, 917508, 22, 0, 917510, 38, 0, 983040, 94, 0, 983041, 94, 0, 983042, 90, 0, 983043, 71, 0, 983044, 22, 0, 983046, 38, 0, 983047, 39, 0, 983048, 39, 0, 983049, 33, 0, 1048576, 36, 0, 1048577, 36, 0, 1048578, 36, 0, 1048579, 38, 0, 1048580, 22, 0, 1048582, 38, 0, 1048583, 41, 0, 1048584, 34, 0, 1048585, 11, 0, 1114112, 38, 0, 1114113, 41, 0, 1114114, 38, 0, 1114115, 38, 0, 1114116, 22, 0, 1114118, 38, 0, 1114119, 34, 0, 1114120, 11, 0, 1114121, 43, 0, 1179648, 38, 0, 1179649, 41, 0, 1179650, 41, 0, 1179651, 38, 0, 1179652, 22, 0, 1179654, 34, 0, 1179655, 18, 0, 1179656, 11, 0, 1179657, 11, 0, 1245184, 41, 0, 1245185, 38, 0, 1245186, 38, 0, 1245187, 41, 0, 1245188, 22, 0, 1245190, 17, 0, 1245191, 11, 0, 1245192, 17, 0, 1245193, 18, 0 )
 
 [node name="ObstaclesTileMap" type="TileMap" parent="Background_2"]
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 393219, 7, 0, 458762, 7, 0, 589825, 7, 0, 851978, 7, 0, 917517, 7, 0, 983041, 7, 0, 983044, 0, 0, 1048584, 1, 0, 1048588, 7, 0, 1114119, 30, 0, 1179655, 27, 0, 1245186, 7, 0, 1376260, 1, 0, 1376264, 1, 0 )
+tile_data = PoolIntArray( 131076, 30, 0, 458757, 15, 0, 524288, 9, 0, 524293, 30, 0, 589828, 22, 0, 589829, 33, 0, 655360, 12, 0, 655363, 1, 0, 655365, 16, 0, 786432, 10, 0, 851970, 8, 0, 917504, 13, 0, 917507, 1, 0, 1114112, 2, 0, 1114113, 3, 0, 1114115, 0, 0, 1114119, 0, 0, 1179648, 2, 0, 1179649, 2, 0, 1179657, 23, 0, 1245184, 2, 0, 1245185, 2, 0, 1245193, 17, 0 )
+
+[node name="Enemies" type="Node2D" parent="Background_2"]
+
+[node name="ScarabEnemy" parent="Background_2/Enemies" instance=ExtResource( 11 )]
+position = Vector2( 51, 274 )
+demoMode = true
+
+[node name="ScarabEnemy2" parent="Background_2/Enemies" instance=ExtResource( 11 )]
+position = Vector2( 53, 346 )
+demoMode = true
+
+[node name="ScarabEnemy4" parent="Background_2/Enemies" instance=ExtResource( 11 )]
+position = Vector2( 111, 376 )
+demoMode = true
+
+[node name="ScarabEnemy5" parent="Background_2/Enemies" instance=ExtResource( 11 )]
+position = Vector2( 112, 400 )
+demoMode = true
+
+[node name="ScarabEnemy3" parent="Background_2/Enemies" instance=ExtResource( 11 )]
+position = Vector2( 41, 400 )
+scale = Vector2( -1.4, 1.4 )
+demoMode = true
+
+[node name="EggEnemy" parent="Background_2/Enemies" instance=ExtResource( 8 )]
+position = Vector2( 57, 469 )
+demoMode = true
+
+[node name="EggEnemy2" parent="Background_2/Enemies" instance=ExtResource( 8 )]
+position = Vector2( 39, 469 )
+demoMode = true
+
+[node name="ArahnaBoss" parent="Background_2/Enemies" instance=ExtResource( 14 )]
+position = Vector2( 42, 102 )
+demoMode = true
+
+[node name="Towers" type="Node2D" parent="Background_2"]
+
+[node name="SniperTower" parent="Background_2/Towers" instance=ExtResource( 12 )]
+position = Vector2( 225, 460 )
+scale = Vector2( -1, 1 )
+demoMode = true
+
+[node name="SniperTower2" parent="Background_2/Towers" instance=ExtResource( 12 )]
+position = Vector2( 225, 413 )
+scale = Vector2( -1, 1 )
+demoMode = true
+demoAnimationLevel = 3
+
+[node name="SniperTower3" parent="Background_2/Towers" instance=ExtResource( 12 )]
+position = Vector2( 225, 372 )
+scale = Vector2( -1, 1 )
+demoMode = true
+
+[node name="GrenadierTower" parent="Background_2/Towers" instance=ExtResource( 13 )]
+position = Vector2( 177, 408 )
+demoMode = true
+
+[node name="HeavyTower" parent="Background_2/Towers" instance=ExtResource( 10 )]
+position = Vector2( 121, 91 )
+demoMode = true
+demoAnimationLevel = 3
+
+[node name="HeavyTower2" parent="Background_2/Towers" instance=ExtResource( 10 )]
+position = Vector2( 80, 51 )
+demoMode = true
+demoAnimationLevel = 3
+
+[node name="AssaultTower" parent="Background_2/Towers" instance=ExtResource( 4 )]
+position = Vector2( 96, 135 )
+demoMode = true
+demoAnimationLevel = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Logo" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_top = 156.0
+margin_bottom = 213.0
+
+[node name="Border" parent="CanvasLayer/Logo" instance=ExtResource( 16 )]
+position = Vector2( 37, -22 )
+
+[node name="Text" type="Label" parent="CanvasLayer/Logo"]
+margin_right = 320.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 17 )
+text = "RoboTD"
+align = 1
+
+[node name="Menu" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 416.0
+margin_right = -50.0
+margin_bottom = 518.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="Border" parent="CanvasLayer/Menu" instance=ExtResource( 16 )]
+tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 1, -65535, 2, 1, -65534, 2, 1, -65533, 2, 1, -65532, 2, 1, -65531, 2, 2, -65530, 2, 2, -65529, 2, 2, -65528, 2, 2, -65527, 2, 1, -65526, 2, 2, -65525, 2, 3, 65535, 2, 65536, 0, 2, 65538, 1, 2, 131074, 2, 2, 65538, 3, 2, 131074, 4, 2, 65537, 5, 2, 65537, 6, 2, 131074, 7, 2, 65538, 8, 2, 65538, 9, 2, 131074, 10, 2, 65538, 11, 2, 131075, 131071, 2, 65536, 65536, 2, 131073, 65537, 2, 131073, 65538, 2, 131074, 65539, 2, 131074, 65540, 2, 65537, 65541, 2, 65537, 65542, 2, 65537, 65543, 2, 131074, 65544, 2, 65538, 65545, 2, 131074, 65546, 2, 131073, 65547, 2, 65539, 196607, 2, 131072, 131072, 2, 131073, 131073, 2, 131073, 131074, 2, 131073, 131075, 2, 131073, 131076, 2, 131073, 131077, 2, 131073, 131078, 2, 65538, 131079, 2, 65537, 131080, 2, 131073, 131081, 2, 65538, 131082, 2, 131074, 131083, 2, 65539, 262143, 2, 131072, 196608, 2, 131073, 196609, 2, 65537, 196610, 2, 131073, 196611, 2, 65538, 196612, 2, 65537, 196613, 2, 65538, 196614, 2, 65537, 196615, 2, 131074, 196616, 2, 65537, 196617, 2, 65538, 196618, 2, 65538, 196619, 2, 65539, 327679, 2, 65536, 262144, 2, 65538, 262145, 2, 131073, 262146, 2, 131073, 262147, 2, 65537, 262148, 2, 131073, 262149, 2, 65538, 262150, 2, 65537, 262151, 2, 65537, 262152, 2, 65538, 262153, 2, 65537, 262154, 2, 65538, 262155, 2, 131075, 393215, 2, 196608, 327680, 2, 196609, 327681, 2, 196610, 327682, 2, 196609, 327683, 2, 196609, 327684, 2, 196609, 327685, 2, 196609, 327686, 2, 196610, 327687, 2, 196609, 327688, 2, 196609, 327689, 2, 196609, 327690, 2, 196610, 327691, 2, 196611 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu"]
+margin_right = 220.0
+margin_bottom = 102.0
+custom_constants/separation = 6
+
+[node name="BuyBtnSample" type="Button" parent="CanvasLayer/Menu/VBoxContainer"]
+margin_right = 220.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 120, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource( 18 )
+custom_fonts/font = ExtResource( 20 )
+shortcut_in_tooltip = false
+text = "Campain"
+icon = ExtResource( 19 )
+
+[node name="BuyBtnSample2" type="Button" parent="CanvasLayer/Menu/VBoxContainer"]
+margin_top = 36.0
+margin_right = 220.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 120, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource( 18 )
+custom_fonts/font = ExtResource( 20 )
+shortcut_in_tooltip = false
+text = "Settings"
+icon = ExtResource( 19 )
+
+[node name="BuyBtnSample3" type="Button" parent="CanvasLayer/Menu/VBoxContainer"]
+margin_top = 72.0
+margin_right = 220.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 120, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource( 18 )
+custom_fonts/font = ExtResource( 20 )
+shortcut_in_tooltip = false
+text = "Credentials"
+icon = ExtResource( 19 )
+
+[node name="Version" type="MarginContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+margin_right = -10.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Version"]
+margin_top = 5.0
+margin_right = 310.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 21 )
+text = "v. 1.0.0"
+align = 2
