@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
 [ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
@@ -24,11 +24,12 @@
 [ext_resource path="res://tiles/effects/big_explosion/big-explosion8.png" type="Texture" id=22]
 [ext_resource path="res://tiles/effects/big_explosion/big-explosion9.png" type="Texture" id=23]
 [ext_resource path="res://tiles/effects/big_explosion/big-explosion10.png" type="Texture" id=24]
+[ext_resource path="res://tiles/font/game_font_extra_small.tres" type="DynamicFont" id=25]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("AP_RawardIcon:position")
+tracks/0/path = NodePath("AP_Reward:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -40,7 +41,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AP_RawardIcon:scale")
+tracks/1/path = NodePath("AP_Reward:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -49,14 +50,14 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.1, 0.1 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "reward"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AP_RawardIcon:scale")
+tracks/0/path = NodePath("AP_Reward:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -65,10 +66,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 0.8, 0.8 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AP_RawardIcon:position")
+tracks/1/path = NodePath("AP_Reward:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -80,7 +81,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, -10 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("AP_RawardIcon")
+tracks/2/path = NodePath("AP_Reward")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -119,6 +120,23 @@ radius = 8.0
 script = ExtResource( 1 )
 unitName = "EnemyName"
 
+[node name="AP_Reward" type="Node2D" parent="."]
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 2
+
+[node name="RawardIcon" type="Sprite" parent="AP_Reward"]
+position = Vector2( -6, -1 )
+scale = Vector2( 1.125, 1.125 )
+texture = ExtResource( 3 )
+
+[node name="RewardValue" type="Label" parent="AP_Reward"]
+margin_left = 2.0
+margin_top = -8.0
+margin_right = 10.0
+margin_bottom = 6.0
+custom_fonts/font = ExtResource( 25 )
+text = "2"
+
 [node name="Animation" type="AnimatedSprite" parent="."]
 playing = true
 
@@ -133,10 +151,6 @@ wait_time = 5.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/reward = SubResource( 2 )
-
-[node name="AP_RawardIcon" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 3 )
 
 [node name="ExplosionAnimation" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )

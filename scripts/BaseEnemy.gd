@@ -20,10 +20,13 @@ onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
 
 onready var animationPlayer = $AnimationPlayer
+onready var rewardPopupValue = $AP_Reward/RewardValue
+
 onready var explosionAnimation = $ExplosionAnimation
 
 
 func _ready():
+	rewardPopupValue.text = str(energyReward)
 	currentHealth = maxHealth
 	animation.animation = "walk"
 	if demoMode:
