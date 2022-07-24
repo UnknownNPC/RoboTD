@@ -2021,16 +2021,16 @@ demoMode = true
 
 [node name="Towers" type="Node2D" parent="Background_1"]
 
-[node name="AssaultTower" parent="Background_1/Towers" instance=ExtResource( 4 )]
+[node name="AssaultTower" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
 position = Vector2( 206, 236 )
 demoMode = true
 demoAnimationLevel = 2
 
-[node name="AssaultTower2" parent="Background_1/Towers" instance=ExtResource( 4 )]
+[node name="AssaultTower2" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
 position = Vector2( 230, 273 )
 demoMode = true
 
-[node name="AssaultTower3" parent="Background_1/Towers" instance=ExtResource( 4 )]
+[node name="AssaultTower3" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
 position = Vector2( 225, 202 )
 demoMode = true
 
@@ -2039,11 +2039,11 @@ position = Vector2( 257, 238 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 
-[node name="HeavyTower" parent="Background_1/Towers" instance=ExtResource( 10 )]
+[node name="HeavyTower" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 10 )]
 position = Vector2( 163, 500 )
 demoMode = true
 
-[node name="HeavyTower2" parent="Background_1/Towers" instance=ExtResource( 10 )]
+[node name="HeavyTower2" parent="Background_1/Towers" groups=["selectable", "towers"] instance=ExtResource( 10 )]
 position = Vector2( 163, 538 )
 demoMode = true
 
@@ -2103,37 +2103,37 @@ demoMode = true
 
 [node name="Towers" type="Node2D" parent="Background_2"]
 
-[node name="SniperTower" parent="Background_2/Towers" instance=ExtResource( 12 )]
+[node name="SniperTower" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 12 )]
 position = Vector2( 225, 460 )
 scale = Vector2( -1, 1 )
 demoMode = true
 
-[node name="SniperTower2" parent="Background_2/Towers" instance=ExtResource( 12 )]
+[node name="SniperTower2" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 12 )]
 position = Vector2( 225, 413 )
 scale = Vector2( -1, 1 )
 demoMode = true
 demoAnimationLevel = 3
 
-[node name="SniperTower3" parent="Background_2/Towers" instance=ExtResource( 12 )]
+[node name="SniperTower3" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 12 )]
 position = Vector2( 225, 372 )
 scale = Vector2( -1, 1 )
 demoMode = true
 
-[node name="GrenadierTower" parent="Background_2/Towers" instance=ExtResource( 13 )]
+[node name="GrenadierTower" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 13 )]
 position = Vector2( 177, 408 )
 demoMode = true
 
-[node name="HeavyTower" parent="Background_2/Towers" instance=ExtResource( 10 )]
+[node name="HeavyTower" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 10 )]
 position = Vector2( 121, 91 )
 demoMode = true
 demoAnimationLevel = 3
 
-[node name="HeavyTower2" parent="Background_2/Towers" instance=ExtResource( 10 )]
+[node name="HeavyTower2" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 10 )]
 position = Vector2( 80, 51 )
 demoMode = true
 demoAnimationLevel = 3
 
-[node name="AssaultTower" parent="Background_2/Towers" instance=ExtResource( 4 )]
+[node name="AssaultTower" parent="Background_2/Towers" groups=["selectable", "towers"] instance=ExtResource( 4 )]
 position = Vector2( 96, 135 )
 demoMode = true
 demoAnimationLevel = 3

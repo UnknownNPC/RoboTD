@@ -25,11 +25,10 @@ animations = [ {
 scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
 unitName = "Arahna Boss"
-maxHealth = 2000
+maxHealth = 1200
 speed = 15
 energyReward = 50
 
-[node name="Animation" parent="." index="0"]
+[node name="Animation" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1

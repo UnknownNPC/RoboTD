@@ -23,6 +23,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var rewardPopupValue = $AP_Reward/RewardValue
 
 onready var explosionAnimation = $ExplosionAnimation
+onready var incomeDamageAnimation = $IncomeDamageAnimation
 
 
 func _ready():
@@ -55,6 +56,9 @@ func add_damage(damage):
 		dieSideEffects()
 
 		deadBodyRelease.start()
+	else:
+		incomeDamageAnimation.animation = getIncomeDamageAnimation()
+		incomeDamageAnimation.frame = 0
 
 
 func dieSideEffects():
@@ -63,6 +67,10 @@ func dieSideEffects():
 
 func getExplosion():
 	return "small_explosion"
+
+
+func getIncomeDamageAnimation():
+	return "small-fragments"
 
 
 func _on_DeadBodyRelease_timeout():

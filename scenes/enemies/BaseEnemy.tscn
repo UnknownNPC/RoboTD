@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/BaseEnemy.gd" type="Script" id=1]
 [ext_resource path="res://scenes/UI/SelectSprite.tscn" type="PackedScene" id=2]
@@ -25,6 +25,36 @@
 [ext_resource path="res://tiles/effects/big_explosion/big-explosion9.png" type="Texture" id=23]
 [ext_resource path="res://tiles/effects/big_explosion/big-explosion10.png" type="Texture" id=24]
 [ext_resource path="res://tiles/font/game_font_extra_small.tres" type="DynamicFont" id=25]
+[ext_resource path="res://tiles/effects/small_fragments/small-fragments1.png" type="Texture" id=26]
+[ext_resource path="res://tiles/effects/small_fragments/small-fragments5.png" type="Texture" id=27]
+[ext_resource path="res://tiles/effects/small_fragments/small-fragments4.png" type="Texture" id=28]
+[ext_resource path="res://tiles/effects/small_fragments/small-fragments2.png" type="Texture" id=29]
+[ext_resource path="res://tiles/effects/small_fragments/small-fragments3.png" type="Texture" id=30]
+[ext_resource path="res://tiles/effects/small_fragments/small-fragments0.png" type="Texture" id=31]
+[ext_resource path="res://tiles/effects/big_fragments/big-fragments4.png" type="Texture" id=32]
+[ext_resource path="res://tiles/effects/big_fragments/big-fragments2.png" type="Texture" id=33]
+[ext_resource path="res://tiles/effects/big_fragments/big-fragments0.png" type="Texture" id=34]
+[ext_resource path="res://tiles/effects/big_fragments/big-fragments5.png" type="Texture" id=35]
+[ext_resource path="res://tiles/effects/big_fragments/big-fragments3.png" type="Texture" id=36]
+[ext_resource path="res://tiles/effects/big_fragments/big-fragments1.png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 35 ), null ],
+"loop": false,
+"name": "big-fragments",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 27 ), null ],
+"loop": false,
+"name": "small-fragments",
+"speed": 9.0
+} ]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -136,6 +166,10 @@ margin_right = 10.0
 margin_bottom = 6.0
 custom_fonts/font = ExtResource( 25 )
 text = "2"
+
+[node name="IncomeDamageAnimation" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+playing = true
 
 [node name="Animation" type="AnimatedSprite" parent="."]
 playing = true

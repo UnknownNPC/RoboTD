@@ -13,7 +13,7 @@ tile_data = PoolIntArray( 0, 30, 0, 1, 38, 0, 2, 38, 0, 3, 40, 0, 4, 38, 0, 5, 3
 [node name="ObstaclesTileMap" parent="." index="4"]
 position = Vector2( -48, -113 )
 cell_size = Vector2( 2, 2 )
-tile_data = PoolIntArray( 4128832, 0, 0, 6684736, 0, 0, 7208991, 0, 0 )
+tile_data = PoolIntArray( 4128832, 0, 0, 6684736, 0, 0, 7012408, 22, 0, 7208991, 0, 0, 7471161, 29, 0 )
 
 [node name="SpawnPoint" parent="TowerSpawnPoints" index="0" instance=ExtResource( 3 )]
 position = Vector2( 16, 368 )

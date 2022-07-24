@@ -12,7 +12,6 @@ maxHealth = 120
 speed = 30
 energyReward = 2
 
-[node name="Animation" parent="." index="0"]
+[node name="Animation" parent="." index="2"]
 frames = ExtResource( 2 )
 animation = "walk"
-frame = 1
