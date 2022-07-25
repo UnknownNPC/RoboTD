@@ -67,6 +67,7 @@ func initBtnStates():
 	if isMax:
 		upgradeBtn.text = "Max Rank"
 		upgradeBtn.disabled = true
+		upgradeBtn.icon = null
 	else:
 		var nextLevelCost = getNextLvlCost()
 		upgradeBtn.text = upgradeBtnText + str(nextLevelCost)
