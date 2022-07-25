@@ -2150,6 +2150,7 @@ position = Vector2( 37, -22 )
 [node name="Text" type="Label" parent="CanvasLayer/Logo"]
 margin_right = 320.0
 margin_bottom = 57.0
+custom_colors/font_color = Color( 0.882353, 0.882353, 0.882353, 1 )
 custom_fonts/font = ExtResource( 17 )
 text = "RoboTD"
 align = 1
