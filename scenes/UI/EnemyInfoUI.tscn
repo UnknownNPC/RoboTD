@@ -17,49 +17,46 @@ script = ExtResource( 3 )
 [node name="BaseInfoUI" parent="." instance=ExtResource( 2 )]
 
 [node name="Speed" type="Label" parent="."]
-margin_left = 18.0
 margin_top = 36.0
-margin_right = 59.0
+margin_right = 41.0
 margin_bottom = 51.0
 custom_fonts/font = ExtResource( 1 )
 text = "Speed"
 
 [node name="SpeedValue" type="Label" parent="."]
-margin_left = 72.0
+margin_left = 54.0
 margin_top = 36.0
-margin_right = 113.0
+margin_right = 95.0
 margin_bottom = 51.0
 custom_fonts/font = ExtResource( 1 )
 text = "250"
 
 [node name="HP" type="Label" parent="."]
-margin_left = 18.0
 margin_top = 52.0
-margin_right = 58.0
+margin_right = 40.0
 margin_bottom = 67.0
 custom_fonts/font = ExtResource( 1 )
 text = "HP"
 
 [node name="HPValue" type="Label" parent="."]
-margin_left = 72.0
+margin_left = 54.0
 margin_top = 52.0
-margin_right = 128.0
+margin_right = 110.0
 margin_bottom = 67.0
 custom_fonts/font = ExtResource( 1 )
 text = "100/100"
 
 [node name="Reward" type="Label" parent="."]
-margin_left = 18.0
 margin_top = 68.0
-margin_right = 66.0
+margin_right = 48.0
 margin_bottom = 83.0
 custom_fonts/font = ExtResource( 1 )
 text = "Reward"
 
 [node name="EnergyIcon" type="TextureRect" parent="."]
-margin_left = 70.0
+margin_left = 52.0
 margin_top = 68.0
-margin_right = 86.0
+margin_right = 68.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 15, 15 )
 size_flags_horizontal = 2
@@ -68,9 +65,9 @@ texture = SubResource( 1 )
 stretch_mode = 5
 
 [node name="RewardValue" type="Label" parent="."]
-margin_left = 86.0
+margin_left = 68.0
 margin_top = 68.0
-margin_right = 142.0
+margin_right = 124.0
 margin_bottom = 83.0
 custom_fonts/font = ExtResource( 1 )
 text = "2"

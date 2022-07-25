@@ -54,6 +54,7 @@ func selfSelect():
 
 ## EXTERNAL SIGNALS!!!
 func _towerWasRemoved():
+	$"/root/GameProcessState".addEnergy(getCurrentCost() / 2)
 	var spawnPoint = load(spawnPointScene).instance()
 	spawnPoint.global_position = self.global_position
 	spawnPointsNode.add_child(spawnPoint)
@@ -70,6 +71,15 @@ func _towerLevelWasIncreased():
 	$"/root/ScreenUISingleton".addInfoPanel(self)
 	radiusShape.init(effectRadius)
 	radiusShape.show()
+
+
+func getCurrentCost():
+	if currentLevel == 1:
+		return buyCost
+	elif currentLevel == 2:
+		return level2Cost
+	else:
+		return level3Cost
 
 
 ## EXTERNAL SIGNALS END!!!

@@ -11,7 +11,8 @@ onready var animation = $BaseInfoUI/Animation
 onready var upgradeBtn = $Actions/Upgrade
 onready var removeBtn = $Actions/Remove
 
-var upgradeBtnText = "Rank Up - "
+var upgradeBtnText = "Rank Up -"
+var removeBtnText = "Remove +"
 
 signal towerLevelBump
 signal towerKill
@@ -64,6 +65,7 @@ func _on_Remove_pressed():
 
 func initBtnStates():
 	var isMax = isMaxLvl()
+	removeBtn.text = removeBtnText + str(getCurrentCost() / 2)
 	if isMax:
 		upgradeBtn.text = "Max Rank"
 		upgradeBtn.disabled = true
@@ -88,5 +90,17 @@ func isMaxLvl():
 func getNextLvlCost():
 	if is_instance_valid(tower):
 		return tower.level2Cost if tower.currentLevel == 1 else tower.level3Cost
+	else:
+		return 0
+
+
+func getCurrentCost():
+	if is_instance_valid(tower):
+		if tower.currentLevel == 1:
+			return tower.buyCost
+		elif tower.currentLevel == 2:
+			return tower.level2Cost
+		else:
+			return tower.level3Cost
 	else:
 		return 0
