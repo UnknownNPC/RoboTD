@@ -39,7 +39,7 @@
 		  ]
 	  },
 	  {
-		 "count":5,
+		 "count":1,
 		 "reward": 0,
 		 "scenes": [
 		 	"res://scenes/enemies/ArahnaBoss.tscn"
