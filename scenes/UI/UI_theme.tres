@@ -14,12 +14,13 @@ margin_bottom = 2.0
 modulate_color = Color( 0.552941, 0.427451, 0.427451, 1 )
 
 [sub_resource type="StyleBoxTexture" id=5]
+content_margin_bottom = 0.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 3.57255
-margin_right = 3.44151
-margin_top = 2.26209
-margin_bottom = 2.0
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 2 )
@@ -57,3 +58,4 @@ Button/styles/hover = SubResource( 5 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
 HSeparator/styles/separator = SubResource( 7 )
+VScrollBar/styles/scroll = SubResource( 5 )
