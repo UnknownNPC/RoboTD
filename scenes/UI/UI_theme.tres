@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=13 format=2]
 
 [ext_resource path="res://tiles/font/haxorville.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://tiles/UI/rect/range12.png" type="Texture" id=2]
@@ -14,13 +14,12 @@ margin_bottom = 2.0
 modulate_color = Color( 0.552941, 0.427451, 0.427451, 1 )
 
 [sub_resource type="StyleBoxTexture" id=5]
-content_margin_bottom = 0.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 4.0
-margin_right = 4.0
-margin_top = 4.0
-margin_bottom = 4.0
+margin_right = 3.0
+margin_top = 2.0
+margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 2 )
@@ -44,6 +43,33 @@ draw_center = false
 color = Color( 0, 1, 0, 0.235294 )
 thickness = 4
 
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 3.57255
+margin_right = 3.44151
+margin_top = 2.26209
+margin_bottom = 2.0
+modulate_color = Color( 0.803922, 0.698039, 0.698039, 1 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+content_margin_bottom = 0.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id=10]
+content_margin_bottom = 0.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
+
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
@@ -58,6 +84,6 @@ Button/styles/hover = SubResource( 5 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
 HSeparator/styles/separator = SubResource( 7 )
-VScrollBar/styles/grabber = SubResource( 3 )
-VScrollBar/styles/grabber_highlight = SubResource( 5 )
-VScrollBar/styles/scroll = SubResource( 5 )
+VScrollBar/styles/grabber = SubResource( 8 )
+VScrollBar/styles/grabber_highlight = SubResource( 9 )
+VScrollBar/styles/scroll = SubResource( 10 )
