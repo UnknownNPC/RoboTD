@@ -9,7 +9,7 @@ var isReady = false
 
 
 func init(maxWaveCounterVal, healthCounterVal, startEnergyCounter):
-	currentWaveCounter = 1
+	currentWaveCounter = 0
 	maxWaveCounter = maxWaveCounterVal
 	healthCounter = healthCounterVal
 	energyCounter = startEnergyCounter + 999

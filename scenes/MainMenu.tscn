@@ -9,6 +9,8 @@
 
 [node name="MainMenu" type="Node2D"]
 
+[node name="MenuBackground" parent="." instance=ExtResource( 1 )]
+
 [node name="MainScreen" type="CanvasLayer" parent="."]
 
 [node name="Logo" type="MarginContainer" parent="MainScreen"]
@@ -44,7 +46,7 @@ margin_right = 220.0
 margin_bottom = 102.0
 custom_constants/separation = 6
 
-[node name="BuyBtnSample" type="Button" parent="MainScreen/Menu/VBoxContainer"]
+[node name="BuyBtnSample2" type="Button" parent="MainScreen/Menu/VBoxContainer"]
 margin_right = 220.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 120, 30 )
@@ -55,7 +57,7 @@ custom_fonts/font = ExtResource( 20 )
 shortcut_in_tooltip = false
 text = "Campain"
 
-[node name="BuyBtnSample2" type="Button" parent="MainScreen/Menu/VBoxContainer"]
+[node name="BuyBtnSample3" type="Button" parent="MainScreen/Menu/VBoxContainer"]
 margin_top = 36.0
 margin_right = 220.0
 margin_bottom = 66.0
@@ -67,7 +69,7 @@ custom_fonts/font = ExtResource( 20 )
 shortcut_in_tooltip = false
 text = "Settings"
 
-[node name="BuyBtnSample3" type="Button" parent="MainScreen/Menu/VBoxContainer"]
+[node name="BuyBtnSample4" type="Button" parent="MainScreen/Menu/VBoxContainer"]
 margin_top = 72.0
 margin_right = 220.0
 margin_bottom = 102.0
@@ -95,5 +97,3 @@ margin_bottom = 20.0
 custom_fonts/font = ExtResource( 21 )
 text = "v. 1.0.0"
 align = 2
-
-[node name="MenuBackground" parent="." instance=ExtResource( 1 )]

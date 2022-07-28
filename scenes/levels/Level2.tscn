@@ -132,47 +132,50 @@ position = Vector2( 80, 208 )
 [node name="SpawnPoint48" parent="TowerSpawnPoints" index="38" instance=ExtResource( 3 )]
 position = Vector2( 80, 240 )
 
-[node name="SpawnPoint44" parent="TowerSpawnPoints" index="39" instance=ExtResource( 3 )]
+[node name="SpawnPoint55" parent="TowerSpawnPoints" index="39" instance=ExtResource( 3 )]
+position = Vector2( 112, 240 )
+
+[node name="SpawnPoint44" parent="TowerSpawnPoints" index="40" instance=ExtResource( 3 )]
 position = Vector2( 80, 176 )
 
-[node name="SpawnPoint45" parent="TowerSpawnPoints" index="40" instance=ExtResource( 3 )]
+[node name="SpawnPoint45" parent="TowerSpawnPoints" index="41" instance=ExtResource( 3 )]
 position = Vector2( 80, 144 )
 
-[node name="SpawnPoint46" parent="TowerSpawnPoints" index="41" instance=ExtResource( 3 )]
+[node name="SpawnPoint46" parent="TowerSpawnPoints" index="42" instance=ExtResource( 3 )]
 position = Vector2( 80, 112 )
 
-[node name="SpawnPoint47" parent="TowerSpawnPoints" index="42" instance=ExtResource( 3 )]
+[node name="SpawnPoint47" parent="TowerSpawnPoints" index="43" instance=ExtResource( 3 )]
 position = Vector2( 80, 80 )
 
-[node name="SpawnPoint19" parent="TowerSpawnPoints" index="43" instance=ExtResource( 3 )]
+[node name="SpawnPoint19" parent="TowerSpawnPoints" index="44" instance=ExtResource( 3 )]
 position = Vector2( 144, 80 )
 
-[node name="SpawnPoint20" parent="TowerSpawnPoints" index="44" instance=ExtResource( 3 )]
+[node name="SpawnPoint20" parent="TowerSpawnPoints" index="45" instance=ExtResource( 3 )]
 position = Vector2( 176, 80 )
 
-[node name="SpawnPoint21" parent="TowerSpawnPoints" index="45" instance=ExtResource( 3 )]
+[node name="SpawnPoint21" parent="TowerSpawnPoints" index="46" instance=ExtResource( 3 )]
 position = Vector2( 208, 80 )
 
-[node name="SpawnPoint22" parent="TowerSpawnPoints" index="46" instance=ExtResource( 3 )]
+[node name="SpawnPoint22" parent="TowerSpawnPoints" index="47" instance=ExtResource( 3 )]
 position = Vector2( 240, 80 )
 
-[node name="SpawnPoint23" parent="TowerSpawnPoints" index="47" instance=ExtResource( 3 )]
+[node name="SpawnPoint23" parent="TowerSpawnPoints" index="48" instance=ExtResource( 3 )]
 position = Vector2( 272, 80 )
 
-[node name="SpawnPoint24" parent="TowerSpawnPoints" index="48" instance=ExtResource( 3 )]
+[node name="SpawnPoint24" parent="TowerSpawnPoints" index="49" instance=ExtResource( 3 )]
 position = Vector2( 240, 176 )
 
-[node name="SpawnPoint25" parent="TowerSpawnPoints" index="49" instance=ExtResource( 3 )]
+[node name="SpawnPoint25" parent="TowerSpawnPoints" index="50" instance=ExtResource( 3 )]
 position = Vector2( 272, 176 )
 
-[node name="SpawnPoint26" parent="TowerSpawnPoints" index="50" instance=ExtResource( 3 )]
+[node name="SpawnPoint26" parent="TowerSpawnPoints" index="51" instance=ExtResource( 3 )]
 position = Vector2( 304, 176 )
 
-[node name="SpawnPoint35" parent="TowerSpawnPoints" index="51" instance=ExtResource( 3 )]
+[node name="SpawnPoint35" parent="TowerSpawnPoints" index="52" instance=ExtResource( 3 )]
 position = Vector2( 272, 208 )
 
-[node name="SpawnPoint36" parent="TowerSpawnPoints" index="52" instance=ExtResource( 3 )]
+[node name="SpawnPoint36" parent="TowerSpawnPoints" index="53" instance=ExtResource( 3 )]
 position = Vector2( 304, 208 )
 
-[node name="SpawnPoint27" parent="TowerSpawnPoints" index="53" instance=ExtResource( 3 )]
+[node name="SpawnPoint27" parent="TowerSpawnPoints" index="54" instance=ExtResource( 3 )]
 position = Vector2( 144, 112 )

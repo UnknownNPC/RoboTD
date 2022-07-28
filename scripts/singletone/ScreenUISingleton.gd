@@ -4,8 +4,16 @@ var enemyInfoUrl = "res://scenes/UI/EnemyInfoUI.tscn"
 var towerInfoUrl = "res://scenes/UI/TowerInfoUI.tscn"
 var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
 var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
+var firstWaveMessageModalUrl = "res://scenes/UI/FirstWaveMessageModal.tscn"
 
 var currentPanel
+
+
+#### dirty hack because call in the BaseLevel#_ready
+func showFirstWaveMenu(nextWaveSeconds):
+	var firstWaveMessageModal = load(firstWaveMessageModalUrl).instance()
+	get_parent().call_deferred("add_child", firstWaveMessageModal)
+	firstWaveMessageModal.call_deferred("display", nextWaveSeconds)
 
 
 func showLevelBonusMenu(energySize, nextWaveSeconds):

@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/UI/BorderUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/FirstWaveMessageModal.gd" type="Script" id=3]
+
+[node name="FirstWaveMessageModal" type="Control"]
+margin_left = 40.0
+margin_top = 208.0
+margin_right = 281.0
+margin_bottom = 240.0
+script = ExtResource( 3 )
+
+[node name="Border" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 2, -65535, 2, 2, -65534, 2, 2, -65533, 2, 1, -65532, 2, 1, -65531, 2, 1, -65530, 2, 1, -65529, 2, 2, -65528, 2, 1, -65527, 2, 1, -65526, 2, 1, -65525, 2, 2, -65524, 2, 3, 65535, 2, 131072, 0, 2, 65538, 1, 2, 65538, 2, 2, 131073, 3, 2, 131074, 4, 2, 131073, 5, 2, 131073, 6, 2, 131074, 7, 2, 131073, 8, 2, 131073, 9, 2, 65538, 10, 2, 65537, 11, 2, 65537, 12, 2, 131075, 131071, 2, 196608, 65536, 2, 196610, 65537, 2, 196610, 65538, 2, 196610, 65539, 2, 196610, 65540, 2, 196609, 65541, 2, 196610, 65542, 2, 196610, 65543, 2, 196609, 65544, 2, 196609, 65545, 2, 196610, 65546, 2, 196610, 65547, 2, 196610, 65548, 2, 196611 )
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_left = -5.0
+margin_top = -4.0
+margin_right = 245.0
+margin_bottom = 24.0
+
+[node name="NextWaveContainer" type="HBoxContainer" parent="Body"]
+margin_right = 250.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="WaveTime" type="Label" parent="Body/NextWaveContainer"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 172.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
+text = "First wave in"
+
+[node name="SecondsValue" type="Label" parent="Body/NextWaveContainer"]
+margin_left = 177.0
+margin_top = 2.0
+margin_right = 203.0
+margin_bottom = 25.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "10"
+
+[node name="SecondsLabel" type="Label" parent="Body/NextWaveContainer"]
+margin_left = 208.0
+margin_top = 2.0
+margin_right = 247.0
+margin_bottom = 25.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "sec"
+
+[connection signal="gui_input" from="." to="." method="_on_FirstWaveMessageModal_gui_input"]

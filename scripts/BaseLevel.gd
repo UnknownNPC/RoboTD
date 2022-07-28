@@ -22,7 +22,9 @@ func _ready():
 		LEVEL_SETTINGS_READER.getHealthOnStart(),
 		LEVEL_SETTINGS_READER.getEnergyOnStart()
 	)
-	spawnEnemies(LEVEL_SETTINGS_READER.getCurrentWaveEnemiesCount(GAME_STATE.currentWaveCounter))
+
+	nextWaveTimer.start()
+	$"/root/ScreenUISingleton".showFirstWaveMenu(nextWaveTimer)
 
 
 ### should be overriden
