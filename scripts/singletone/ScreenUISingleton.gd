@@ -11,12 +11,14 @@ var currentPanel
 
 #### dirty hack because call in the BaseLevel#_ready
 func showFirstWaveMenu(nextWaveSeconds):
+	_resetUi()
 	var firstWaveMessageModal = load(firstWaveMessageModalUrl).instance()
 	get_parent().call_deferred("add_child", firstWaveMessageModal)
 	firstWaveMessageModal.call_deferred("display", nextWaveSeconds)
 
 
 func showLevelBonusMenu(energySize, nextWaveSeconds):
+	_resetUi()
 	var waveBonus = load(waveBonusUrl).instance()
 	get_parent().add_child(waveBonus)
 	waveBonus.display(energySize, nextWaveSeconds)
