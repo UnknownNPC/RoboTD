@@ -35,7 +35,7 @@ func levelNum():
 func _process(delta):
 	if gameover:
 		print("Game over. Reloading")
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to(load("res://scenes/MainMenu.tscn"))
 	else:
 		if enableProcessing:
 			var allEnemies = get_tree().get_nodes_in_group("enemies")

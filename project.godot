@@ -81,7 +81,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RoboTD"
-run/main_scene="res://scenes/BaseLevel.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
