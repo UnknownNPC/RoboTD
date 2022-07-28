@@ -28,15 +28,15 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "smoke_disapearing",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "smoke_action",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "smoke_disapearing",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
@@ -48,7 +48,6 @@ script = ExtResource( 17 )
 [node name="Animation" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
-frame = 7
 playing = true
 
 [node name="SmokeArea" type="Area2D" parent="."]
@@ -59,7 +58,7 @@ visible = false
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "smoke_action"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmokeArea"]

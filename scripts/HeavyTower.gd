@@ -21,8 +21,9 @@ func howToDamage():
 	rocket.connect("enemyInTheExplosionArea", self, "_enemyInTheExplosionArea")
 	var direction = -1 if currentAnimation.flip_h else 1
 	## should be spawned from the gun
-	rocket.global_position.x = rocket.global_position.x + (15 if direction == 1 else -15)
-	rocket.global_position.y = rocket.global_position.y - 7
+	## should not be global_position!
+	rocket.position.x = rocket.position.x + (15 if direction == 1 else -15)
+	rocket.position.y = rocket.position.y - 7
 
 	add_child(rocket)
 	rocket.init(attackPoint, direction)
