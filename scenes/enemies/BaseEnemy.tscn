@@ -132,21 +132,22 @@ animations = [ {
 "name": "big_explosion",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "small_explosion",
-"speed": 10.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "nothing",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "small_explosion",
+"speed": 10.0
 } ]
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 8.0
 
 [node name="BaseEnemy" type="Area2D" groups=["enemies", "selectable"]]
+z_index = -1
 script = ExtResource( 1 )
 unitName = "EnemyName"
 
