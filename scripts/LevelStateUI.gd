@@ -12,8 +12,8 @@ func _process(delta):
 	if $"/root/GameProcessState".isReady:
 		healthValue.text = str($"/root/GameProcessState".healthCounter)
 		waveValue.text = (
-			str(waveFormat % $"/root/GameProcessState".maxWaveCounter)
+			str(waveFormat % $"/root/GameProcessState".currentWaveCounter)
 			+ "/"
-			+ str(waveFormat % $"/root/GameProcessState".currentWaveCounter)
+			+ str(waveFormat % $"/root/GameProcessState".maxWaveCounter)
 		)
 		energyValue.text = str(energyFormat % $"/root/GameProcessState".energyCounter)
