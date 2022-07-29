@@ -24,6 +24,8 @@ onready var animationLv1 = $AnimationLv1
 onready var animationLv2 = $AnimationLv2
 onready var animationLv3 = $AnimationLv3
 
+onready var spawnAnimation = $SpawnAnimation
+
 var currentAnimation
 var currentLevel = 1
 var maxLevel = 3
@@ -54,6 +56,12 @@ func selfSelect():
 
 ## EXTERNAL SIGNALS!!!
 func _towerWasRemoved():
+	$"/root/ScreenUISingleton"._resetUi()
+
+	spawnAnimation.play("spawn")
+	yield(spawnAnimation, "animation_finished")
+	spawnAnimation.stop()
+
 	$"/root/GameProcessState".addEnergy(getCurrentCost() / 2)
 	var spawnPoint = load(spawnPointScene).instance()
 	spawnPoint.global_position = self.global_position

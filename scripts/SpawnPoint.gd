@@ -2,6 +2,7 @@ extends Area2D
 
 onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
+onready var spawnAnimation = $SpawnAnimation
 
 onready var towersNode = get_tree().get_root().find_node("Towers", true, false)
 
@@ -21,9 +22,16 @@ func _on_SelectSprite_input_event(viewport, event, shape_idx):
 func _towerBuy(resourcePath):
 	var newTower = load(resourcePath).instance()
 	newTower.global_position = self.global_position
+	newTower.hide()
 	towersNode.add_child(newTower)
-	$"/root/GameProcessState".getEnergy(newTower.buyCost)
 	newTower.selfSelect()
+	$"/root/GameProcessState".getEnergy(newTower.buyCost)
+
+	spawnAnimation.play("spawn")
+	yield(spawnAnimation, "animation_finished")
+	spawnAnimation.stop()
+	newTower.show()
+
 	queue_free()
 
 
