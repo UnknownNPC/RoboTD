@@ -23,5 +23,5 @@ animations = [ {
 } ]
 
 [node name="SpawnAnimation" type="AnimatedSprite"]
-scale = Vector2( 3, 3 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )

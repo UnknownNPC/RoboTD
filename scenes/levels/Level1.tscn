@@ -126,3 +126,7 @@ position = Vector2( 112, 304 )
 [node name="ObstaclesTileMap" parent="." index="6"]
 position = Vector2( -66, -128 )
 tile_data = PoolIntArray( 393227, 8, 0, 786436, 0, 0, 786442, 0, 0, 983044, 0, 0, 983048, 22, 0, 983049, 23, 0, 983050, 0, 0, 1245191, 4, 0, 1376258, 8, 0, 1376262, 8, 0, 1441802, 8, 0 )
+
+[node name="WaveDirectionArrows" parent="." index="9"]
+position = Vector2( 28, 352 )
+animation = "right"

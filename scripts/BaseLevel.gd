@@ -1,9 +1,12 @@
 extends Node
 
+enum WAVE_ANIMATION_ARROWS_DIRECTION { left, right, up, down }
+
 onready var spawnBox = $RuntimeSpawnBox
 onready var nextWaveTimer = $NextWaveTriggerTimer
 onready var nextEnemySpawnTimer = $NextEnemySpawn
 onready var basePath = $BaseWavePath
+onready var waveDirectionArrows = $WaveDirectionArrows
 
 var enableProcessing = false
 var gameover = false
@@ -71,6 +74,7 @@ func _process(delta):
 
 func _on_NextWaveTriggerTimer_timeout():
 	nextWaveTimer.stop()
+	waveDirectionArrows.hide()
 
 	## bodies should be removed before next wave
 	_cleanupWaveResources()

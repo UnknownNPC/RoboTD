@@ -1,9 +1,21 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://tiles/obstacles/obstacles-and-objects.png" type="Texture" id=1]
 [ext_resource path="res://tiles/terrain/tileset_arranged.png" type="Texture" id=2]
+[ext_resource path="res://tiles/terrain/arrows/down_2.png" type="Texture" id=3]
 [ext_resource path="res://scripts/BaseLevel.gd" type="Script" id=4]
 [ext_resource path="res://scenes/UI/LevelStateUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tiles/terrain/arrows/down_1.png" type="Texture" id=6]
+[ext_resource path="res://tiles/terrain/arrows/down_3.png" type="Texture" id=7]
+[ext_resource path="res://tiles/terrain/arrows/up_3.png" type="Texture" id=8]
+[ext_resource path="res://tiles/terrain/arrows/up_2.png" type="Texture" id=9]
+[ext_resource path="res://tiles/terrain/arrows/up_1.png" type="Texture" id=10]
+[ext_resource path="res://tiles/terrain/arrows/left_2.png" type="Texture" id=11]
+[ext_resource path="res://tiles/terrain/arrows/left_1.png" type="Texture" id=12]
+[ext_resource path="res://tiles/terrain/arrows/left_3.png" type="Texture" id=13]
+[ext_resource path="res://tiles/terrain/arrows/right_2.png" type="Texture" id=14]
+[ext_resource path="res://tiles/terrain/arrows/right_1.png" type="Texture" id=15]
+[ext_resource path="res://tiles/terrain/arrows/right_3.png" type="Texture" id=16]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -1866,6 +1878,29 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 43/shapes = [  ]
 43/z_index = 0
 
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "left",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "right",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "up",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "down",
+"speed": 3.0
+} ]
+
 [node name="BaseLevel" type="Node"]
 script = ExtResource( 4 )
 
@@ -1898,6 +1933,12 @@ format = 1
 wait_time = 5.0
 
 [node name="NextEnemySpawn" type="Timer" parent="."]
+
+[node name="WaveDirectionArrows" type="AnimatedSprite" parent="."]
+frames = SubResource( 24 )
+animation = "up"
+frame = 2
+playing = true
 
 [connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]
 [connection signal="timeout" from="NextEnemySpawn" to="." method="_on_NextEnemySpawn_timeout"]
