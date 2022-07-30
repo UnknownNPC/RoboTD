@@ -44,8 +44,15 @@ func _process(delta):
 			var allEnemies = get_tree().get_nodes_in_group("enemies")
 			for enemy in allEnemies:
 				if !enemy.isDead:
-					var follow = enemy.get_parent()
+					var follow = enemy.get_parent() as PathFollow2D
+
+					var enemyPosBeforeMove = enemy.global_position.x
 					follow.offset += enemy.speed * enemy.slownessModifier * delta
+					if enemy.global_position.x - enemyPosBeforeMove >= 0:
+						enemy.animation.flip_h = false
+					else:
+						enemy.animation.flip_h = true
+
 					if follow.unit_offset >= 1:
 						enemy.queue_free()
 						### Enemy moved to the end
@@ -64,6 +71,7 @@ func _process(delta):
 					return
 				print("Waiting " + str(nextWaveTimer.wait_time) + " before next wave")
 				nextWaveTimer.start()
+				waveDirectionArrows.show()
 
 				var waveReward = LEVEL_SETTINGS_READER.getCurrentWaveReward(
 					GAME_STATE.currentWaveCounter

@@ -183,4 +183,4 @@ tile_data = PoolIntArray( 4128832, 0, 0, 6684736, 0, 0, 7012408, 22, 0, 7208991,
 [node name="WaveDirectionArrows" parent="." index="9"]
 position = Vector2( 29, 416 )
 animation = "right"
-frame = 2
+frame = 0

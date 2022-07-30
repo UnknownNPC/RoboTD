@@ -127,9 +127,9 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 21 ) ],
 "loop": false,
-"name": "big_explosion",
+"name": "small_explosion",
 "speed": 10.0
 }, {
 "frames": [  ],
@@ -137,9 +137,9 @@ animations = [ {
 "name": "nothing",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": false,
-"name": "small_explosion",
+"name": "big_explosion",
 "speed": 10.0
 } ]
 
