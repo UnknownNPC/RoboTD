@@ -1935,6 +1935,7 @@ wait_time = 5.0
 [node name="NextEnemySpawn" type="Timer" parent="."]
 
 [node name="WaveDirectionArrows" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
 frame = 2
