@@ -18,4 +18,4 @@ curve = SubResource( 1 )
 tile_data = PoolIntArray( 917506, 15, 0, 917507, 15, 0, 917508, 15, 0 )
 
 [node name="WaveDirectionArrows" parent="." index="9"]
-frame = 1
+frame = 2

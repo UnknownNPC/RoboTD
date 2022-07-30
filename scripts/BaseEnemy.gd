@@ -48,6 +48,8 @@ func add_damage(damage):
 		#explosion
 		var explosionAnimationName = getExplosion()
 		explosionAnimation.play(explosionAnimationName)
+		incomeDamageAnimation.play("big-fragments")
+		incomeDamageAnimation.frame = 0
 
 		emit_signal("rewardForKill", self.energyReward)
 		animationPlayer.play("reward")
