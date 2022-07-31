@@ -1061,10 +1061,10 @@ _data = {
 81/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
-points = PoolVector2Array( 24, 32, 8, 32, 8, 48, 24, 48 )
+points = PoolVector2Array( 24, 40, 8, 40, 8, 48, 24, 48 )
 
 [sub_resource type="ConvexPolygonShape2D" id=28]
-points = PoolVector2Array( 24, 16, 8, 16, 8, 0, 24, 0 )
+points = PoolVector2Array( 24, 16, 8, 16, 8, 8, 24, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=25]
 points = PoolVector2Array( 8, 8, 24, 8, 24, 24, 8, 24 )
@@ -2028,6 +2028,7 @@ wait_time = 5.0
 scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
+frame = 1
 playing = true
 
 [connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]
