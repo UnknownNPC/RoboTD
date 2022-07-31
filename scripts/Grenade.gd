@@ -28,6 +28,11 @@ func ammoAction():
 	animation.hide()
 
 	smokeArea.monitoring = true
+	var enemiesInsideSmoke = smokeArea.get_overlapping_areas()
+	for enemyInSmoke in enemiesInsideSmoke:
+		if enemyInSmoke.is_in_group("enemies"):
+			enemyInSmoke.slownessModifier = grandeSlownessModifier
+
 	smokeCloudAnimation.show()
 	smokeCloudAnimation.play("smoke_action")
 
@@ -38,3 +43,9 @@ func _on_SmokeCloudTimer_timeout():
 	smokeCloudAnimation.play("smoke_disapearing")
 	yield(smokeCloudAnimation, "animation_finished")
 	queue_free()
+
+
+### flying granade
+func _on_Grenade_body_entered(body):
+	if body.is_in_group("obstacles"):
+		ammoAction()

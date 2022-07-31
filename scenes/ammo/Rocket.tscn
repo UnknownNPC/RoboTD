@@ -30,10 +30,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
+radius = 9.05539
 
 [node name="Rocket" type="Area2D"]
 position = Vector2( 0, -7 )
-monitoring = false
 script = ExtResource( 15 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
@@ -45,3 +45,4 @@ playing = true
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="." to="." method="_on_Rocket_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Rocket_body_entered"]
