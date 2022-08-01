@@ -1,7 +1,5 @@
 extends Node
 
-enum WAVE_ANIMATION_ARROWS_DIRECTION { left, right, up, down }
-
 onready var spawnBox = $RuntimeSpawnBox
 onready var nextWaveTimer = $NextWaveTriggerTimer
 onready var nextEnemySpawnTimer = $NextEnemySpawn
@@ -11,13 +9,14 @@ onready var waveDirectionArrows = $WaveDirectionArrows
 var enableProcessing = false
 var gameover = false
 
-var spawnedEnemiesInWaveLeft = 0
+var spawnedEnemiesInWaveLeft := 0
 
-onready var GAME_STATE = $"/root/GameProcessState"
-onready var LEVEL_SETTINGS_READER = $"/root/LevelSettingsReader"
+onready var GAME_STATE := $"/root/GameProcessState"
+onready var LEVEL_SETTINGS_READER := $"/root/LevelSettingsReader"
 
 var firstWaveWaitingSec := 15.0
 var regularWaveWaitingSec := 5.0
+
 
 func _ready():
 	LEVEL_SETTINGS_READER.init(levelNum())
