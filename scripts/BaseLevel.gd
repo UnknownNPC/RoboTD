@@ -16,6 +16,8 @@ var spawnedEnemiesInWaveLeft = 0
 onready var GAME_STATE = $"/root/GameProcessState"
 onready var LEVEL_SETTINGS_READER = $"/root/LevelSettingsReader"
 
+var firstWaveWaitingSec := 15.0
+var regularWaveWaitingSec := 5.0
 
 func _ready():
 	LEVEL_SETTINGS_READER.init(levelNum())
@@ -26,6 +28,7 @@ func _ready():
 		LEVEL_SETTINGS_READER.getEnergyOnStart()
 	)
 
+	nextWaveTimer.wait_time = firstWaveWaitingSec
 	nextWaveTimer.start()
 	$"/root/ScreenUISingleton".showFirstWaveMenu(nextWaveTimer)
 
@@ -82,6 +85,7 @@ func _process(delta):
 
 func _on_NextWaveTriggerTimer_timeout():
 	nextWaveTimer.stop()
+	nextWaveTimer.wait_time = regularWaveWaitingSec
 	waveDirectionArrows.hide()
 
 	## bodies should be removed before next wave
