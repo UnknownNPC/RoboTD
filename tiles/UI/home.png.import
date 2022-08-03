@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/range8.png-0a387c328309ccacf32126b799bc480f.stex"
+path="res://.import/home.png-24e71dcf8854fbe3a3263a6c89dab9da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/UI/rect/range8.png"
-dest_files=[ "res://.import/range8.png-0a387c328309ccacf32126b799bc480f.stex" ]
+source_file="res://tiles/UI/home.png"
+dest_files=[ "res://.import/home.png-24e71dcf8854fbe3a3263a6c89dab9da.stex" ]
 
 [params]
 
