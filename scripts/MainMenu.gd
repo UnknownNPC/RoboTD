@@ -32,3 +32,7 @@ func _on_GoBackBtn_pressed():
 	# go back from campain page
 	gameMainMenu.show()
 	selectLevel.hide()
+
+
+func openLevelsPage():
+	_on_CampainBtn_pressed()

@@ -5,8 +5,16 @@ var towerInfoUrl = "res://scenes/UI/TowerInfoUI.tscn"
 var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
 var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
 var firstWaveMessageModalUrl = "res://scenes/UI/FirstWaveMessageModal.tscn"
+var pauseMenuModal = "res://scenes/UI/PauseModalUI.tscn"
 
 var currentPanel
+var currentModal
+
+
+func showPauseMenu():
+	get_tree().paused = true
+	var pauseMenu = load(pauseMenuModal).instance()
+	get_parent().add_child(pauseMenu)
 
 
 #### dirty hack because call in the BaseLevel#_ready

@@ -12,7 +12,8 @@ func display(inputNextWaveTimer):
 
 
 func _process(delta):
-	nextWaveSecondsValue.text = str(floor(nextWaveTimer.time_left))
+	if is_instance_valid(nextWaveTimer):
+		nextWaveSecondsValue.text = str(floor(nextWaveTimer.time_left))
 
 
 func _on_FirstWaveMessageModal_gui_input(event):

@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/UI/BorderUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/UI/home.png" type="Texture" id=2]
 [ext_resource path="res://tiles/UI/home_p.png" type="Texture" id=3]
+[ext_resource path="res://scripts/GameMenuIconUI.gd" type="Script" id=4]
 
 [node name="GameMenuIconUI" type="CanvasLayer"]
+script = ExtResource( 4 )
 
 [node name="Border" parent="." instance=ExtResource( 1 )]
 tile_data = PoolIntArray( 0, 2, 0, 1, 2, 2, 2, 2, 3, 65536, 2, 65536, 65537, 2, 131073, 65538, 2, 65539, 131072, 2, 196608, 131073, 2, 196610, 131074, 2, 196611 )
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="HomeBtn" type="TextureButton" parent="."]
 margin_left = 15.0
 margin_top = 16.0
 margin_right = 45.0
@@ -17,3 +19,5 @@ margin_bottom = 46.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
+
+[connection signal="pressed" from="HomeBtn" to="." method="_on_HomeBtn_pressed"]
