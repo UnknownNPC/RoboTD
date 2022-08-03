@@ -4,15 +4,19 @@ var mainMenuScene = "res://scenes/MainMenu.tscn"
 
 
 func _on_ResumtBtn_pressed():
-	queue_free()
 	get_tree().paused = false
+	queue_free()
 
 
 func _on_RestartBtn_pressed():
 	get_tree().paused = false
-	pass  # Replace with function body.
+	queue_free()
+	$"/root/ScreenUISingleton"._resetCurrentWaveModal()
+	get_tree().reload_current_scene()
 
 
 func _on_Menu_pressed():
 	get_tree().paused = false
+	queue_free()
+	$"/root/ScreenUISingleton"._resetCurrentWaveModal()
 	get_tree().change_scene(mainMenuScene)

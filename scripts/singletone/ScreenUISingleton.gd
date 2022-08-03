@@ -8,7 +8,7 @@ var firstWaveMessageModalUrl = "res://scenes/UI/FirstWaveMessageModal.tscn"
 var pauseMenuModal = "res://scenes/UI/PauseModalUI.tscn"
 
 var currentPanel
-var currentModal
+var currentWaveModal
 
 
 func showPauseMenu():
@@ -17,12 +17,21 @@ func showPauseMenu():
 	get_parent().add_child(pauseMenu)
 
 
+################### start wave modals
+
+
+func _resetCurrentWaveModal():
+	if is_instance_valid(currentWaveModal):
+		currentWaveModal.queue_free()
+
+
 #### dirty hack because call in the BaseLevel#_ready
 func showFirstWaveMenu(nextWaveSeconds):
 	_resetUi()
 	var firstWaveMessageModal = load(firstWaveMessageModalUrl).instance()
 	get_parent().call_deferred("add_child", firstWaveMessageModal)
 	firstWaveMessageModal.call_deferred("display", nextWaveSeconds)
+	currentWaveModal = firstWaveMessageModal
 
 
 func showLevelBonusMenu(energySize, nextWaveSeconds):
@@ -30,6 +39,10 @@ func showLevelBonusMenu(energySize, nextWaveSeconds):
 	var waveBonus = load(waveBonusUrl).instance()
 	get_parent().add_child(waveBonus)
 	waveBonus.display(energySize, nextWaveSeconds)
+	currentWaveModal = waveBonus
+
+
+#################### end wave modals
 
 
 func addBuyTowerMenuPanel():
