@@ -145,7 +145,8 @@ margin_bottom = 65.0
 rect_min_size = Vector2( 65, 65 )
 size_flags_horizontal = 3
 theme = ExtResource( 18 )
-text = "Level"
+custom_fonts/font = ExtResource( 20 )
+text = "#99"
 
 [connection signal="pressed" from="GameMainMenu/Menu/VBoxContainer/CampainBtn" to="." method="_on_CampainBtn_pressed"]
 [connection signal="pressed" from="SelectLevel/GoBack/GoBackBtn" to="." method="_on_GoBackBtn_pressed"]

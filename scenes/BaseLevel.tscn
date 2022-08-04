@@ -2031,7 +2031,7 @@ wait_time = 5.0
 scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
-frame = 2
+frame = 1
 playing = true
 
 [connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]
