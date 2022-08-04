@@ -9,7 +9,7 @@
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/icon2.png-7662bc449ce0150559228b0e74c0d3e9.stex"
 
-[node name="LevelStateUI" type="CanvasLayer"]
+[node name="LevelStateUI" type="Control"]
 script = ExtResource( 5 )
 
 [node name="Border" parent="." instance=ExtResource( 3 )]

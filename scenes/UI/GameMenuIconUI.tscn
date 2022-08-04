@@ -5,7 +5,7 @@
 [ext_resource path="res://tiles/UI/home_p.png" type="Texture" id=3]
 [ext_resource path="res://scripts/GameMenuIconUI.gd" type="Script" id=4]
 
-[node name="GameMenuIconUI" type="CanvasLayer"]
+[node name="GameMenuIconUI" type="Control"]
 script = ExtResource( 4 )
 
 [node name="Border" parent="." instance=ExtResource( 1 )]

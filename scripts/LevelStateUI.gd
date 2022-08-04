@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 onready var healthValue = $HealthBox/HealthValue
 onready var waveValue = $WaveBox/WaveValue
