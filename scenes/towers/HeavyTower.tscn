@@ -57,24 +57,24 @@ animations = [ {
 [node name="HeavyTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Heavy"
-buyCost = 45
-level2Cost = 80
-level3Cost = 150
-damageValue = 10
+buyCost = 40
+level2Cost = 60
+level3Cost = 90
+effectRadius = 90
+damageValue = 20
 attackCooldown = 1.5
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1

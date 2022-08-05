@@ -58,10 +58,10 @@ animations = [ {
 script = ExtResource( 14 )
 unitName = "Sniper"
 buyCost = 30
-level2Cost = 50
-level3Cost = 75
-effectRadius = 100
-damageValue = 25
+level2Cost = 40
+level3Cost = 60
+effectRadius = 110
+damageValue = 20
 attackCooldown = 2.0
 
 [node name="AnimationLv1" parent="." index="0"]

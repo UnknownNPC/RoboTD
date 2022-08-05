@@ -10,8 +10,9 @@ script = ExtResource( 3 )
 unitName = "Spider"
 maxHealth = 120
 speed = 30
-energyReward = 2
+energyReward = 3
 
 [node name="Animation" parent="." index="2"]
 frames = ExtResource( 2 )
 animation = "walk"
+frame = 1

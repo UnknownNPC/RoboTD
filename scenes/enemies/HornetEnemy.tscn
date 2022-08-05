@@ -30,7 +30,7 @@ scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
 unitName = "Hornet"
 maxHealth = 50
-speed = 22
+speed = 25
 energyReward = 3
 
 [node name="Animation" parent="." index="2"]

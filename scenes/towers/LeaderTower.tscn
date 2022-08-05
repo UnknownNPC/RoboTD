@@ -36,21 +36,24 @@ animations = [ {
 [node name="LeaderTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Captain"
-buyCost = 50
-level2Cost = 100
-level3Cost = 150
+buyCost = 70
+level2Cost = 90
+level3Cost = 120
+damageBufferPercentValue = 0.1
+attackBufferPercentCooldown = 0.1
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1

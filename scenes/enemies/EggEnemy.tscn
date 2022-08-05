@@ -25,11 +25,11 @@ animations = [ {
 scale = Vector2( 1.1, 1.1 )
 script = ExtResource( 6 )
 unitName = "RoboEgg"
-maxHealth = 35
-speed = 35
-energyReward = 1
+maxHealth = 30
+speed = 30
+energyReward = 2
 
 [node name="Animation" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 1

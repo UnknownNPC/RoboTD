@@ -57,22 +57,21 @@ animations = [ {
 [node name="AssaultTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unitName = "Assault"
-buyCost = 20
-level2Cost = 50
-level3Cost = 100
+buyCost = 15
+level2Cost = 30
+level3Cost = 40
 effectRadius = 80
-damageValue = 15
+damageValue = 10
+attackCooldown = 1.5
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
