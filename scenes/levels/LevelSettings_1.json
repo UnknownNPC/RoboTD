@@ -3,18 +3,17 @@
    "energyOnStart":50,
    "enemiesWave":[
 	  {
-		 "count":5,
+		 "count":7,
 		 "reward": 30,
 		 "scenes": [
-		 	"res://scenes/enemies/HornetEnemy.tscn"
+		 	"res://scenes/enemies/WaspEnemy.tscn"
 		  ]
 	  },
 	  {
 		 "count":5,
 		 "reward": 20,
 		 "scenes": [
-		 	"res://scenes/enemies/CiclopeEnemy.tscn",
-		 	"res://scenes/enemies/EggEnemy.tscn"
+		 	"res://scenes/enemies/HornetEnemy.tscn"
 		  ]
 	  },
 	  {
