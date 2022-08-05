@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var levelsUrlPrefix := "res://scenes/levels/"
-var levels := {"#01": levelsUrlPrefix + "Level1.tscn", "#02": levelsUrlPrefix + "Level2.tscn"}
+var levels := {"01": levelsUrlPrefix + "Level1.tscn", "02": levelsUrlPrefix + "Level2.tscn"}
 
 onready var levelBtnExample = $SelectLevel/LevelsContainer/GridContainer/ButtonExample
 onready var levelBtnsGrid = $SelectLevel/LevelsContainer/GridContainer
