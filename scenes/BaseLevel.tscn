@@ -1061,6 +1061,29 @@ _data = {
 81/shapes = [  ]
 81/z_index = 0
 
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "left",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "right",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "up",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "down",
+"speed": 3.0
+} ]
+
 [sub_resource type="ConvexPolygonShape2D" id=27]
 points = PoolVector2Array( 24, 40, 8, 40, 8, 48, 24, 48 )
 
@@ -1969,29 +1992,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 43/shapes = [  ]
 43/z_index = 0
 
-[sub_resource type="SpriteFrames" id=24]
-animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "left",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "right",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "up",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "down",
-"speed": 3.0
-} ]
-
 [node name="BaseLevel" type="Node"]
 script = ExtResource( 4 )
 
@@ -2019,6 +2019,13 @@ format = 1
 
 [node name="Towers" type="Node" parent="."]
 
+[node name="WaveDirectionArrows" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 24 )
+animation = "up"
+frame = 2
+playing = true
+
 [node name="ObstaclesTileMap" type="TileMap" parent="." groups=["obstacles"]]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
@@ -2030,13 +2037,6 @@ format = 1
 wait_time = 5.0
 
 [node name="NextEnemySpawn" type="Timer" parent="."]
-
-[node name="WaveDirectionArrows" type="AnimatedSprite" parent="."]
-scale = Vector2( 2, 2 )
-frames = SubResource( 24 )
-animation = "up"
-frame = 2
-playing = true
 
 [connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]
 [connection signal="timeout" from="NextEnemySpawn" to="." method="_on_NextEnemySpawn_timeout"]

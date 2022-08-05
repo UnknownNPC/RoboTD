@@ -3,10 +3,10 @@
    "energyOnStart":50,
    "enemiesWave":[
 	  {
-		 "count":1,
+		 "count":5,
 		 "reward": 30,
 		 "scenes": [
-		 	"res://scenes/enemies/SpiderEnemy.tscn"
+		 	"res://scenes/enemies/HornetEnemy.tscn"
 		  ]
 	  },
 	  {

@@ -45,6 +45,11 @@ _global_script_classes=[ {
 "path": "res://scripts/HeavyTower.gd"
 }, {
 "base": "Node2D",
+"class": "HornetEnemy",
+"language": "GDScript",
+"path": "res://scripts/HornetEnemy.gd"
+}, {
+"base": "Node2D",
 "class": "ScarabEnemy",
 "language": "GDScript",
 "path": "res://scripts/ScarabEnemy.gd"
@@ -72,6 +77,7 @@ _global_script_class_icons={
 "EggEnemy": "",
 "GrenadierTower": "",
 "HeavyTower": "",
+"HornetEnemy": "",
 "ScarabEnemy": "",
 "SniperTower": "",
 "SpiderBoss": "",
