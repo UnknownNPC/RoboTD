@@ -3,9 +3,11 @@ extends "res://scripts/BaseEnemy.gd"
 class_name CentepideEnemy
 
 
-func _ready():
-	selectSprite.scale = Vector2(0.6, 0.6)
+onready var baseCollisionShape := $BaseCollisionShape
 
+func _ready():
 	var clickShape = RectangleShape2D.new()
-	clickShape.extents = Vector2(27, 7)
+	clickShape.extents = Vector2(26, 7)
 	selectShapeCollision.set_shape(clickShape)
+	
+	selectShapeCollision.position = baseCollisionShape.position

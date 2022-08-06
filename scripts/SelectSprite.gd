@@ -39,13 +39,14 @@ func _initSelectBorders():
 			bottomRight = _movePointToLenghtAndAngle(315, hipotenuza + DISTANCE_CONST, center)
 
 		elif collision.shape is RectangleShape2D:
-			var size = collision.shape.extents
-			var hipotenuza = sqrt(pow(size.x, 2) + pow(size.y, 2))
+			var size = collision.shape.extents * parentScaleVal
+			var halfXSize = size.x
+			var halfYSize = size.y
 
-			topRight = _movePointToLenghtAndAngle(45, hipotenuza + DISTANCE_CONST, center)
-			topLeft = _movePointToLenghtAndAngle(135, hipotenuza + DISTANCE_CONST, center)
-			bottomLeft = _movePointToLenghtAndAngle(225, hipotenuza + DISTANCE_CONST, center)
-			bottomRight = _movePointToLenghtAndAngle(315, hipotenuza + DISTANCE_CONST, center)
+			topRight = Vector2(center.x + halfXSize, center.y + halfYSize)
+			topLeft = Vector2(center.x - halfXSize, center.y + halfYSize)
+			bottomLeft = Vector2(center.x - halfXSize, center.y - halfYSize)
+			bottomRight = Vector2(center.x + halfXSize, center.y - halfYSize)
 
 		topLeftSprite.global_position = bottomLeft
 		topRightSprite.global_position = bottomRight

@@ -129,8 +129,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 26, 7 )
 
-[node name="Centepide" instance=ExtResource( 27 )]
-scale = Vector2( 2, 2 )
+[node name="CentepideEnemy" instance=ExtResource( 27 )]
+position = Vector2( 115, 57 )
+scale = Vector2( 3, 3 )
 script = ExtResource( 41 )
 unitName = "Centepide"
 maxHealth = 200
@@ -140,13 +141,14 @@ energyReward = 5
 [node name="Animation" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "right"
+frame = 1
 
 [node name="Node" type="AnimatedSprite" parent="Animation" index="0"]
 position = Vector2( -7.69231, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Node2" type="AnimatedSprite" parent="Animation" index="1"]
@@ -154,7 +156,7 @@ position = Vector2( -14.6154, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Node3" type="AnimatedSprite" parent="Animation" index="2"]
@@ -162,7 +164,7 @@ position = Vector2( -21.5385, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Node4" type="AnimatedSprite" parent="Animation" index="3"]
@@ -170,7 +172,7 @@ position = Vector2( -28.4615, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Node5" type="AnimatedSprite" parent="Animation" index="4"]
@@ -178,7 +180,7 @@ position = Vector2( -35.3846, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="tail" type="AnimatedSprite" parent="Animation" index="5"]
@@ -188,5 +190,6 @@ frames = SubResource( 3 )
 animation = "right"
 
 [node name="BaseCollisionShape" parent="." index="8"]
+visible = false
 position = Vector2( -18.5, 0 )
 shape = SubResource( 4 )
