@@ -8,7 +8,6 @@ onready var towersNode = get_tree().get_root().find_node("Towers", true, false)
 
 
 func _ready():
-	selectSprite.scale = Vector2(1, 1)
 	var clickShape = RectangleShape2D.new()
 	clickShape.set_extents(Vector2(16, 16))
 	selectShapeCollision.set_shape(clickShape)

@@ -35,7 +35,6 @@ func showFirstWaveMenu(nextWaveSeconds):
 
 
 func showLevelBonusMenu(energySize, nextWaveSeconds):
-	_resetUi()
 	var waveBonus = load(waveBonusUrl).instance()
 	get_parent().add_child(waveBonus)
 	waveBonus.display(energySize, nextWaveSeconds)
