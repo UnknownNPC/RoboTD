@@ -14,14 +14,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
-"name": "die",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "die",
 "speed": 5.0
 } ]
 
@@ -36,4 +36,4 @@ energyReward = 2
 [node name="Animation" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 6
+frame = 4

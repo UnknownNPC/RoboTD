@@ -10,15 +10,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "die",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
 } ]
 
 [node name="CiclopeEnemy" instance=ExtResource( 2 )]
@@ -32,4 +32,4 @@ energyReward = 3
 [node name="Animation" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 1

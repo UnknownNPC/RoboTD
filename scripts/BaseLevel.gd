@@ -50,6 +50,8 @@ func _process(delta):
 
 					var enemyPosBeforeMove = enemy.global_position.x
 					follow.offset += enemy.speed * enemy.slownessModifier * delta
+					
+					
 					if enemy.global_position.x - enemyPosBeforeMove >= 0:
 						enemy.animation.flip_h = false
 					else:

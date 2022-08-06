@@ -3,12 +3,10 @@
    "energyOnStart":100,
    "enemiesWave":[
 	  {
-		 "count":8,
+		 "count":1,
 		 "reward": 30,
 		 "scenes": [
-		 	"res://scenes/enemies/SpiderEnemy.tscn",
-		 	"res://scenes/enemies/CiclopeEnemy.tscn",
-		 	"res://scenes/enemies/EggEnemy.tscn"
+		 	"res://scenes/enemies/CentepideEnemy.tscn"
 		  ]
 	  },
 	  {
