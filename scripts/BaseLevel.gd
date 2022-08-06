@@ -14,7 +14,7 @@ var spawnedEnemiesInWaveLeft := 0
 onready var GAME_STATE := $"/root/GameProcessState"
 onready var LEVEL_SETTINGS_READER := $"/root/LevelSettingsReader"
 
-var firstWaveWaitingSec := 15.0
+var firstWaveWaitingSec := 1.0
 var regularWaveWaitingSec := 5.0
 
 

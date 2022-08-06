@@ -2032,6 +2032,7 @@ demoMode = true
 position = Vector2( 257, 238 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
+demoMode = true
 
 [node name="HeavyTower" parent="Background_1/Towers" instance=ExtResource( 23 )]
 position = Vector2( 163, 500 )
