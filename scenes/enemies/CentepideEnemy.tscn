@@ -59,14 +59,14 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 30 ), ExtResource( 20 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 34 ) ],
 "loop": false,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 30 ), ExtResource( 20 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -87,14 +87,14 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 40 ) ],
 "loop": false,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -115,14 +115,14 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -141,14 +141,13 @@ energyReward = 5
 [node name="Animation" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "right"
-frame = 1
+frame = 3
 
 [node name="Node" type="AnimatedSprite" parent="Animation" index="0"]
 position = Vector2( -7.69231, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
 playing = true
 
 [node name="Node2" type="AnimatedSprite" parent="Animation" index="1"]
@@ -156,7 +155,6 @@ position = Vector2( -14.6154, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
 playing = true
 
 [node name="Node3" type="AnimatedSprite" parent="Animation" index="2"]
@@ -164,7 +162,6 @@ position = Vector2( -21.5385, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
 playing = true
 
 [node name="Node4" type="AnimatedSprite" parent="Animation" index="3"]
@@ -172,7 +169,6 @@ position = Vector2( -28.4615, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
 playing = true
 
 [node name="Node5" type="AnimatedSprite" parent="Animation" index="4"]
@@ -180,7 +176,6 @@ position = Vector2( -35.3846, 0 )
 scale = Vector2( 0.769231, 0.769231 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
 playing = true
 
 [node name="tail" type="AnimatedSprite" parent="Animation" index="5"]

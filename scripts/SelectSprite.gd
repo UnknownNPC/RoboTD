@@ -26,7 +26,7 @@ func _initSelectBorders():
 		var bottomLeft = Vector2.ZERO
 		var bottomRight = Vector2.ZERO
 
-		var center = self.global_position
+		var center = collision.global_position
 
 		if collision.shape is CircleShape2D:
 			# correct scale

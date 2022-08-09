@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 [node name="Collision" type="CollisionShape2D" parent="."]
 
 [node name="Select" type="Node2D" parent="."]
+visible = false
 
 [node name="topLeft" type="Sprite" parent="Select"]
 texture = ExtResource( 3 )
