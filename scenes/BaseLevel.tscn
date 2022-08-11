@@ -2023,6 +2023,7 @@ format = 1
 scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
+frame = 2
 playing = true
 
 [node name="ObstaclesTileMap" type="TileMap" parent="." groups=["obstacles"]]

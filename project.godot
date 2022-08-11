@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://scripts/AssaultTower.gd"
 }, {
 "base": "Node2D",
+"class": "CiclopeBoss",
+"language": "GDScript",
+"path": "res://scripts/CiclopeBoss.gd"
+}, {
+"base": "Node2D",
 "class": "CiclopeEnemy",
 "language": "GDScript",
 "path": "res://scripts/CiclopeEnemy.gd"
@@ -78,6 +83,7 @@ _global_script_class_icons={
 "ArahnaBoss": "",
 "ArahnaEnemy": "",
 "AssaultTower": "",
+"CiclopeBoss": "",
 "CiclopeEnemy": "",
 "EggEnemy": "",
 "GrenadierTower": "",

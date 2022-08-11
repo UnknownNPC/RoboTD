@@ -1,6 +1,6 @@
 {
    "healthOnStart":9999,
-   "energyOnStart":100,
+   "energyOnStart":9999,
    "enemiesWave":[
 	  {
 		 "count":999,
@@ -14,7 +14,8 @@
 		 	"res://scenes/enemies/WaspEnemy.tscn",
 		 	"res://scenes/enemies/HornetEnemy.tscn",
 		 	"res://scenes/enemies/ArahnaEnemy.tscn",
-		 	"res://scenes/enemies/SpiderBoss.tscn"
+		 	"res://scenes/enemies/SpiderBoss.tscn",
+		 	"res://scenes/enemies/CiclopeBoss.tscn"
 		  ]
 	  },
 	  {

@@ -144,7 +144,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 8.0
+radius = 7.0
 
 [node name="BaseEnemy" type="Area2D" groups=["enemies", "selectable"]]
 z_index = -1
@@ -152,7 +152,6 @@ script = ExtResource( 1 )
 unitName = "EnemyName"
 
 [node name="AP_Reward" type="Node2D" parent="."]
-scale = Vector2( 1e-05, 1e-05 )
 z_index = 2
 
 [node name="RawardIcon" type="Sprite" parent="AP_Reward"]

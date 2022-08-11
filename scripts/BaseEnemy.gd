@@ -25,6 +25,7 @@ onready var incomeDamageAnimation = $IncomeDamageAnimation
 
 
 func _ready():
+	# fix reward scale size
 	rewardPopupValue.text = str(energyReward)
 	currentHealth = maxHealth
 	animation.animation = "walk"
