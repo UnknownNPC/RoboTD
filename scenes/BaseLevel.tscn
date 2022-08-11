@@ -2013,17 +2013,16 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
-[node name="RuntimeSpawnBox" type="Node" parent="."]
-
 [node name="TowerSpawnPoints" type="Node" parent="."]
 
 [node name="Towers" type="Node" parent="."]
+
+[node name="RuntimeSpawnBox" type="Node" parent="."]
 
 [node name="WaveDirectionArrows" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
-frame = 1
 playing = true
 
 [node name="ObstaclesTileMap" type="TileMap" parent="." groups=["obstacles"]]

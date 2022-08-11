@@ -14,7 +14,7 @@ var spawnedEnemiesInWaveLeft := 0
 onready var GAME_STATE := $"/root/GameProcessState"
 onready var LEVEL_SETTINGS_READER := $"/root/LevelSettingsReader"
 
-var firstWaveWaitingSec := 1.0
+var firstWaveWaitingSec := 15.0
 var regularWaveWaitingSec := 5.0
 
 
@@ -106,10 +106,6 @@ func spawnEnemies(enemiesCount):
 	nextEnemySpawnTimer.start()
 
 
-func _processRewardForKill(rewardCount):
-	GAME_STATE.addEnergy(rewardCount)
-
-
 #Should be run when stopProcessingMovement = true
 func _cleanupWaveResources():
 	print("_cleanupWaveResources: cleanup spawnbox - " + str(spawnBox.get_child_count()))
@@ -133,7 +129,6 @@ func _on_NextEnemySpawn_timeout():
 		var lerpY = lerp(-10, 10, randf())
 
 		var enemy = load(randomEnemyUrl).instance()
-		enemy.connect("rewardForKill", self, "_processRewardForKill")
 
 		var new_follow = PathFollow2D.new()
 		new_follow.rotate = false

@@ -27,4 +27,4 @@ func init(targetEnemy):
 
 	animation.frames = enemy.get_node("Animation").frames.duplicate()
 	animation.animation = enemy.get_node("Animation").animation
-	animation.scale = Vector2(2, 2)
+	animation.scale = enemy.scale
