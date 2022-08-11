@@ -18,8 +18,6 @@ func _ready():
 
 
 func _initSelectBorders():
-	print(parentScaleVal)
-
 	if is_instance_valid(collision.shape):
 		var topRight = Vector2.ZERO
 		var topLeft = Vector2.ZERO

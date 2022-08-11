@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 72, 234, 0, 0, 0, 0, 192, 306, 0, 0, 0, 0, 168, 428, 0, 0, 0, 0, 232, 486, 0, 0, 0, 0, 206, 526, 0, 0, 0, 0, 142, 546, 0, 0, 0, 0, 80, 540, 0, 0, 0, 0, 40, 500, 0, 0, 0, 0, 32, 452 )
+"points": PoolVector2Array( 0, 0, 0, 0, 72, 234, 0, 0, 0, 0, 192, 306, 0, 0, 0, 0, 168, 428, 0, 0, 0, 0, 232, 486, 0, 0, 0, 0, 206, 526, 0, 0, 0, 0, 142, 546, 0, 0, 0, 0, 80, 540, 0, 0, 0, 0, 40, 500, 0, 0, 0, 0, 32, 452, 0, 0, 0, 0, 64, 336 )
 }
 
 [node name="TestLevel" instance=ExtResource( 3 )]
@@ -18,5 +18,8 @@ curve = SubResource( 1 )
 [node name="SpawnPoint" parent="TowerSpawnPoints" index="0" instance=ExtResource( 1 )]
 position = Vector2( 104, 422 )
 
-[node name="ObstaclesTileMap" parent="." index="9"]
+[node name="WaveDirectionArrows" parent="." index="9"]
+frame = 1
+
+[node name="ObstaclesTileMap" parent="." index="10"]
 tile_data = PoolIntArray( 917506, 15, 0, 917507, 15, 0, 917508, 15, 0 )

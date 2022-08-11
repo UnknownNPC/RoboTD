@@ -9,8 +9,7 @@ var currentHealth
 var slownessModifier = 1
 
 var isDead = false
-
-signal rewardForKill(energy)
+var isEnemyContainer = false
 
 onready var heathBar = $HealthBar
 onready var animation = $Animation
@@ -51,7 +50,7 @@ func add_damage(damage):
 		incomeDamageAnimation.play("big-fragments")
 		incomeDamageAnimation.frame = 0
 
-		emit_signal("rewardForKill", self.energyReward)
+		addRewardForKill(self.energyReward)
 		animationPlayer.play("reward")
 
 		## some actions
@@ -61,6 +60,10 @@ func add_damage(damage):
 	else:
 		incomeDamageAnimation.animation = getIncomeDamageAnimation()
 		incomeDamageAnimation.frame = 0
+
+
+func addRewardForKill(rewardCount):
+	$"/root/GameProcessState".addEnergy(rewardCount)
 
 
 func dieSideEffects():

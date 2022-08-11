@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/enemies/centepide/CentepideNodeAnimation.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/centepide/CentepideNode.gd" type="Script" id=3]
+
+[node name="CentepideNode" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+unitName = "Centepide Body"
+maxHealth = 30
+speed = 10
+energyReward = 3
+
+[node name="Animation" parent="." index="2"]
+frames = ExtResource( 1 )
+animation = "right"
+frame = 3

@@ -107,10 +107,6 @@ func spawnEnemies(enemiesCount):
 	nextEnemySpawnTimer.start()
 
 
-func _processRewardForKill(rewardCount):
-	GAME_STATE.addEnergy(rewardCount)
-
-
 #Should be run when stopProcessingMovement = true
 func _cleanupWaveResources():
 	print("_cleanupWaveResources: cleanup spawnbox - " + str(spawnBox.get_child_count()))
@@ -133,12 +129,10 @@ func _on_NextEnemySpawn_timeout():
 		var lerpX = lerp(-10, 10, randf())
 		var lerpY = lerp(-10, 10, randf())
 
-		var enemy = load(randomEnemyUrl).instance()
-		enemy.connect("rewardForKill", self, "_processRewardForKill")
-
 		var new_follow = PathFollow2D.new()
 		new_follow.rotate = false
 		new_follow.loop = false
+		var enemy = load(randomEnemyUrl).instance()
 		new_follow.add_child(enemy)
 
 		var new_path = Path2D.new()

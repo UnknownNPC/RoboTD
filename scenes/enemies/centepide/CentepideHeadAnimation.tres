@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=2]
+
+[ext_resource path="res://tiles/enemies/centepide/left/centipede35.png" type="Texture" id=1]
+[ext_resource path="res://tiles/enemies/centepide/left/centipede34.png" type="Texture" id=2]
+[ext_resource path="res://tiles/enemies/centepide/up/centipede18.png" type="Texture" id=3]
+[ext_resource path="res://tiles/enemies/centepide/right/centipede3.png" type="Texture" id=4]
+[ext_resource path="res://tiles/enemies/centepide/right/centipede2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/enemies/centepide/up/centipede16.png" type="Texture" id=6]
+[ext_resource path="res://tiles/enemies/centepide/down/centipede48.png" type="Texture" id=7]
+[ext_resource path="res://tiles/enemies/centepide/left/centipede33.png" type="Texture" id=8]
+[ext_resource path="res://tiles/enemies/centepide/up/centipede19.png" type="Texture" id=9]
+[ext_resource path="res://tiles/enemies/centepide/up/centipede17.png" type="Texture" id=10]
+[ext_resource path="res://tiles/enemies/centepide/down/centipede50.png" type="Texture" id=11]
+[ext_resource path="res://tiles/enemies/centepide/right/centipede0.png" type="Texture" id=12]
+[ext_resource path="res://tiles/enemies/centepide/right/centipede1.png" type="Texture" id=13]
+[ext_resource path="res://tiles/enemies/centepide/down/centipede51.png" type="Texture" id=14]
+[ext_resource path="res://tiles/enemies/centepide/down/centipede49.png" type="Texture" id=15]
+[ext_resource path="res://tiles/enemies/centepide/left/centipede32.png" type="Texture" id=16]
+[ext_resource path="res://tiles/enemies/centepide/die_head.png" type="Texture" id=17]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]

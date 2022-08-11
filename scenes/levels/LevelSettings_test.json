@@ -6,7 +6,7 @@
 		 "count":999,
 		 "reward": 30,
 		 "scenes": [
-		 	"res://scenes/enemies/CentepideEnemy.tscn"
+		 	"res://scenes/enemies/centepide/CentepideEnemy.tscn"
 		  ]
 	  },
 	  {

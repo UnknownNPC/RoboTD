@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://tiles/obstacles/obstacles-and-objects.png" type="Texture" id=1]
 [ext_resource path="res://tiles/terrain/tileset_arranged.png" type="Texture" id=2]
@@ -2014,6 +2014,8 @@ cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="RuntimeSpawnBox" type="Node" parent="."]
+
+[node name="RuntimeBoxForContainers" type="Node" parent="."]
 
 [node name="TowerSpawnPoints" type="Node" parent="."]
 

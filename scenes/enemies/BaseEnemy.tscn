@@ -191,7 +191,7 @@ anims/reward = SubResource( 2 )
 frames = SubResource( 3 )
 animation = "nothing"
 
-[node name="BaseCollisionShape" type="CollisionShape2D" parent="."]
+[node name="DamageRetrieverCollision" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
 
 [connection signal="timeout" from="DeadBodyRelease" to="." method="_on_DeadBodyRelease_timeout"]
