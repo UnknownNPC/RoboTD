@@ -17,8 +17,14 @@ onready var LEVEL_SETTINGS_READER := $"/root/LevelSettingsReader"
 var firstWaveWaitingSec := 15.0
 var regularWaveWaitingSec := 5.0
 
+onready var adv := $AdMobAdvert
+
 
 func _ready():
+	adv.load_rewarded_video()
+
+	adv.show_rewarded_video()
+
 	LEVEL_SETTINGS_READER.init(levelNum())
 
 	GAME_STATE.init(

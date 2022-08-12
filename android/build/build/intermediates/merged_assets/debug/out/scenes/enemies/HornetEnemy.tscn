@@ -1,0 +1,39 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/HornetEnemy.gd" type="Script" id=2]
+[ext_resource path="res://tiles/enemies/hornet/hornet6.png" type="Texture" id=3]
+[ext_resource path="res://tiles/enemies/hornet/hornet5.png" type="Texture" id=4]
+[ext_resource path="res://tiles/enemies/hornet/hornet2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/enemies/hornet/hornet3.png" type="Texture" id=6]
+[ext_resource path="res://tiles/enemies/hornet/hornet7.png" type="Texture" id=7]
+[ext_resource path="res://tiles/enemies/hornet/hornet4.png" type="Texture" id=8]
+[ext_resource path="res://tiles/enemies/hornet/hornet1.png" type="Texture" id=9]
+[ext_resource path="res://tiles/enemies/hornet/hornet0.png" type="Texture" id=10]
+[ext_resource path="res://tiles/enemies/hornet/hornet_die.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
+
+[node name="HornetEnemy" instance=ExtResource( 1 )]
+scale = Vector2( 1.2, 1.2 )
+script = ExtResource( 2 )
+unitName = "Hornet"
+maxHealth = 50
+speed = 25
+energyReward = 3
+
+[node name="Animation" parent="." index="2"]
+frames = SubResource( 1 )
+animation = "walk"
+frame = 7

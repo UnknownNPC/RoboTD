@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/enemies/SpiderAnimation.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://scripts/SpiderBoss.gd" type="Script" id=3]
+
+[node name="SpiderBoss" instance=ExtResource( 1 )]
+scale = Vector2( 3, 3 )
+script = ExtResource( 3 )
+unitName = "Spider Boss"
+maxHealth = 1500
+speed = 20
+energyReward = 25
+
+[node name="Animation" parent="." index="2"]
+frames = ExtResource( 2 )
+animation = "walk"
+frame = 2

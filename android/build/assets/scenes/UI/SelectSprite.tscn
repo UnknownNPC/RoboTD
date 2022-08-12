@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/SelectSprite.gd" type="Script" id=2]
+[ext_resource path="res://tiles/UI/select/lt.png" type="Texture" id=3]
+[ext_resource path="res://tiles/UI/select/rb.png" type="Texture" id=4]
+[ext_resource path="res://tiles/UI/select/rt.png" type="Texture" id=5]
+[ext_resource path="res://tiles/UI/select/lb.png" type="Texture" id=6]
+
+[node name="SelectSprite" type="Area2D"]
+z_index = 99
+script = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Select" type="Node2D" parent="."]
+visible = false
+
+[node name="topLeft" type="Sprite" parent="Select"]
+texture = ExtResource( 3 )
+
+[node name="topRight" type="Sprite" parent="Select"]
+texture = ExtResource( 5 )
+
+[node name="bottomLeft" type="Sprite" parent="Select"]
+texture = ExtResource( 6 )
+
+[node name="bottomRight" type="Sprite" parent="Select"]
+texture = ExtResource( 4 )

@@ -1,0 +1,7 @@
+#Fri Aug 12 21:59:23 EEST 2022
+base.1=/home/vzymu/Development/godot/RoboTD/android/build/build/intermediates/dex/debug/mergeDexDebug/classes2.dex
+path.1=classes2.dex
+base.0=/home/vzymu/Development/godot/RoboTD/android/build/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

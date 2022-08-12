@@ -28,7 +28,8 @@
     <!-- If you want to add tags manually, do before it. -->
     <!-- WARNING: This should stay on a single line until the parsing code is improved. See GH-32414. -->
     <!-- TODO: Remove the 'requestLegacyExternalStorage' attribute when https://github.com/godotengine/godot/issues/38913 is resolved -->
-    <application android:label="@string/godot_project_name_string" android:allowBackup="false" android:isGame="true" android:hasFragileUserData="false" android:requestLegacyExternalStorage="false" tools:ignore="GoogleAppIndexingWarning" android:icon="@mipmap/icon" >
+    <application android:label="@string/godot_project_name_string" android:allowBackup="false" android:isGame="true" android:hasFragileUserData="false" android:requestLegacyExternalStorage="false" tools:ignore="GoogleAppIndexingWarning" android:icon="@mipmap/icon">
+    android:name="android.support.multidex.MultiDexApplication">
 
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
@@ -83,7 +84,9 @@
 <!-- Custom application XML added by add-ons. -->
 <!--CHUNK_APPLICATION_BEGIN-->
 <!--CHUNK_APPLICATION_END-->
-
+ 	<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1153625699559010~4248109188"/>
     </application>
 
 </manifest>

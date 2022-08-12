@@ -45,6 +45,7 @@ allprojects {
 dependencies {
     implementation libraries.kotlinStdLib
     implementation libraries.androidxFragment
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     if (rootProject.findProject(":lib")) {
         implementation project(":lib")
@@ -107,6 +108,7 @@ android {
         targetSdkVersion getExportTargetSdkVersion()
 //CHUNK_ANDROID_DEFAULTCONFIG_BEGIN
 //CHUNK_ANDROID_DEFAULTCONFIG_END
+	multiDexEnabled true
     }
 
     lintOptions {

@@ -1,0 +1,20 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
+
+[ext_resource path="res://tiles/enemies/spider/spider_tile20.png" type="Texture" id=2]
+[ext_resource path="res://tiles/enemies/spider/spider_tile7.png" type="Texture" id=6]
+[ext_resource path="res://tiles/enemies/spider/spider_tile6.png" type="Texture" id=9]
+[ext_resource path="res://tiles/enemies/spider/spider_tile8.png" type="Texture" id=11]
+[ext_resource path="res://tiles/enemies/spider/spider_tile5.png" type="Texture" id=14]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]

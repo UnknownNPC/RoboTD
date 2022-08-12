@@ -1,0 +1,82 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scenes/towers/AttackTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/AssaultTower.gd" type="Script" id=2]
+[ext_resource path="res://tiles/towers/assault/lv1/idle1.png" type="Texture" id=3]
+[ext_resource path="res://tiles/towers/assault/lv1/idle2.png" type="Texture" id=4]
+[ext_resource path="res://tiles/towers/assault/lv1/fire2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/towers/assault/lv1/fire1.png" type="Texture" id=6]
+[ext_resource path="res://tiles/towers/assault/lv2/lv2_idle2.png" type="Texture" id=7]
+[ext_resource path="res://tiles/towers/assault/lv2/lv2_idle1.png" type="Texture" id=8]
+[ext_resource path="res://tiles/towers/assault/lv2/lv2_fire2.png" type="Texture" id=9]
+[ext_resource path="res://tiles/towers/assault/lv2/lv2_fire1.png" type="Texture" id=10]
+[ext_resource path="res://tiles/towers/assault/lv3/lv3_idle2.png" type="Texture" id=11]
+[ext_resource path="res://tiles/towers/assault/lv3/lv3_idle1.png" type="Texture" id=12]
+[ext_resource path="res://tiles/towers/assault/lv3/lv3_fire2.png" type="Texture" id=13]
+[ext_resource path="res://tiles/towers/assault/lv3/lv3_fire1.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[node name="AssaultTower" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+unitName = "Assault"
+buyCost = 15
+level2Cost = 30
+level3Cost = 40
+effectRadius = 80
+damageValue = 10
+attackCooldown = 1.5
+
+[node name="AnimationLv1" parent="." index="0"]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+
+[node name="AnimationLv2" parent="." index="1"]
+visible = false
+frames = SubResource( 2 )
+animation = "idle"
+frame = 1
+
+[node name="AnimationLv3" parent="." index="2"]
+visible = false
+frames = SubResource( 3 )
+animation = "fire"
+frame = 1

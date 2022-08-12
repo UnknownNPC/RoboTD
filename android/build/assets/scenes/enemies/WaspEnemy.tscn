@@ -1,0 +1,39 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/enemies/wasp/wasp_die.png" type="Texture" id=2]
+[ext_resource path="res://tiles/enemies/wasp/wasp5.png" type="Texture" id=3]
+[ext_resource path="res://tiles/enemies/wasp/wasp6.png" type="Texture" id=4]
+[ext_resource path="res://tiles/enemies/wasp/wasp2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/enemies/wasp/wasp1.png" type="Texture" id=6]
+[ext_resource path="res://tiles/enemies/wasp/wasp0.png" type="Texture" id=7]
+[ext_resource path="res://tiles/enemies/wasp/wasp4.png" type="Texture" id=8]
+[ext_resource path="res://tiles/enemies/wasp/wasp3.png" type="Texture" id=9]
+[ext_resource path="res://tiles/enemies/wasp/wasp7.png" type="Texture" id=10]
+[ext_resource path="res://scripts/WaspEnemy.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="WaspEnemy" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 11 )
+unitName = "Wasp"
+maxHealth = 25
+speed = 40
+energyReward = 2
+
+[node name="Animation" parent="." index="2"]
+frames = SubResource( 1 )
+animation = "walk"
+frame = 6

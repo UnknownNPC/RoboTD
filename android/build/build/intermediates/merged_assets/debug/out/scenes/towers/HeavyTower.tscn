@@ -1,0 +1,81 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scenes/towers/AttackTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/HeavyTower.gd" type="Script" id=2]
+[ext_resource path="res://tiles/towers/heavy/lv1/idle1.png" type="Texture" id=3]
+[ext_resource path="res://tiles/towers/heavy/lv1/idle2.png" type="Texture" id=4]
+[ext_resource path="res://tiles/towers/heavy/lv1/fire2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/towers/heavy/lv1/fire1.png" type="Texture" id=6]
+[ext_resource path="res://tiles/towers/heavy/lv2/fire1.png" type="Texture" id=7]
+[ext_resource path="res://tiles/towers/heavy/lv2/fire2.png" type="Texture" id=8]
+[ext_resource path="res://tiles/towers/heavy/lv2/idle2.png" type="Texture" id=9]
+[ext_resource path="res://tiles/towers/heavy/lv2/idle1.png" type="Texture" id=10]
+[ext_resource path="res://tiles/towers/heavy/lv3/fire1.png" type="Texture" id=11]
+[ext_resource path="res://tiles/towers/heavy/lv3/fire2.png" type="Texture" id=12]
+[ext_resource path="res://tiles/towers/heavy/lv3/idle2.png" type="Texture" id=13]
+[ext_resource path="res://tiles/towers/heavy/lv3/idle1.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[node name="HeavyTower" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+unitName = "Heavy"
+buyCost = 40
+level2Cost = 60
+level3Cost = 90
+effectRadius = 90
+damageValue = 20
+attackCooldown = 1.5
+
+[node name="AnimationLv1" parent="." index="0"]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+
+[node name="AnimationLv2" parent="." index="1"]
+visible = false
+frames = SubResource( 2 )
+animation = "idle"
+frame = 1
+
+[node name="AnimationLv3" parent="." index="2"]
+visible = false
+frames = SubResource( 3 )
+animation = "idle"
