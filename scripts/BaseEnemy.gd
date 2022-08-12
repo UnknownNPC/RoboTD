@@ -18,6 +18,7 @@ onready var selectSprite = $SelectSprite/Select
 onready var selectShapeCollision = $SelectSprite/Collision
 
 onready var animationPlayer = $AnimationPlayer
+onready var apRewardContainer = $AP_Reward
 onready var rewardPopupValue = $AP_Reward/RewardValue
 
 onready var explosionAnimation = $ExplosionAnimation
@@ -32,6 +33,12 @@ func _ready():
 	if demoMode:
 		selectSprite.queue_free()
 		selectShapeCollision.queue_free()
+
+
+func _process(delta):
+	# fix award modal scale when enemy dies
+	if is_instance_valid(apRewardContainer) and is_instance_valid(self):
+		apRewardContainer.scale = apRewardContainer.scale / self.scale
 
 
 func add_damage(damage):
