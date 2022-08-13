@@ -8,13 +8,13 @@
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
-"name": "die",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
 } ]
