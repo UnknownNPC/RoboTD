@@ -1,3 +1,4 @@
+emulator @nextus5x
 adb logcat | grep godot
 
 release

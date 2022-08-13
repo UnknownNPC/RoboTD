@@ -17,7 +17,7 @@
 [ext_resource path="res://tiles/terrain/arrows/right_1.png" type="Texture" id=15]
 [ext_resource path="res://tiles/terrain/arrows/right_3.png" type="Texture" id=16]
 [ext_resource path="res://scenes/UI/GameMenuIconUI.tscn" type="PackedScene" id=17]
-[ext_resource path="res://admob-lib/admob.gd" type="Script" id=18]
+[ext_resource path="res://scenes/UI/advert/AdvertProvider.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -2024,7 +2024,6 @@ format = 1
 scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
-frame = 1
 playing = true
 
 [node name="ObstaclesTileMap" type="TileMap" parent="." groups=["obstacles"]]
@@ -2039,9 +2038,8 @@ wait_time = 5.0
 
 [node name="NextEnemySpawn" type="Timer" parent="."]
 
-[node name="AdMobAdvert" type="Node" parent="."]
-script = ExtResource( 18 )
-rewarded_id = "ca-app-pub-1153625699559010/5310194823"
+[node name="AdvertProvider" parent="." instance=ExtResource( 19 )]
+position = Vector2( 0, 54 )
 
 [connection signal="timeout" from="NextWaveTriggerTimer" to="." method="_on_NextWaveTriggerTimer_timeout"]
 [connection signal="timeout" from="NextEnemySpawn" to="." method="_on_NextEnemySpawn_timeout"]

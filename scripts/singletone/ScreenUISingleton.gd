@@ -6,6 +6,7 @@ var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
 var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
 var firstWaveMessageModalUrl = "res://scenes/UI/FirstWaveMessageModal.tscn"
 var pauseMenuModal = "res://scenes/UI/PauseModalUI.tscn"
+var showAdvertMenuModal = "res://scenes/UI/advert/ShowAdvertModalUI.tscn"
 
 var currentPanel
 var currentWaveModal
@@ -15,6 +16,13 @@ func showPauseMenu():
 	get_tree().paused = true
 	var pauseMenu = load(pauseMenuModal).instance()
 	get_parent().add_child(pauseMenu)
+
+
+func showAdvertModal(advertMob):
+	get_tree().paused = true
+	var advertModal = load(showAdvertMenuModal).instance()
+	advertModal.init(advertMob)
+	get_parent().add_child(advertModal)
 
 
 ################### start wave modals

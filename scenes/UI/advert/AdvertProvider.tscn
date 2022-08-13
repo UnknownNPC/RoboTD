@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/UI/advert/OpenRewardAdvertBtnUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=2]
+[ext_resource path="res://scripts/AdvertProvider.gd" type="Script" id=3]
+
+[node name="AdvertProvider" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="GameMenuIconUI" parent="." instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_bottom = 0.0
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 2 )
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+
+[connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
+[connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]
+[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
+[connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
