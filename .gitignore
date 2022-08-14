@@ -16,3 +16,4 @@ user/
 export_presets.cfg
 
 android/build/build
+android/build/.gradle
