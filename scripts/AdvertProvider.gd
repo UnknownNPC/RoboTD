@@ -33,10 +33,5 @@ func _on_AdMob_rewarded_video_closed():
 	print("Rewarded video closed")
 	advertMob.load_rewarded_video()
 
-
-func _on_AdMob_rewarded_video_failed_to_load(error_code):
-	pass  # Replace with function body.
-
-
 func _on_AdMob_rewarded_video_loaded():
 	print("Rewarded video loaded")

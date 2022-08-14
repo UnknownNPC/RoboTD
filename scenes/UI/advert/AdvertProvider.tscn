@@ -17,5 +17,4 @@ rewarded_id = "ca-app-pub-3940256099942544/5224354917"
 
 [connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
 [connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]
-[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
 [connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
