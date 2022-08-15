@@ -75,8 +75,8 @@ position = Vector2( 72, 294 )
 [node name="SpawnPoint20" parent="TowerSpawnPoints" index="19" instance=ExtResource( 1 )]
 position = Vector2( 40, 294 )
 
-[node name="WaveDirectionArrows" parent="." index="8"]
-frame = 0
+[node name="WaveDirectionArrows" parent="." index="7"]
+frame = 1
 
-[node name="ObstaclesTileMap" parent="." index="9"]
+[node name="ObstaclesTileMap" parent="." index="8"]
 tile_data = PoolIntArray( 917506, 15, 0, 917507, 15, 0, 917508, 15, 0 )

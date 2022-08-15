@@ -1,6 +1,5 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scenes/UI/BorderUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI/UI_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/BuyTowerMenu.gd" type="Script" id=3]
 [ext_resource path="res://tiles/font/game_font_extra_small.tres" type="DynamicFont" id=4]
@@ -10,6 +9,7 @@
 [ext_resource path="res://scenes/towers/SniperTower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/towers/GrenadierTower.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/towers/LeaderTower.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/UI/BorderUIV2.tscn" type="PackedScene" id=11]
 
 [node name="BuyTowerMenu" type="Control"]
 anchor_right = 1.0
@@ -18,27 +18,29 @@ mouse_filter = 2
 script = ExtResource( 3 )
 towers = [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
-[node name="Border" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 530 )
-tile_data = PoolIntArray( -65537, 2, 0, -131072, 2, 2, -131071, 2, 1, -131070, 2, 2, -131069, 2, 2, -131068, 2, 1, -131067, 2, 2, -131066, 2, 2, -131065, 2, 1, -131064, 2, 1, -131063, 2, 2, -131062, 2, 2, -131061, 2, 1, -131060, 2, 3, -1, 2, 65536, -65536, 2, 65537, -65535, 2, 131074, -65534, 2, 65538, -65533, 2, 131074, -65532, 2, 131073, -65531, 2, 65538, -65530, 2, 131074, -65529, 2, 65537, -65528, 2, 65537, -65527, 2, 131074, -65526, 2, 65538, -65525, 2, 65537, -65524, 2, 131075, 65535, 2, 65536, 0, 2, 65538, 1, 2, 65538, 2, 2, 65537, 3, 2, 65537, 4, 2, 131073, 5, 2, 131073, 6, 2, 131073, 7, 2, 131074, 8, 2, 131073, 9, 2, 131073, 10, 2, 131073, 11, 2, 131073, 12, 2, 65539, 131071, 2, 65536, 65536, 2, 65537, 65537, 2, 131073, 65538, 2, 131074, 65539, 2, 131074, 65540, 2, 65537, 65541, 2, 65537, 65542, 2, 65537, 65543, 2, 131074, 65544, 2, 65538, 65545, 2, 131074, 65546, 2, 131073, 65547, 2, 65538, 65548, 2, 65539, 196607, 2, 65536, 131072, 2, 131074, 131073, 2, 131073, 131074, 2, 131073, 131075, 2, 131073, 131076, 2, 131073, 131077, 2, 131073, 131078, 2, 65538, 131079, 2, 65537, 131080, 2, 131073, 131081, 2, 65538, 131082, 2, 131074, 131083, 2, 131074, 131084, 2, 131075, 262143, 2, 65536, 196608, 2, 65537, 196609, 2, 65537, 196610, 2, 131073, 196611, 2, 65538, 196612, 2, 65537, 196613, 2, 65538, 196614, 2, 65537, 196615, 2, 131074, 196616, 2, 65537, 196617, 2, 65538, 196618, 2, 65538, 196619, 2, 131074, 196620, 2, 131075, 327679, 2, 196608, 262144, 2, 196609, 262145, 2, 196610, 262146, 2, 196609, 262147, 2, 196610, 262148, 2, 196610, 262149, 2, 196609, 262150, 2, 196609, 262151, 2, 196610, 262152, 2, 196609, 262153, 2, 196609, 262154, 2, 196609, 262155, 2, 196610, 262156, 2, 196611 )
+[node name="BorderUIV2" parent="." instance=ExtResource( 11 )]
+margin_left = 23.0
+margin_top = 493.0
+margin_right = -160.0
+margin_bottom = -80.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 36.0
-margin_top = 532.0
-margin_right = 284.0
-margin_bottom = 615.0
+margin_left = 32.0
+margin_top = 520.0
+margin_right = 288.0
+margin_bottom = 618.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 
 [node name="HorizontalScroll" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 248.0
-margin_bottom = 83.0
+margin_right = 256.0
+margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Grid" type="GridContainer" parent="ScrollContainer/HorizontalScroll"]
-margin_right = 248.0
+margin_right = 256.0
 theme = ExtResource( 2 )
 columns = 5
 
@@ -99,14 +101,14 @@ text = "100"
 icon = ExtResource( 6 )
 
 [node name="Header" type="Control" parent="."]
-margin_top = -2.0
+margin_top = -8.0
 margin_right = 40.0
-margin_bottom = 38.0
+margin_bottom = 32.0
 
 [node name="NameLabel" type="Label" parent="Header"]
-margin_left = 49.0
+margin_left = 44.0
 margin_top = 509.0
-margin_right = 95.0
+margin_right = 90.0
 margin_bottom = 523.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
@@ -115,9 +117,9 @@ text = "Name"
 align = 1
 
 [node name="DmgLabel" type="Label" parent="Header"]
-margin_left = 106.0
+margin_left = 105.0
 margin_top = 509.0
-margin_right = 152.0
+margin_right = 151.0
 margin_bottom = 523.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
@@ -148,9 +150,9 @@ text = "Range"
 align = 1
 
 [node name="BuyLabel" type="Label" parent="Header"]
-margin_left = 228.0
+margin_left = 231.0
 margin_top = 509.0
-margin_right = 274.0
+margin_right = 277.0
 margin_bottom = 523.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
