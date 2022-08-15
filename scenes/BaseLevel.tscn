@@ -1999,10 +1999,6 @@ script = ExtResource( 4 )
 [node name="BaseWavePath" type="Path2D" parent="."]
 curve = SubResource( 3 )
 
-[node name="State" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="LevelStateUI" parent="." instance=ExtResource( 5 )]
 
 [node name="GameMenuIconUI" parent="." instance=ExtResource( 17 )]
@@ -2024,7 +2020,7 @@ format = 1
 scale = Vector2( 2, 2 )
 frames = SubResource( 24 )
 animation = "up"
-frame = 1
+frame = 2
 playing = true
 
 [node name="ObstaclesTileMap" type="TileMap" parent="." groups=["obstacles"]]

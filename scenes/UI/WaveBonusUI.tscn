@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://scenes/UI/BorderUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/WaveBonusUI.gd" type="Script" id=3]
+[ext_resource path="res://scenes/UI/BorderUIV2.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/icon2.png-7662bc449ce0150559228b0e74c0d3e9.stex"
@@ -14,8 +14,11 @@ margin_right = 281.0
 margin_bottom = 240.0
 script = ExtResource( 3 )
 
-[node name="Border" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( -65537, 2, 0, -131072, 2, 1, -131071, 2, 2, -131070, 2, 2, -131069, 2, 1, -131068, 2, 1, -131067, 2, 2, -131066, 2, 1, -131065, 2, 1, -131064, 2, 2, -131063, 2, 1, -131062, 2, 1, -131061, 2, 1, -131060, 2, 3, -1, 2, 65536, -65536, 2, 131073, -65535, 2, 131074, -65534, 2, 65538, -65533, 2, 131073, -65532, 2, 65538, -65531, 2, 131073, -65530, 2, 65538, -65529, 2, 131074, -65528, 2, 65537, -65527, 2, 131073, -65526, 2, 131073, -65525, 2, 131074, -65524, 2, 65539, 65535, 2, 131072, 0, 2, 65538, 1, 2, 65538, 2, 2, 131073, 3, 2, 131074, 4, 2, 131073, 5, 2, 131073, 6, 2, 131074, 7, 2, 131073, 8, 2, 131073, 9, 2, 65538, 10, 2, 65537, 11, 2, 65537, 12, 2, 131075, 131071, 2, 196608, 65536, 2, 196610, 65537, 2, 196610, 65538, 2, 196610, 65539, 2, 196610, 65540, 2, 196609, 65541, 2, 196610, 65542, 2, 196610, 65543, 2, 196609, 65544, 2, 196609, 65545, 2, 196610, 65546, 2, 196610, 65547, 2, 196610, 65548, 2, 196611 )
+[node name="BorderUIV2" parent="." instance=ExtResource( 4 )]
+margin_left = -17.0
+margin_top = -37.0
+margin_right = -121.0
+margin_bottom = -32.0
 
 [node name="Body" type="VBoxContainer" parent="."]
 margin_left = -5.0
