@@ -106,7 +106,7 @@ _global_script_class_icons={
 
 config/name="RoboTD"
 run/main_scene="res://scenes/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://tiles/icons/andorid_icon.png"
 
 [autoload]
 
