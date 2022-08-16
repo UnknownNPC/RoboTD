@@ -1,5 +1,7 @@
 extends Node2D
 
+enum TowerType { Attack, Debuffer, Buffer }
+
 var spawnPointScene = "res://scenes/SpawnPoint.tscn"
 onready var spawnPointsNode = get_tree().get_root().find_node("TowerSpawnPoints", true, false)
 
@@ -31,6 +33,7 @@ var currentLevel = 1
 var maxLevel = 3
 
 export(int) var effectRadius = 120
+export(TowerType) var towerType = TowerType.Attack
 
 
 func _ready():

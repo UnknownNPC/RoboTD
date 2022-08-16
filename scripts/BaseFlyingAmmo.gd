@@ -10,7 +10,7 @@ var isFlying = true
 
 #lerp
 var t = 0.0
-var duration = 0.8
+var lerpSpeedConstant = 0.8
 
 var only_once = true
 
@@ -27,7 +27,7 @@ func init(initTargetPoint, initDirection):
 
 func _process(delta):
 	if isFlying:
-		t += delta / duration
+		t += delta / lerpSpeedConstant
 		global_position = lerp(fromPoint, targetPoint, min(t, 1.0))
 
 	if global_position.floor() == targetPoint.floor() and only_once:

@@ -1,7 +1,12 @@
 extends Node
 
+const BaseTowerPreload = preload("res://scripts/BaseTower.gd")
+
 var enemyInfoUrl = "res://scenes/UI/EnemyInfoUI.tscn"
-var towerInfoUrl = "res://scenes/UI/TowerInfoUI.tscn"
+var attackTowerInfoUrl = "res://scenes/UI/AttackTowerInfoUI.tscn"
+var bufferTowerInfoUrl = "res://scenes/UI/BufferTowerInfoUI.tscn"
+var debufferTowerInfoUrl = "res://scenes/UI/DebufferTowerInfoUI.tscn"
+
 var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
 var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
 var firstWaveMessageModalUrl = "res://scenes/UI/FirstWaveMessageModal.tscn"
@@ -29,9 +34,11 @@ func showAdvertModal(advertMob):
 
 ################### start wave modals
 
+
 func showCurrentWaveModal():
 	if is_instance_valid(currentWaveModal):
 		currentWaveModal.show()
+
 
 func hideCurrentWaveModal():
 	if is_instance_valid(currentWaveModal):
@@ -75,7 +82,19 @@ func addInfoPanel(entity):
 	if is_instance_valid(currentPanel):
 		_removePanel(currentPanel)
 	var isEnemy = entity.is_in_group("enemies")
-	var url = enemyInfoUrl if isEnemy else towerInfoUrl
+
+	var url = null
+	if isEnemy:
+		url = enemyInfoUrl
+	else:
+		match entity.towerType:
+			BaseTowerPreload.TowerType.Attack:
+				url = attackTowerInfoUrl
+			BaseTowerPreload.TowerType.Buffer:
+				url = bufferTowerInfoUrl
+			BaseTowerPreload.TowerType.Debuffer:
+				url = debufferTowerInfoUrl
+
 	currentPanel = _addInfoUI(entity, url)
 
 

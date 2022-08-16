@@ -4,11 +4,17 @@ onready var smokeCloudTimer = $SmokeCloudTimer
 onready var smokeArea = $SmokeArea
 onready var smokeCloudAnimation = $SmokeArea/SmokeAnimation
 
-export var grandeSlownessModifier = 0.6
+var grandeSlownessModifier = null
 
 
 func _ready():
-	duration = 0.4
+	lerpSpeedConstant = 0.4
+
+
+func initSmokeGranade(attackPoint, direction, effectValue, effectDurationSec):
+	.init(attackPoint, direction)
+	grandeSlownessModifier = effectValue
+	smokeCloudTimer.wait_time = effectDurationSec
 
 
 func _on_SmokeArea_area_entered(area):

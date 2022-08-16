@@ -39,6 +39,7 @@ unitName = "Captain"
 buyCost = 70
 level2Cost = 90
 level3Cost = 120
+towerType = 2
 damageBufferPercentValue = 0.1
 attackBufferPercentCooldown = 0.1
 

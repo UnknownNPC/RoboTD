@@ -2,10 +2,7 @@ extends Control
 
 var tower
 
-onready var nameValue = $BaseInfoUI/NameValue
-onready var damageValue = $DamageValue
-onready var aRateValue = $ARateValue
-onready var radiusValue = $RadiusValue
+onready var rankValue = $RankValue
 onready var animation = $BaseInfoUI/Animation
 
 onready var upgradeBtn = $Actions/Upgrade
@@ -19,7 +16,7 @@ signal towerKill
 
 
 func getPercentFromFloat(val: float):
-	return "+" + str(val * 100) + "%"
+	return str(val * 100) + "%"
 
 
 func _process(delta):
@@ -33,17 +30,16 @@ func _process(delta):
 
 func init(targetTower):
 	tower = targetTower
-	nameValue.text = tower.fullUnitName
+	rankValue.text = tower.fullUnitName
 
-	if targetTower.is_in_group("attackTowers"):
-		var dmgV = "-" if tower.damageValue == 0 else tower.calcDamage()
-		damageValue.text = str(dmgV)
-		aRateValue.text = str(tower.calcCooldown())
-	elif targetTower.is_in_group("bufferTowers"):
-		damageValue.text = getPercentFromFloat(tower.damageBufferPercentValue)
-		aRateValue.text = getPercentFromFloat(tower.attackBufferPercentCooldown)
-
-	radiusValue.text = str(tower.effectRadius)
+#	if targetTower.is_in_group("attackTowers"):
+#		var dmgV = "-" if tower.damageValue == 0 else tower.calcDamage()
+#		damageValue.text = str(dmgV)
+#		aRateValue.text = str(tower.calcCooldown())
+#	elif targetTower.is_in_group("bufferTowers"):
+#
+#
+#	radiusValue.text = str(tower.effectRadius)
 
 	animation.frames = tower.currentAnimation.frames.duplicate()
 	animation.animation = tower.currentAnimation.animation

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tiles/UI/rect/selection-cursor.png" type="Texture" id=2]
-[ext_resource path="res://tiles/font/game_font_small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/UI/BorderUIV2.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=2]
@@ -84,18 +83,3 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 4, 4 )
 format = 1
 tile_data = PoolIntArray( 131091, 0, 0, 131097, 1, 0, 524307, 2, 0, 524313, 3, 0 )
-
-[node name="Name" type="Label" parent="."]
-margin_top = 18.0
-margin_right = 41.0
-margin_bottom = 33.0
-custom_fonts/font = ExtResource( 3 )
-text = "Name"
-
-[node name="NameValue" type="Label" parent="."]
-margin_left = 54.0
-margin_top = 18.0
-margin_right = 112.0
-margin_bottom = 33.0
-custom_fonts/font = ExtResource( 3 )
-text = "Genetic"

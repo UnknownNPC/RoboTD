@@ -2,7 +2,7 @@ extends Control
 
 var enemy
 
-onready var nameValue = $BaseInfoUI/NameValue
+onready var nameValue = $NameValue
 onready var speedValue = $SpeedValue
 onready var hpValue = $HPValue
 onready var rewardValue = $RewardValue

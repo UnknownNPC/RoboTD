@@ -61,22 +61,20 @@ buyCost = 40
 level2Cost = 60
 level3Cost = 90
 effectRadius = 90
+towerType = 1
 damageValue = 0
 attackCooldown = 2.0
 
 [node name="AnimationLv1" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv2" parent="." index="1"]
 visible = false
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 
 [node name="AnimationLv3" parent="." index="2"]
 visible = false
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
