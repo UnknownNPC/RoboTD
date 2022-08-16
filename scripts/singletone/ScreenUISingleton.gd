@@ -13,12 +13,14 @@ var currentWaveModal
 
 
 func showPauseMenu():
+	hideCurrentWaveModal()
 	get_tree().paused = true
 	var pauseMenu = load(pauseMenuModal).instance()
 	get_parent().add_child(pauseMenu)
 
 
 func showAdvertModal(advertMob):
+	hideCurrentWaveModal()
 	get_tree().paused = true
 	var advertModal = load(showAdvertMenuModal).instance()
 	advertModal.init(advertMob)
@@ -26,6 +28,14 @@ func showAdvertModal(advertMob):
 
 
 ################### start wave modals
+
+func showCurrentWaveModal():
+	if is_instance_valid(currentWaveModal):
+		currentWaveModal.show()
+
+func hideCurrentWaveModal():
+	if is_instance_valid(currentWaveModal):
+		currentWaveModal.hide()
 
 
 func _resetCurrentWaveModal():

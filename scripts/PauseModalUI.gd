@@ -6,6 +6,7 @@ var mainMenuScene = "res://scenes/MainMenu.tscn"
 func _on_ResumtBtn_pressed():
 	get_tree().paused = false
 	queue_free()
+	$"/root/ScreenUISingleton".showCurrentWaveModal()
 
 
 func _on_RestartBtn_pressed():
