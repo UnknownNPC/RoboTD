@@ -7,6 +7,8 @@ var attackTowerInfoUrl = "res://scenes/UI/AttackTowerInfoUI.tscn"
 var bufferTowerInfoUrl = "res://scenes/UI/BufferTowerInfoUI.tscn"
 var debufferTowerInfoUrl = "res://scenes/UI/DebufferTowerInfoUI.tscn"
 
+var towerInfoActionsUrl = "res://scenes/UI/TowerInfoActionsUI.tscn"
+
 var towerBuyMenuUrl = "res://scenes/UI/BuyTowerMenu.tscn"
 var waveBonusUrl = "res://scenes/UI/WaveBonusUI.tscn"
 var firstWaveMessageModalUrl = "res://scenes/UI/FirstWaveMessageModal.tscn"
@@ -14,6 +16,7 @@ var pauseMenuModal = "res://scenes/UI/PauseModalUI.tscn"
 var showAdvertMenuModal = "res://scenes/UI/advert/ShowAdvertModalUI.tscn"
 
 var currentPanel
+var currentAdditionalPanel
 var currentWaveModal
 
 
@@ -70,8 +73,8 @@ func showLevelBonusMenu(energySize, nextWaveSeconds):
 
 
 func addBuyTowerMenuPanel():
-	if is_instance_valid(currentPanel):
-		_removePanel(currentPanel)
+	_removePanel(currentPanel)
+	_removePanel(currentAdditionalPanel)
 	var buyMenuUi = load(towerBuyMenuUrl).instance()
 	get_parent().add_child(buyMenuUi)
 	currentPanel = buyMenuUi
@@ -79,8 +82,8 @@ func addBuyTowerMenuPanel():
 
 
 func addInfoPanel(entity):
-	if is_instance_valid(currentPanel):
-		_removePanel(currentPanel)
+	_removePanel(currentPanel)
+	_removePanel(currentAdditionalPanel)
 	var isEnemy = entity.is_in_group("enemies")
 
 	var url = null
@@ -94,6 +97,7 @@ func addInfoPanel(entity):
 				url = bufferTowerInfoUrl
 			BaseTowerPreload.TowerType.Debuffer:
 				url = debufferTowerInfoUrl
+		currentAdditionalPanel = _addInfoUI(entity, towerInfoActionsUrl)
 
 	currentPanel = _addInfoUI(entity, url)
 
@@ -107,6 +111,7 @@ func _unhandled_input(event):
 func _resetUi():
 	_cleanupMouseSelection()
 	_removePanel(currentPanel)
+	_removePanel(currentAdditionalPanel)
 
 
 func _cleanupMouseSelection():

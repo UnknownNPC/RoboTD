@@ -76,7 +76,7 @@ position = Vector2( 72, 294 )
 position = Vector2( 40, 294 )
 
 [node name="WaveDirectionArrows" parent="." index="9"]
-frame = 1
+frame = 2
 
 [node name="ObstaclesTileMap" parent="." index="10"]
 tile_data = PoolIntArray( 917506, 15, 0, 917507, 15, 0, 917508, 15, 0 )
