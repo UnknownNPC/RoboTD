@@ -5,65 +5,78 @@
 [ext_resource path="res://tiles/font/game_font_small.tres" type="DynamicFont" id=3]
 
 [node name="DebufferTowerInfoUI" instance=ExtResource( 1 )]
+rect_min_size = Vector2( 275, 95 )
 rect_pivot_offset = Vector2( -153, -83 )
 script = ExtResource( 2 )
 
+[node name="RankText" parent="." index="1"]
+margin_top = 8.0
+margin_bottom = 23.0
+
+[node name="RankValue" parent="." index="2"]
+margin_top = 8.0
+margin_bottom = 23.0
+
 [node name="EffectText" type="Label" parent="." index="3"]
-margin_top = 26.0
-margin_right = 59.0
-margin_bottom = 41.0
+margin_left = 23.0
+margin_top = 24.0
+margin_right = 82.0
+margin_bottom = 39.0
 custom_fonts/font = ExtResource( 3 )
 text = "Effect:"
 
 [node name="EffectValue" type="Label" parent="." index="4"]
-margin_left = 70.0
-margin_top = 26.0
-margin_right = 166.0
-margin_bottom = 41.0
+margin_left = 93.0
+margin_top = 24.0
+margin_right = 189.0
+margin_bottom = 39.0
 custom_fonts/font = ExtResource( 3 )
 text = "Slowness 60%"
 
 [node name="DurationText" type="Label" parent="." index="5"]
-margin_top = 42.0
-margin_right = 56.0
-margin_bottom = 57.0
+margin_left = 23.0
+margin_top = 40.0
+margin_right = 79.0
+margin_bottom = 55.0
 custom_fonts/font = ExtResource( 3 )
 text = "Time:"
 
 [node name="DurationValue" type="Label" parent="." index="6"]
-margin_left = 70.0
-margin_top = 42.0
-margin_right = 118.0
-margin_bottom = 57.0
+margin_left = 93.0
+margin_top = 40.0
+margin_right = 141.0
+margin_bottom = 55.0
 custom_fonts/font = ExtResource( 3 )
 text = "20 sec"
 
 [node name="ReloadText" type="Label" parent="." index="7"]
-margin_top = 58.0
-margin_right = 56.0
-margin_bottom = 73.0
+margin_left = 23.0
+margin_top = 56.0
+margin_right = 79.0
+margin_bottom = 71.0
 custom_fonts/font = ExtResource( 3 )
 text = "Reload:"
 
 [node name="ReloadValue" type="Label" parent="." index="8"]
-margin_left = 70.0
-margin_top = 58.0
-margin_right = 110.0
-margin_bottom = 73.0
+margin_left = 93.0
+margin_top = 56.0
+margin_right = 133.0
+margin_bottom = 71.0
 custom_fonts/font = ExtResource( 3 )
 text = "1 sec"
 
 [node name="RangeText" type="Label" parent="." index="9"]
-margin_top = 74.0
-margin_right = 48.0
-margin_bottom = 89.0
+margin_left = 23.0
+margin_top = 72.0
+margin_right = 71.0
+margin_bottom = 87.0
 custom_fonts/font = ExtResource( 3 )
 text = "Range:"
 
 [node name="RangeValue" type="Label" parent="." index="10"]
-margin_left = 70.0
-margin_top = 74.0
-margin_right = 110.0
-margin_bottom = 89.0
+margin_left = 93.0
+margin_top = 72.0
+margin_right = 133.0
+margin_bottom = 87.0
 custom_fonts/font = ExtResource( 3 )
 text = "120"

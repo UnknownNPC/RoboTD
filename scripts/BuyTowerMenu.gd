@@ -1,55 +1,41 @@
 extends Control
 
+const BaseTowerPreload = preload("res://scripts/BaseTower.gd")
+
+var attackTowerInfoUrl = "res://scenes/UI/AttackTowerInfoUI.tscn"
+var bufferTowerInfoUrl = "res://scenes/UI/BufferTowerInfoUI.tscn"
+var debufferTowerInfoUrl = "res://scenes/UI/DebufferTowerInfoUI.tscn"
+
 export(Array, PackedScene) var towers
 
 onready var horizontalScroll = $ScrollContainer/HorizontalScroll
-onready var grid = $ScrollContainer/HorizontalScroll/Grid
+
+onready var invisibleSpawnBlock = $InvisibleSpawnBlock
 
 onready var buyButtons = []
 
 signal towerBuy(resourcePath)
 
 
-func getPercentFromFloat(val: float):
-	return "+" + str(val * 100) + "%"
-
-
 func _ready():
 	for tower in towers:
 		var towerInstance = tower.instance()
+		invisibleSpawnBlock.add_child(towerInstance)
 
-		var nameVal = copySampleNode("NameValSample", towerInstance.unitName)
-		grid.add_child(nameVal)
+		var modalUrl = null
+		match towerInstance.towerType:
+			BaseTowerPreload.TowerType.Attack:
+				modalUrl = attackTowerInfoUrl
+			BaseTowerPreload.TowerType.Buffer:
+				modalUrl = bufferTowerInfoUrl
+			BaseTowerPreload.TowerType.Debuffer:
+				modalUrl = debufferTowerInfoUrl
 
-		if towerInstance.is_in_group("attackTowers"):
-			var dmgV = "-" if towerInstance.damageValue == 0 else towerInstance.damageValue
-			var dmgVal = copySampleNode("DmgValSample", dmgV)
-			grid.add_child(dmgVal)
-			var rateVal = copySampleNode("RateValSample", towerInstance.attackCooldown)
-			grid.add_child(rateVal)
-		elif towerInstance.is_in_group("bufferTowers"):
-			var dmgPercntBuff = getPercentFromFloat(towerInstance.damageBufferPercentValue)
-			var dmgVal = copySampleNode("DmgValSample", dmgPercntBuff)
-			grid.add_child(dmgVal)
-			var cooldownPercntBuff = getPercentFromFloat(towerInstance.attackBufferPercentCooldown)
-			var rateVal = copySampleNode("RateValSample", cooldownPercntBuff)
-			grid.add_child(rateVal)
+		var modalInstance = load(modalUrl).instance()
 
-		var effectVal = copySampleNode("RangeValSample", towerInstance.effectRadius)
-		grid.add_child(effectVal)
+		horizontalScroll.add_child(modalInstance)
 
-		var buyBtn = copySampleNode("BuyBtnSample", towerInstance.buyCost)
-		grid.add_child(buyBtn)
-		buyBtn.connect("pressed", self, "_onButtonPressed", [tower.resource_path])
-
-		buyButtons.append(buyBtn)
-
-
-func copySampleNode(nodeName, textField):
-	var newNode = grid.get_node(nodeName).duplicate()
-	newNode.text = str(textField)
-	newNode.show()
-	return newNode
+		modalInstance.init(towerInstance)
 
 
 func _process(delta):

@@ -5,58 +5,62 @@
 [ext_resource path="res://scripts/AttackTowerInfoUI.gd" type="Script" id=3]
 
 [node name="AttackTowerInfoUI" instance=ExtResource( 1 )]
+rect_min_size = Vector2( 275, 95 )
 rect_pivot_offset = Vector2( 11, -113 )
 script = ExtResource( 3 )
 
 [node name="RankText" parent="." index="1"]
-margin_top = 19.0
-margin_bottom = 34.0
+margin_top = 16.0
+margin_bottom = 31.0
 
 [node name="RankValue" parent="." index="2"]
-margin_top = 19.0
-margin_bottom = 34.0
+margin_top = 16.0
+margin_bottom = 31.0
 
 [node name="DamageText" type="Label" parent="." index="3"]
-margin_top = 35.0
-margin_right = 56.0
-margin_bottom = 50.0
+margin_left = 23.0
+margin_top = 32.0
+margin_right = 79.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 2 )
 text = "Damage:"
 
 [node name="DamageValue" type="Label" parent="." index="4"]
-margin_left = 70.0
-margin_top = 35.0
-margin_right = 111.0
-margin_bottom = 50.0
+margin_left = 93.0
+margin_top = 32.0
+margin_right = 134.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 2 )
 text = "250"
 
 [node name="ReloadText" type="Label" parent="." index="5"]
-margin_top = 51.0
-margin_right = 56.0
-margin_bottom = 66.0
+margin_left = 23.0
+margin_top = 48.0
+margin_right = 79.0
+margin_bottom = 63.0
 custom_fonts/font = ExtResource( 2 )
 text = "Reload:"
 
 [node name="ReloadValue" type="Label" parent="." index="6"]
-margin_left = 70.0
-margin_top = 51.0
-margin_right = 118.0
-margin_bottom = 66.0
+margin_left = 93.0
+margin_top = 48.0
+margin_right = 141.0
+margin_bottom = 63.0
 custom_fonts/font = ExtResource( 2 )
 text = "20 sec"
 
 [node name="RangeText" type="Label" parent="." index="7"]
-margin_top = 67.0
-margin_right = 48.0
-margin_bottom = 82.0
+margin_left = 23.0
+margin_top = 64.0
+margin_right = 71.0
+margin_bottom = 79.0
 custom_fonts/font = ExtResource( 2 )
 text = "Range:"
 
 [node name="RangeValue" type="Label" parent="." index="8"]
-margin_left = 70.0
-margin_top = 67.0
-margin_right = 110.0
-margin_bottom = 82.0
+margin_left = 93.0
+margin_top = 64.0
+margin_right = 133.0
+margin_bottom = 79.0
 custom_fonts/font = ExtResource( 2 )
 text = "120"

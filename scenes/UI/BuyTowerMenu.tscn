@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/UI/UI_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/BuyTowerMenu.gd" type="Script" id=3]
-[ext_resource path="res://tiles/font/game_font_extra_small.tres" type="DynamicFont" id=4]
 [ext_resource path="res://scenes/towers/AssaultTower.tscn" type="PackedScene" id=5]
-[ext_resource path="res://tiles/UI/icon2.png" type="Texture" id=6]
 [ext_resource path="res://scenes/towers/HeavyTower.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/towers/SniperTower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/towers/GrenadierTower.tscn" type="PackedScene" id=9]
@@ -19,142 +17,26 @@ script = ExtResource( 3 )
 towers = [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
 [node name="BorderUIV2" parent="." instance=ExtResource( 11 )]
-margin_left = 23.0
-margin_top = 493.0
+margin_left = 14.0
+margin_top = 362.0
 margin_right = -160.0
-margin_bottom = -80.0
+margin_bottom = -145.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 32.0
-margin_top = 520.0
-margin_right = 288.0
+margin_left = 23.0
+margin_top = 372.0
+margin_right = 297.0
 margin_bottom = 618.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
+follow_focus = true
+scroll_horizontal_enabled = false
 
 [node name="HorizontalScroll" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 235.0
-rect_min_size = Vector2( 235, 0 )
+margin_right = 274.0
+margin_bottom = 246.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
 
-[node name="Grid" type="GridContainer" parent="ScrollContainer/HorizontalScroll"]
-margin_right = 235.0
-rect_min_size = Vector2( 220, 0 )
-theme = ExtResource( 2 )
-columns = 5
-
-[node name="NameValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
-visible = false
-margin_top = 3.0
-margin_right = 56.0
-margin_bottom = 17.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Assault"
-align = 1
-
-[node name="DmgValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
-visible = false
-margin_top = 3.0
-margin_right = 43.0
-margin_bottom = 17.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "100"
-align = 1
-
-[node name="RateValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
-visible = false
-margin_top = 3.0
-margin_right = 43.0
-margin_bottom = 17.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "1"
-align = 1
-
-[node name="RangeValSample" type="Label" parent="ScrollContainer/HorizontalScroll/Grid"]
-visible = false
-margin_top = 3.0
-margin_right = 43.0
-margin_bottom = 17.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "120"
-align = 1
-
-[node name="BuyBtnSample" type="Button" parent="ScrollContainer/HorizontalScroll/Grid"]
-visible = false
-margin_top = -1.0
-margin_right = 49.0141
-margin_bottom = 19.2621
-size_flags_horizontal = 3
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
-shortcut_in_tooltip = false
-text = "100"
-icon = ExtResource( 6 )
-
-[node name="Header" type="Control" parent="."]
-margin_top = -8.0
-margin_right = 40.0
-margin_bottom = 32.0
-
-[node name="NameLabel" type="Label" parent="Header"]
-margin_left = 42.0
-margin_top = 509.0
-margin_right = 88.0
-margin_bottom = 523.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Name"
-align = 1
-
-[node name="DmgLabel" type="Label" parent="Header"]
-margin_left = 100.0
-margin_top = 509.0
-margin_right = 146.0
-margin_bottom = 523.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Dmg"
-align = 1
-
-[node name="RateLabel" type="Label" parent="Header"]
-margin_left = 140.0
-margin_top = 509.0
-margin_right = 186.0
-margin_bottom = 523.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Rate"
-align = 1
-
-[node name="RangeLabel" type="Label" parent="Header"]
-margin_left = 181.0
-margin_top = 509.0
-margin_right = 227.0
-margin_bottom = 523.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Range"
-align = 1
-
-[node name="BuyLabel" type="Label" parent="Header"]
-margin_left = 226.0
-margin_top = 509.0
-margin_right = 272.0
-margin_bottom = 523.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Cost"
-align = 1
+[node name="InvisibleSpawnBlock" type="Node2D" parent="."]

@@ -62,22 +62,22 @@
 3/z_index = 0
 
 [node name="BaseInfoUI" type="Control"]
-margin_right = -3.84
-margin_bottom = -7.68
+margin_right = 275.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 275, 95 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
-position = Vector2( 212, 49 )
+position = Vector2( 226, 44 )
 z_index = 2
 playing = true
 
 [node name="BorderUIV2" parent="." instance=ExtResource( 4 )]
-margin_left = -17.0
-margin_top = 3.0
-margin_right = 120.0
-margin_bottom = 50.0
+margin_right = 0.0
+margin_bottom = 0.0
+rect_scale = Vector2( 1, 1 )
 
 [node name="Focus" type="TileMap" parent="."]
-position = Vector2( 28, 2 )
+position = Vector2( 41, -1 )
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 4, 4 )
