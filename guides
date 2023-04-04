@@ -1,8 +1,0 @@
-emulator @nextus5x
-adb logcat | grep godot
-
-release
-1. set advertmob release flag true
-2. update advert code from test to prod
-test: ca-app-pub-3940256099942544/5224354917
-prod: ca-app-pub-1153625699559010/5310194823
