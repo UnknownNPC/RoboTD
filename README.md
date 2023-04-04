@@ -17,9 +17,9 @@ You can also play it on your android device: [link 2 playstore](https://play.goo
 
 This game is a classic tower defense game in pixelart style. Music & tiles are from https://opengameart.org & https://itch.io
 
-## Installation
+## How to run sources
 
-To install and run the game, follow these steps:
+To run the game, follow these steps:
 
  - Download and install Godot v3.5 if it is not already installed.
  - Clone the repository to your local machine.
