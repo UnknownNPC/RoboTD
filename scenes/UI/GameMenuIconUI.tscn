@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sounds/pause1_in.wav" type="AudioStream" id=1]
+[ext_resource path="res://tiles/UI/home.png" type="Texture" id=2]
+[ext_resource path="res://tiles/UI/home_p.png" type="Texture" id=3]
+[ext_resource path="res://scripts/GameMenuIconUI.gd" type="Script" id=4]
+
+[node name="GameMenuIconUI" type="Control"]
+script = ExtResource( 4 )
+
+[node name="HomeBtn" type="TextureButton" parent="."]
+margin_left = 15.0
+margin_top = 16.0
+margin_right = 45.0
+margin_bottom = 46.0
+rect_scale = Vector2( 0.9, 0.9 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+expand = true
+
+[node name="PauseInSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "sfx"
+
+[connection signal="pressed" from="HomeBtn" to="." method="_on_HomeBtn_pressed"]

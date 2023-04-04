@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://tiles/enemies/ciclope_boss/centipede1.png" type="Texture" id=1]
+[ext_resource path="res://tiles/enemies/ciclope_boss/centipede0.png" type="Texture" id=2]
+[ext_resource path="res://scripts/FlesheaterEnemy.gd" type="Script" id=3]
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tiles/enemies/ciclope_boss/centipede2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/enemies/ciclope_boss/die_tail.png" type="Texture" id=6]
+[ext_resource path="res://tiles/enemies/ciclope_boss/centipede3.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="FlesheaterEnemy" instance=ExtResource( 4 )]
+scale = Vector2( 2.2, 2.2 )
+script = ExtResource( 3 )
+unitName = "Flesheater"
+maxHealth = 220
+speed = 27
+energyReward = 2
+
+[node name="Animation" parent="." index="2"]
+frames = SubResource( 1 )
+animation = "walk"
+frame = 1

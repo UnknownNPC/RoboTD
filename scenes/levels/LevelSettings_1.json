@@ -1,0 +1,76 @@
+{
+   "healthOnStart":5,
+   "energyOnStart":75,
+   "enemiesWave":[
+	  {
+		 "count":5,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+		 	"res://scenes/enemies/EggEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":13,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+			"res://scenes/enemies/EggEnemy.tscn",
+			"res://scenes/enemies/WaspEnemy.tscn",
+		  ]
+	  },
+	  {
+		 "count":10,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+			"res://scenes/enemies/EggEnemy.tscn",
+			"res://scenes/enemies/WaspEnemy.tscn",
+			"res://scenes/enemies/HornetEnemy.tscn",
+		  ]
+	  },
+	  
+	  {
+		 "count":15,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+			"res://scenes/enemies/HornetEnemy.tscn",
+		  ]
+	  },
+	  {
+		 "count":20,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+			"res://scenes/enemies/HornetEnemy.tscn",
+		  ]
+	  },
+	  {
+		 "count":20,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+			"res://scenes/enemies/HornetEnemy.tscn",
+			"res://scenes/enemies/CiclopeEnemy.tscn",
+		  ]
+	  },
+	  {
+		 "count":8,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+			"res://scenes/enemies/CiclopeEnemy.tscn",
+		  ]
+	  },
+	  {
+		 "count":15,
+		 "reward": 0,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+			"res://scenes/enemies/CiclopeEnemy.tscn"
+		  ]
+	  }
+   ]
+}

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tiles/UI/ammo.png" type="Texture" id=1]
+[ext_resource path="res://tiles/UI/ammo_load.png" type="Texture" id=2]
+
+[node name="ReloadingState" type="TextureProgress"]
+margin_right = 10.0
+margin_bottom = 10.0
+rect_scale = Vector2( 1.2, 1.2 )
+value = 100.0
+rounded = true
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+fill_mode = 3

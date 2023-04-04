@@ -1,0 +1,59 @@
+{
+   "healthOnStart":5,
+   "energyOnStart":150,
+   "enemiesWave":[
+	  {
+		 "count":5,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.7,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":8,
+		 "reward": 20,
+		 "spawnIntervalSec": 0.9,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+		 	"res://scenes/enemies/CiclopeEnemy.tscn",
+		 	"res://scenes/enemies/EggEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":10,
+		 "reward": 15,
+		 "spawnIntervalSec": 0.9,
+		 "scenes": [
+		 	"res://scenes/enemies/ScarabEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":5,
+		 "reward": 20,
+		 "spawnIntervalSec": 1,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":2,
+		 "reward": 20,
+		 "spawnIntervalSec": 1,
+		 "scenes": [
+		 	"res://scenes/enemies/ArahnaEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":1,
+		 "reward": 0,
+		 "spawnIntervalSec": 1,
+		 "scenes": [
+		 	"res://scenes/enemies/WaspBoss.tscn"
+		  ]
+	  }
+   ]
+}

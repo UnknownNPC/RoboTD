@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/AttackTower.gd" type="Script" id=1]
+[ext_resource path="res://scenes/towers/BaseTower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/towers/ReloadingState.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/towers/WarnEmoji.tscn" type="PackedScene" id=4]
+
+[node name="AttackTower" groups=["attackTowers"] instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+damageValue = 100
+attackCooldown = 1.0
+
+[node name="AttackTimer" type="Timer" parent="." index="5"]
+
+[node name="ReloadingState" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = 6.0
+margin_top = -22.0
+margin_right = 22.0
+margin_bottom = -6.0
+
+[node name="WarnEmoji" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( -11, -16 )
+
+[node name="ShootPlayer" type="AudioStreamPlayer" parent="." index="9"]
+bus = "sfx"
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

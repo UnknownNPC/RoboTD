@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/UI/advert/OpenRewardAdvertBtnUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=2]
+[ext_resource path="res://scripts/AdvertProvider.gd" type="Script" id=3]
+[ext_resource path="res://sounds/pause1_in.wav" type="AudioStream" id=4]
+[ext_resource path="res://tiles/UI/warn.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "warn"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("warnIcon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+
+[node name="AdvertProvider" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="GameMenuIconUI" parent="." instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_bottom = 0.0
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 2 )
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+
+[node name="RewardedVideoRetry" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="PauseInAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "sfx"
+
+[node name="warnIcon" type="Sprite" parent="."]
+visible = false
+position = Vector2( 38, 25 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/warn = SubResource( 1 )
+
+[connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
+[connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]
+[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
+[connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
+[connection signal="timeout" from="RewardedVideoRetry" to="." method="_on_RewardedVideoRetry_timeout"]

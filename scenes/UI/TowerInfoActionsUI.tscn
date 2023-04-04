@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/UI/UI_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/TowerInfoActionsUI.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI/BorderUIV2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tiles/UI/icon2.png" type="Texture" id=4]
+
+[node name="TowerInfoActionsUI" type="Control"]
+margin_left = 36.0
+margin_top = 479.0
+margin_right = 276.0
+margin_bottom = 539.0
+script = ExtResource( 2 )
+
+[node name="BorderUIV2" parent="." instance=ExtResource( 3 )]
+margin_left = 4.0
+margin_top = 15.0
+margin_right = 4.0
+margin_bottom = -15.0
+rect_min_size = Vector2( 240, 35 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="Upgrade" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 131.0
+margin_bottom = 44.0
+theme = ExtResource( 1 )
+text = "Rank Up -10"
+icon = ExtResource( 4 )
+align = 2
+icon_align = 2
+expand_icon = true
+
+[node name="Remove" type="Button" parent="."]
+margin_left = 140.0
+margin_top = 20.0
+margin_right = 238.0
+margin_bottom = 44.0
+theme = ExtResource( 1 )
+text = "Sell +10"
+icon = ExtResource( 4 )
+align = 2
+icon_align = 2
+expand_icon = true
+
+[connection signal="pressed" from="Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="Remove" to="." method="_on_Remove_pressed"]

@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/UI/UI_theme.tres" type="Theme" id=1]
+[ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/LevelCompletedModalUI.gd" type="Script" id=3]
+[ext_resource path="res://scenes/UI/BorderUIV2.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float amount: hint_range(0.0, 5.0);
+
+void fragment() {
+	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, amount).rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/amount = 0.8
+
+[node name="LevelCompletedModalUI" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+
+[node name="BlurShader" type="ColorRect" parent="."]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="BorderUIV2" parent="." instance=ExtResource( 5 )]
+margin_left = 3.0
+margin_top = 191.0
+margin_right = -160.0
+margin_bottom = -402.0
+
+[node name="PauseModalUI" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 203.0
+margin_right = -20.0
+margin_bottom = -367.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BodyHor" type="VBoxContainer" parent="PauseModalUI"]
+margin_right = 281.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Text" type="Label" parent="PauseModalUI/BodyHor"]
+margin_right = 281.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level complete!"
+align = 1
+
+[node name="VerticalContainer" type="HBoxContainer" parent="PauseModalUI/BodyHor"]
+margin_top = 43.0
+margin_right = 281.0
+margin_bottom = 68.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="RestartBtn" type="Button" parent="PauseModalUI/BodyHor/VerticalContainer"]
+margin_right = 85.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 85, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Restart"
+
+[node name="NextLevelBtn" type="Button" parent="PauseModalUI/BodyHor/VerticalContainer"]
+margin_left = 93.0
+margin_right = 188.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 95, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Next level"
+
+[node name="MenuBtn" type="Button" parent="PauseModalUI/BodyHor/VerticalContainer"]
+margin_left = 196.0
+margin_right = 281.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 85, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Menu"
+
+[connection signal="pressed" from="PauseModalUI/BodyHor/VerticalContainer/RestartBtn" to="." method="_on_RestartBtn_pressed"]
+[connection signal="pressed" from="PauseModalUI/BodyHor/VerticalContainer/NextLevelBtn" to="." method="_on_NextLevelBtn_pressed"]
+[connection signal="pressed" from="PauseModalUI/BodyHor/VerticalContainer/MenuBtn" to="." method="_on_MenuBtn_pressed"]

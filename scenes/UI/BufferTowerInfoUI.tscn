@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/UI/BaseTowerInfoUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/BufferTowerInfoUI.gd" type="Script" id=2]
+[ext_resource path="res://tiles/font/game_font_small.tres" type="DynamicFont" id=3]
+
+[node name="BufferTowerInfoUI" instance=ExtResource( 1 )]
+rect_min_size = Vector2( 240, 100 )
+script = ExtResource( 2 )
+
+[node name="RankText" parent="." index="1"]
+margin_top = 19.0
+margin_bottom = 34.0
+
+[node name="RankValue" parent="." index="2"]
+margin_top = 19.0
+margin_bottom = 34.0
+
+[node name="DamageText" type="Label" parent="." index="3"]
+margin_left = 9.0
+margin_top = 35.0
+margin_right = 65.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 3 )
+text = "Damage:"
+
+[node name="DamageValue" type="Label" parent="." index="4"]
+margin_left = 79.0
+margin_top = 35.0
+margin_right = 120.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 3 )
+text = "250"
+
+[node name="ReloadText" type="Label" parent="." index="5"]
+margin_left = 9.0
+margin_top = 51.0
+margin_right = 65.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
+text = "Reload:"
+
+[node name="ReloadValue" type="Label" parent="." index="6"]
+margin_left = 79.0
+margin_top = 51.0
+margin_right = 127.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
+text = "20 sec"
+
+[node name="RangeText" type="Label" parent="." index="7"]
+margin_left = 9.0
+margin_top = 67.0
+margin_right = 57.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 3 )
+text = "Range:"
+
+[node name="RangeValue" type="Label" parent="." index="8"]
+margin_left = 79.0
+margin_top = 67.0
+margin_right = 119.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 3 )
+text = "120"

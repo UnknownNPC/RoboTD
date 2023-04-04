@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/enemies/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/ScarabTankEnemy.gd" type="Script" id=2]
+[ext_resource path="res://tiles/enemies/scarab_tank/scarab8.png" type="Texture" id=3]
+[ext_resource path="res://tiles/enemies/scarab_tank/scarab5.png" type="Texture" id=4]
+[ext_resource path="res://tiles/enemies/scarab_tank/scarab7.png" type="Texture" id=5]
+[ext_resource path="res://tiles/enemies/scarab_tank/scarab6.png" type="Texture" id=6]
+[ext_resource path="res://tiles/enemies/scarab_tank/scarab20.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
+
+[node name="ScarabTankEnemy" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+unitName = "Scarab Tank"
+maxHealth = 300
+speed = 25
+energyReward = 2
+
+[node name="Animation" parent="." index="2"]
+frames = SubResource( 1 )
+animation = "walk"
+frame = 3

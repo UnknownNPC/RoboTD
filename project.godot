@@ -1,0 +1,172 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "AdMob",
+"language": "GDScript",
+"path": "res://admob-lib/admob.gd"
+}, {
+"base": "Node2D",
+"class": "ArahnaBoss",
+"language": "GDScript",
+"path": "res://scripts/ArahnaBoss.gd"
+}, {
+"base": "Node2D",
+"class": "ArahnaEnemy",
+"language": "GDScript",
+"path": "res://scripts/ArahnaEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "AssaultTower",
+"language": "GDScript",
+"path": "res://scripts/AssaultTower.gd"
+}, {
+"base": "Node2D",
+"class": "CiclopeBoss",
+"language": "GDScript",
+"path": "res://scripts/CiclopeBoss.gd"
+}, {
+"base": "Node2D",
+"class": "CiclopeEnemy",
+"language": "GDScript",
+"path": "res://scripts/CiclopeEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "EggEnemy",
+"language": "GDScript",
+"path": "res://scripts/EggEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "FlesheaterEnemy",
+"language": "GDScript",
+"path": "res://scripts/FlesheaterEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "GrenadierTower",
+"language": "GDScript",
+"path": "res://scripts/GrenadierTower.gd"
+}, {
+"base": "Node2D",
+"class": "HeavyTower",
+"language": "GDScript",
+"path": "res://scripts/HeavyTower.gd"
+}, {
+"base": "Node2D",
+"class": "HornetEnemy",
+"language": "GDScript",
+"path": "res://scripts/HornetEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "ScarabEnemy",
+"language": "GDScript",
+"path": "res://scripts/ScarabEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "ScarabTankEnemy",
+"language": "GDScript",
+"path": "res://scripts/ScarabTankEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "SniperTower",
+"language": "GDScript",
+"path": "res://scripts/SniperTower.gd"
+}, {
+"base": "Node2D",
+"class": "SpiderBoss",
+"language": "GDScript",
+"path": "res://scripts/SpiderBoss.gd"
+}, {
+"base": "Node2D",
+"class": "SpiderEnemy",
+"language": "GDScript",
+"path": "res://scripts/SpiderEnemy.gd"
+}, {
+"base": "Node2D",
+"class": "WaspBoss",
+"language": "GDScript",
+"path": "res://scripts/WaspBoss.gd"
+}, {
+"base": "Node2D",
+"class": "WaspEnemy",
+"language": "GDScript",
+"path": "res://scripts/WaspEnemy.gd"
+} ]
+_global_script_class_icons={
+"AdMob": "res://admob-lib/icon.png",
+"ArahnaBoss": "",
+"ArahnaEnemy": "",
+"AssaultTower": "",
+"CiclopeBoss": "",
+"CiclopeEnemy": "",
+"EggEnemy": "",
+"FlesheaterEnemy": "",
+"GrenadierTower": "",
+"HeavyTower": "",
+"HornetEnemy": "",
+"ScarabEnemy": "",
+"ScarabTankEnemy": "",
+"SniperTower": "",
+"SpiderBoss": "",
+"SpiderEnemy": "",
+"WaspBoss": "",
+"WaspEnemy": ""
+}
+
+[application]
+
+config/name="RoboTD"
+run/main_scene="res://scenes/MainMenu.tscn"
+boot_splash/image="res://tiles/icons/andorid_icon.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.12549, 0.156863, 0.25098, 1 )
+config/icon="res://tiles/icons/andorid_icon.png"
+
+[autoload]
+
+ScreenUISingleton="*res://scripts/singletone/ScreenUISingleton.gd"
+LevelProcessState="*res://scripts/singletone/LevelProcessState.gd"
+LevelSettingsReader="*res://scripts/singletone/LevelSettingsReader.gd"
+LevelManager="*res://scripts/singletone/LevelManager.gd"
+GameSaveService="*res://scripts/singletone/GameSaveService.gd"
+LevelMusicPlayer="*res://scripts/singletone/LevelMusicPlayer.gd"
+
+[display]
+
+window/size/width=320
+window/size/height=640
+window/handheld/orientation="portrait"
+mouse_cursor/custom_image="res://tiles/UI/mouse-pointer.png"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[global]
+
+view=false
+main=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.160784, 0.101961, 0.443137, 1 )
+environment/default_environment="res://default_env.tres"

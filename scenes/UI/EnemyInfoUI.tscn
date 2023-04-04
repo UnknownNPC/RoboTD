@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tiles/font/game_font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/UI/BaseInfoUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/EnemyInfo.gd" type="Script" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/icon2.png-7662bc449ce0150559228b0e74c0d3e9.stex"
+
+[node name="EnemyInfoUI" type="Control"]
+margin_left = 40.0
+margin_top = 530.0
+margin_right = 280.0
+margin_bottom = 630.0
+rect_pivot_offset = Vector2( -182, -50 )
+script = ExtResource( 3 )
+
+[node name="BaseInfoUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Name" type="Label" parent="."]
+margin_left = 9.0
+margin_top = 19.0
+margin_right = 50.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "Name:"
+
+[node name="NameValue" type="Label" parent="."]
+margin_left = 67.0
+margin_top = 19.0
+margin_right = 125.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "Genetic"
+
+[node name="Speed" type="Label" parent="."]
+margin_left = 9.0
+margin_top = 37.0
+margin_right = 57.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 1 )
+text = "Speed:"
+
+[node name="SpeedValue" type="Label" parent="."]
+margin_left = 67.0
+margin_top = 37.0
+margin_right = 108.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 1 )
+text = "250"
+
+[node name="HP" type="Label" parent="."]
+margin_left = 9.0
+margin_top = 53.0
+margin_right = 49.0
+margin_bottom = 68.0
+custom_fonts/font = ExtResource( 1 )
+text = "HP:"
+
+[node name="HPValue" type="Label" parent="."]
+margin_left = 67.0
+margin_top = 53.0
+margin_right = 123.0
+margin_bottom = 68.0
+custom_fonts/font = ExtResource( 1 )
+text = "100/100"
+
+[node name="Reward" type="Label" parent="."]
+margin_left = 9.0
+margin_top = 69.0
+margin_right = 65.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 1 )
+text = "Reward:"
+
+[node name="EnergyIcon" type="TextureRect" parent="."]
+margin_left = 65.0
+margin_top = 69.0
+margin_right = 81.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 15, 15 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = SubResource( 1 )
+stretch_mode = 5
+
+[node name="RewardValue" type="Label" parent="."]
+margin_left = 81.0
+margin_top = 69.0
+margin_right = 137.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 1 )
+text = "2"

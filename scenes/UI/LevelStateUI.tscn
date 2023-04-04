@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://tiles/UI/icon3.png" type="Texture" id=1]
+[ext_resource path="res://tiles/font/game_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://tiles/UI/icon4.png" type="Texture" id=4]
+[ext_resource path="res://scripts/LevelStateUI.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/icon2.png-7662bc449ce0150559228b0e74c0d3e9.stex"
+
+[node name="LevelStateUI" type="Control"]
+script = ExtResource( 5 )
+
+[node name="HealthBox" type="HBoxContainer" parent="."]
+margin_left = 75.0
+margin_top = 16.0
+margin_right = 130.0
+margin_bottom = 46.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = -1
+
+[node name="HealthIcon" type="TextureRect" parent="HealthBox"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+stretch_mode = 5
+
+[node name="HealthValue" type="Label" parent="HealthBox"]
+margin_left = 29.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 26.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "20"
+
+[node name="WaveBox" type="HBoxContainer" parent="."]
+margin_left = 132.0
+margin_top = 16.0
+margin_right = 226.0
+margin_bottom = 46.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = -1
+
+[node name="WaveIcon" type="TextureRect" parent="WaveBox"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 4 )
+stretch_mode = 5
+
+[node name="WaveValue" type="Label" parent="WaveBox"]
+margin_left = 29.0
+margin_top = 3.0
+margin_right = 94.0
+margin_bottom = 26.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "20/20"
+
+[node name="EnergyBox" type="HBoxContainer" parent="."]
+margin_left = 224.0
+margin_top = 16.0
+margin_right = 305.0
+margin_bottom = 46.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = -1
+
+[node name="EnergyIcon" type="TextureRect" parent="EnergyBox"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = SubResource( 1 )
+stretch_mode = 5
+
+[node name="EnergyValue" type="Label" parent="EnergyBox"]
+margin_left = 29.0
+margin_top = 3.0
+margin_right = 81.0
+margin_bottom = 26.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "0000"

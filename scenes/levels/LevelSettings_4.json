@@ -1,0 +1,81 @@
+{
+   "healthOnStart":5,
+   "energyOnStart":100,
+   "enemiesWave":[
+	  {
+		 "count":3,
+		 "reward": 15,
+		 "spawnIntervalSec": 1,
+		 "scenes": [
+		 	"res://scenes/enemies/ScarabEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":5,
+		 "reward": 15,
+		 "spawnIntervalSec": 1,
+		 "scenes": [
+		 	"res://scenes/enemies/ScarabEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":10,
+		 "reward": 15,
+		 "spawnIntervalSec": 1,
+		 "scenes": [
+		 	"res://scenes/enemies/ScarabEnemy.tscn",
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+			"res://scenes/enemies/HornetEnemy.tscn"
+		  ]
+	  },
+	  
+	  {
+		 "count":10,
+		 "reward": 15,
+		 "spawnIntervalSec": 0.8,
+		 "scenes": [
+		 	"res://scenes/enemies/SpiderEnemy.tscn",
+			"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":15,
+		 "reward": 15,
+		 "spawnIntervalSec": 0.9,
+		 "scenes": [
+			"res://scenes/enemies/WaspEnemy.tscn",
+			"res://scenes/enemies/SpiderEnemy.tscn",
+			"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":17,
+		 "reward": 15,
+		 "spawnIntervalSec": 0.9,
+		 "scenes": [
+			"res://scenes/enemies/SpiderEnemy.tscn",
+			"res://scenes/enemies/ScarabEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":18,
+		 "reward": 15,
+		 "spawnIntervalSec": 1.5,
+		 "scenes": [
+			"res://scenes/enemies/FlesheaterEnemy.tscn"
+		  ]
+	  },
+	  {
+		 "count":30,
+		 "reward": 0,
+		 "spawnIntervalSec": 0.9,
+		 "scenes": [
+			"res://scenes/enemies/SpiderEnemy.tscn",
+			"res://scenes/enemies/ScarabEnemy.tscn",
+			"res://scenes/enemies/FlesheaterEnemy.tscn"
+		  ]
+	  }
+   ]
+}
